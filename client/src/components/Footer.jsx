@@ -51,7 +51,7 @@ const Footer = () => {
                             <a href="#" className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors">
                                 <Twitter className="h-5 w-5" />
                             </a>
-                            <a href="#" className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors">
+                            <a href="https://instagram.com/globalpathwayhub" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors">
                                 <Instagram className="h-5 w-5" />
                             </a>
                             <a href="#" className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors">

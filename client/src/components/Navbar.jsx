@@ -1,11 +1,34 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import logo from '@/assets/globalpathwayhub.png';
 
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const location = useLocation();
+    const [pageTitle, setPageTitle] = useState('Global Pathway Hub');
+
+    useEffect(() => {
+        const path = location.pathname;
+        if (path === '/') {
+            setPageTitle('Global Pathway Hub');
+        } else if (path.startsWith('/universities')) {
+            setPageTitle('Universities');
+        } else if (path.startsWith('/about')) {
+            setPageTitle('About Us');
+        } else if (path.startsWith('/contact')) {
+            setPageTitle('Contact Us');
+        } else if (path.startsWith('/login')) {
+            setPageTitle('Login');
+        } else if (path.startsWith('/register')) {
+            setPageTitle('Register');
+        } else if (path.startsWith('/apply')) {
+            setPageTitle('Apply Now');
+        } else {
+            setPageTitle('Global Pathway Hub');
+        }
+    }, [location]);
 
     return (
         <nav className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
@@ -20,7 +43,7 @@ const Navbar = () => {
                             style={{ background: 'transparent' }}
                         />
                         <span className="font-bold text-xl tracking-tight text-foreground hidden sm:block">
-                            Global Pathway Hub
+                            {pageTitle}
                         </span>
                     </Link>
 

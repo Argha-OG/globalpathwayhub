@@ -33,25 +33,25 @@ const Contact = () => {
         {
             icon: <Mail className="h-6 w-6" />,
             title: "Email Us",
-            details: ["info@globalpathwayhub.com", "Support@syntax.com"],
+            details: ["globalpathwayhub@gmail.com"],
             color: "primary"
         },
         {
             icon: <Phone className="h-6 w-6" />,
             title: "Call Us",
-            details: ["+880 13-3679 2001", "+60 11‑3963 8206"],
+            details: ["+880 1410-555054"],
             color: "secondary"
         },
         {
             icon: <MapPin className="h-6 w-6" />,
             title: "Visit Us",
-            details: ["House-1019, Level: 05 , Road no-09 , avenue no-10 , Mirpur DOHS , Pallabi , dhaka-1216"],
+            details: ["Dhaka, Bangladesh"],
             color: "accent"
         },
         {
             icon: <Clock className="h-6 w-6" />,
-            title: "Office Hours",
-            details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 2:00 PM"],
+            title: "Website",
+            details: ["globalpathwayhub.com"],
             color: "primary"
         }
     ];
@@ -201,13 +201,15 @@ const Contact = () => {
                             >
                                 <Facebook className="h-5 w-5" />
                             </Button>
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                className="hover:bg-pink-500/20 hover:border-pink-500 hover:text-pink-500 transition-all"
-                            >
-                                <Instagram className="h-5 w-5" />
-                            </Button>
+                            <a href="https://instagram.com/globalpathwayhub" target="_blank" rel="noopener noreferrer">
+                                <Button
+                                    variant="outline"
+                                    size="icon"
+                                    className="hover:bg-pink-500/20 hover:border-pink-500 hover:text-pink-500 transition-all"
+                                >
+                                    <Instagram className="h-5 w-5" />
+                                </Button>
+                            </a>
                             <Button
                                 variant="outline"
                                 size="icon"
