@@ -5,7 +5,8 @@ import Home from './pages/Home';
 import Universities from './pages/Universities';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Admin from './pages/Admin';
+import AdminDashboard from './pages/Admin/Dashboard';
+import AdminLogin from './pages/Admin/Login';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Support from './pages/Support';
@@ -23,7 +24,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/support" element={<Support />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
       </Routes>
     </Layout>
   );

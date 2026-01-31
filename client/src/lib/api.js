@@ -1,74 +1,102 @@
-import { malaysianUniversities, getPublicUniversities, getPrivateUniversities, searchUniversities, filterUniversitiesByType } from '@/data/universitiesData';
+const API_URL = 'http://localhost:5000/api';
 
-// Simulate async behavior for consistency
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+const getAuthHeaders = () => {
+    const token = localStorage.getItem('admin_token');
+    if (token) {
+        return {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        };
+    }
+    return { 'Content-Type': 'application/json' };
+};
 
+// Public Data Fetching
 export const fetchCountries = async () => {
-    await delay(100);
-    return [{ id: 1, name: 'Malaysia', code: 'MY' }];
+    return [{ id: 1, name: 'Malaysia', code: 'MY' }, { id: 2, name: 'USA', code: 'US' }, { id: 3, name: 'UK', code: 'GB' }];
 };
 
 export const fetchUniversities = async (typeFilter) => {
-    await delay(100);
-    if (typeFilter === 'public') {
-        return getPublicUniversities();
-    } else if (typeFilter === 'private') {
-        return getPrivateUniversities();
+    try {
+        const response = await fetch(`${API_URL}/universities`);
+        if (!response.ok) throw new Error('Failed to fetch universities');
+        const data = await response.json();
+        if (typeFilter) {
+            return data;
+        }
+        return data;
+    } catch (error) {
+        console.error("Error fetching universities:", error);
+        return [];
     }
-    return malaysianUniversities;
 };
 
 export const fetchCourses = async (universityId, search) => {
-    await delay(100);
+    const params = new URLSearchParams();
+    if (universityId) params.append('universityId', universityId);
+    if (search) params.append('search', search);
 
-    let results = [...malaysianUniversities];
-
-    // Filter by university if specified
-    if (universityId) {
-        results = results.filter(uni => uni.id === parseInt(universityId));
+    try {
+        const response = await fetch(`${API_URL}/courses?${params.toString()}`);
+        if (!response.ok) throw new Error('Failed to fetch courses');
+        return await response.json();
+    } catch (error) {
+        console.error("Error fetching courses:", error);
+        return [];
     }
-
-    // Search if query provided
-    if (search) {
-        results = searchUniversities(search);
-    }
-
-    return results;
 };
 
 export const loginUser = async (email, password) => {
-    await delay(300);
-    // Mock authentication
-    if (email === 'admin@eadventure.com' && password === 'admin') {
-        return { success: true, user: { id: 1, name: 'Admin User', email, role: 'admin' } };
+    if (email === "Siam#18767:)" && password === "Siam#18767:)") {
+        localStorage.setItem('admin_token', 'siam-secret-token');
+        localStorage.setItem('admin_user', JSON.stringify({ email }));
+        return {
+            success: true,
+            user: { email, role: 'admin' }
+        };
     }
-    if (email === 'student@test.com' && password === 'student') {
-        return { success: true, user: { id: 2, name: 'Student User', email, role: 'student' } };
-    }
-    return { success: false, message: 'Invalid credentials' };
+    return { success: false, message: "Invalid credentials" };
+};
+
+export const logoutUser = () => {
+    localStorage.removeItem('admin_token');
+    localStorage.removeItem('admin_user');
 };
 
 export const registerUser = async (name, email, password) => {
-    await delay(300);
     // Mock registration
-    return {
-        success: true,
-        user: { id: Date.now(), name, email, role: 'student' }
-    };
+    return { success: true, user: { name, email, role: 'user' } };
 };
 
-// Admin functions (mock)
-export const addCountry = async (data) => {
-    await delay(200);
-    return { success: true, data };
-};
-
+// Admin CRUD
 export const addUniversity = async (data) => {
-    await delay(200);
-    return { success: true, data };
+    try {
+        const headers = getAuthHeaders();
+        const response = await fetch(`${API_URL}/universities`, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify(data)
+        });
+        const resData = await response.json();
+        if (!response.ok) throw new Error(resData.message || 'Failed to add university');
+        return { success: true, data: resData };
+    } catch (error) {
+        return { success: false, message: error.message };
+    }
 };
 
 export const addCourse = async (data) => {
-    await delay(200);
-    return { success: true, data };
+    try {
+        const headers = getAuthHeaders();
+        const response = await fetch(`${API_URL}/courses`, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify(data)
+        });
+        const resData = await response.json();
+        if (!response.ok) throw new Error(resData.message || 'Failed to add course');
+        return { success: true, data: resData };
+    } catch (error) {
+        return { success: false, message: error.message };
+    }
 };

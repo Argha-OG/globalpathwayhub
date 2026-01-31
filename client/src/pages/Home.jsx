@@ -101,12 +101,12 @@ const Home = () => {
 
                     <div className="relative hidden lg:block animate-in slide-in-from-right duration-700 delay-200">
                         <div className="relative z-10 grid grid-cols-2 gap-6">
-                            <GlassCard className="mt-12 animate-bounce delay-700">
+                            <GlassCard className="mt-12 animate-float delay-700">
                                 <GraduationCap className="h-12 w-12 text-primary mb-4" />
                                 <div className="text-4xl font-bold">20+</div>
                                 <div className="text-sm text-muted-foreground">Partner Universities</div>
                             </GlassCard>
-                            <GlassCard className="animate-bounce delay-1000">
+                            <GlassCard className="animate-float delay-1000">
                                 <Users className="h-12 w-12 text-secondary mb-4" />
                                 <div className="text-4xl font-bold">50K+</div>
                                 <div className="text-sm text-muted-foreground">Students Helped</div>
