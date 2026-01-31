@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { fetchUniversities } from '@/lib/api';
+import { fetchUniversities, fetchCourses } from '@/lib/api';
 import { MapPin, CheckCircle, DollarSign, ChevronDown, ChevronUp } from 'lucide-react';
 import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 
@@ -26,9 +26,29 @@ const Universities = () => {
     const [selectedCategories, setSelectedCategories] = useState({});
 
     useEffect(() => {
-        fetchUniversities().then(data => {
-            setUniversities(data || []);
-            setDisplayItems(data.map(u => ({ type: 'university', data: u })) || []);
+        Promise.all([fetchUniversities(), fetchCourses()]).then(([unis, courses]) => {
+            // Join courses to universities and normalize data
+            const combined = unis.map(u => {
+                const uniCourses = courses.filter(c => c.universityId === u._id || c.university?._id === u._id || c.university === u._id);
+                // Map course fields to expected UI format
+                const programs = uniCourses.map(c => {
+                    // Extract numeric fee from string (e.g. "$15,000/year" -> 15000)
+                    const feeString = c.tuitionFee || "0";
+                    const feeMatch = feeString.match(/[\d,]+/);
+                    const fee = feeMatch ? parseInt(feeMatch[0].replace(/,/g, '')) : 0;
+
+                    return {
+                        title: c.name,
+                        category: c.level,
+                        fee: fee,
+                        feeString: c.tuitionFee // keep original string if needed
+                    };
+                });
+                return { ...u, programs };
+            });
+
+            setUniversities(combined || []);
+            setDisplayItems(combined.map(u => ({ type: 'university', data: u })) || []);
         });
     }, []);
 

@@ -1,0 +1,2092 @@
+[
+  {
+    "_id": "1769835363773lnwo22enl",
+    "university": "17698353637721i81ukiuv",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773a2wj7kqd5",
+    "university": "17698353637721i81ukiuv",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "17698353637737dhs9gmj5",
+    "university": "17698353637721i81ukiuv",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773eb7tbosxu",
+    "university": "17698353637721i81ukiuv",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773sw32n7o2w",
+    "university": "17698353637721i81ukiuv",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773h3egyammr",
+    "university": "1769835363773xzm021i3w",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773op6ysuxs4",
+    "university": "1769835363773xzm021i3w",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773y6zz0k169",
+    "university": "1769835363773xzm021i3w",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773a958t1fy7",
+    "university": "1769835363773xzm021i3w",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "17698353637734mopkkmwq",
+    "university": "1769835363773xzm021i3w",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "17698353637736uu29xn4x",
+    "university": "1769835363773k502xqdwf",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773v6gkdp6xo",
+    "university": "1769835363773k502xqdwf",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773r71dbljr0",
+    "university": "1769835363773k502xqdwf",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773d84umqxsl",
+    "university": "1769835363773k502xqdwf",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773x9502544d",
+    "university": "1769835363773tj76khyb7",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773rrp7bb42q",
+    "university": "1769835363773tj76khyb7",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773xfq7odu1o",
+    "university": "1769835363773tj76khyb7",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773dlltbs2jb",
+    "university": "1769835363773tj76khyb7",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "17698353637733v8puoe8m",
+    "university": "1769835363773tj76khyb7",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773wgu8njvum",
+    "university": "1769835363773e9qqrxzzf",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773kz7h50qht",
+    "university": "1769835363773e9qqrxzzf",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773h2p7xlwuw",
+    "university": "1769835363773e9qqrxzzf",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773lyu8vqbd8",
+    "university": "1769835363773e9qqrxzzf",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "17698353637733mk3u6kvs",
+    "university": "1769835363773e9qqrxzzf",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773rn4v76t5m",
+    "university": "1769835363773sld5ii70o",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773pql634j6n",
+    "university": "1769835363773sld5ii70o",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "17698353637735xd0joidh",
+    "university": "1769835363773sld5ii70o",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773sunmqvrr1",
+    "university": "176983536377387e3ww0b0",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773nm9zcxa5d",
+    "university": "176983536377387e3ww0b0",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773ghfeigpsv",
+    "university": "176983536377387e3ww0b0",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773u2k0zs6rg",
+    "university": "1769835363773tkbhqvc5a",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "17698353637737dfptil23",
+    "university": "1769835363773tkbhqvc5a",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773grj8x63q1",
+    "university": "1769835363773tkbhqvc5a",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774942qreeep",
+    "university": "1769835363773tkbhqvc5a",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774rzlcm5wx1",
+    "university": "1769835363773tkbhqvc5a",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637744fovx9xnh",
+    "university": "1769835363774z4imh9ag2",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637745q8ttnlof",
+    "university": "1769835363774z4imh9ag2",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637747r2j4i360",
+    "university": "1769835363774z4imh9ag2",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637748uot9h5mj",
+    "university": "1769835363774z4imh9ag2",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774uurwrc2aw",
+    "university": "1769835363774lda8ep1f8",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774wigujlz8t",
+    "university": "1769835363774lda8ep1f8",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774d1hyjzz31",
+    "university": "1769835363774lda8ep1f8",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774j7wblu8yk",
+    "university": "1769835363774lda8ep1f8",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637741jmm7p3m2",
+    "university": "1769835363774895pr2dnm",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637742prpe9xv3",
+    "university": "1769835363774895pr2dnm",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774zguv74qtq",
+    "university": "1769835363774895pr2dnm",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377487suy4rdi",
+    "university": "1769835363774895pr2dnm",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774wreisxv1m",
+    "university": "1769835363774895pr2dnm",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774s0ki6r6gq",
+    "university": "1769835363774y8t7v0nwr",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774v6ommqt2r",
+    "university": "1769835363774y8t7v0nwr",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377423ob8d8gf",
+    "university": "1769835363774y8t7v0nwr",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774vchm5ls4i",
+    "university": "1769835363774y8t7v0nwr",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377443xn8jndm",
+    "university": "176983536377496ftxd29l",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774hg2uhf4wi",
+    "university": "176983536377496ftxd29l",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774cti88pz7d",
+    "university": "176983536377496ftxd29l",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774yx33hqs19",
+    "university": "176983536377496ftxd29l",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377439cgo37v6",
+    "university": "176983536377496ftxd29l",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774pq5ekbfvi",
+    "university": "1769835363774fzuf943wt",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774vilf7gvi4",
+    "university": "1769835363774fzuf943wt",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774ld1tw6yeo",
+    "university": "1769835363774fzuf943wt",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637748xm2xzfsw",
+    "university": "1769835363774v376p6dmw",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774skfr2z363",
+    "university": "1769835363774v376p6dmw",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637748o8srulyk",
+    "university": "1769835363774v376p6dmw",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637740mne4umaw",
+    "university": "1769835363774azojx9e50",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774oe7npdiv5",
+    "university": "1769835363774azojx9e50",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774pv7n7c02c",
+    "university": "1769835363774azojx9e50",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774qm3q7uvht",
+    "university": "1769835363774azojx9e50",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637745xyqgw4w6",
+    "university": "1769835363774dg433x5te",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774bgxe2saqc",
+    "university": "1769835363774dg433x5te",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774lxv75ghai",
+    "university": "1769835363774dg433x5te",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774k5ry6caqu",
+    "university": "1769835363774dg433x5te",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774onhynwvmy",
+    "university": "1769835363774dg433x5te",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637743jc967z42",
+    "university": "1769835363774g3snkh35r",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774xb9o7usxn",
+    "university": "1769835363774g3snkh35r",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774eluqrpqij",
+    "university": "1769835363774g3snkh35r",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774wa517w6ou",
+    "university": "1769835363774g3snkh35r",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377499bpesh8x",
+    "university": "1769835363774k5t3cek1r",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774xo6tfn2kc",
+    "university": "1769835363774k5t3cek1r",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774tfe88xgn1",
+    "university": "1769835363774k5t3cek1r",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774ijok49c0d",
+    "university": "1769835363774k5t3cek1r",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774bviy4s03g",
+    "university": "1769835363774k5t3cek1r",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774mt5nph1ub",
+    "university": "1769835363774qkpcbpj4o",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774e0pmerwfm",
+    "university": "1769835363774qkpcbpj4o",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774vpsu105uy",
+    "university": "1769835363774qkpcbpj4o",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774hx58mimmg",
+    "university": "1769835363774qkpcbpj4o",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774iaz7o3r7z",
+    "university": "1769835363774qkpcbpj4o",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774bx7jt6aqk",
+    "university": "1769835363774c3262kxnx",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774e3a9fujst",
+    "university": "1769835363774c3262kxnx",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774s9tldhk08",
+    "university": "1769835363774c3262kxnx",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774o1fyndgxn",
+    "university": "1769835363774c3262kxnx",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774q2ednm1fc",
+    "university": "1769835363774c3262kxnx",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774t2riuiiy2",
+    "university": "1769835363774nns6f6ozy",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774ttu7ag2y8",
+    "university": "1769835363774nns6f6ozy",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774wivhp5wd7",
+    "university": "1769835363774nns6f6ozy",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774tgnmyvyi0",
+    "university": "1769835363774nns6f6ozy",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377499n4tjw1j",
+    "university": "1769835363774xy495sg5t",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774xqlpyi1uu",
+    "university": "1769835363774xy495sg5t",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774zntpvavsd",
+    "university": "1769835363774xy495sg5t",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774g3y3gkrii",
+    "university": "1769835363774thwnkm3wq",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774qtdyqgrqx",
+    "university": "1769835363774thwnkm3wq",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774oryfp0wo7",
+    "university": "1769835363774thwnkm3wq",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637747qx6coxso",
+    "university": "1769835363774thwnkm3wq",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774wpprxjqsd",
+    "university": "1769835363774s7vkec0cj",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377420rfsteh4",
+    "university": "1769835363774s7vkec0cj",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637742rf0414v3",
+    "university": "1769835363774s7vkec0cj",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774mwwh4r717",
+    "university": "1769835363774s7vkec0cj",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774syx0nohab",
+    "university": "1769835363774cycp2dz22",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774gyu8lfqdt",
+    "university": "1769835363774cycp2dz22",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774mua0d2zl4",
+    "university": "1769835363774cycp2dz22",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774dv6v0wk74",
+    "university": "1769835363774cycp2dz22",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637740imylgga6",
+    "university": "1769835363774cycp2dz22",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774i39uqy0ps",
+    "university": "1769835363774i8yvootnr",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774im3wsov1b",
+    "university": "1769835363774i8yvootnr",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774yy0ta8w6m",
+    "university": "1769835363774i8yvootnr",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774lncusd5mo",
+    "university": "1769835363774i8yvootnr",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774cj97rpthl",
+    "university": "1769835363774hshsgasl3",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637741ip6au8ay",
+    "university": "1769835363774hshsgasl3",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637749knjlxnbz",
+    "university": "1769835363774hshsgasl3",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774rwtywd0i1",
+    "university": "1769835363774hshsgasl3",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774niip7l377",
+    "university": "1769835363774hshsgasl3",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774pmoggumo8",
+    "university": "1769835363774ndlm5aljt",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637749ozdq4dui",
+    "university": "1769835363774ndlm5aljt",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774qanxtnd9j",
+    "university": "1769835363774ndlm5aljt",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377454y9biidg",
+    "university": "1769835363774ndlm5aljt",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774lys63zuav",
+    "university": "1769835363774ndlm5aljt",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637745q97u2i8f",
+    "university": "176983536377459j15uw7j",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637741c2xkjty3",
+    "university": "176983536377459j15uw7j",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774z8dyeqt9z",
+    "university": "176983536377459j15uw7j",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637741oufc7fcq",
+    "university": "176983536377459j15uw7j",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774jmwjn4zk5",
+    "university": "1769835363774w2dolrmft",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774sge9vadpc",
+    "university": "1769835363774w2dolrmft",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774hxnmmfenz",
+    "university": "1769835363774w2dolrmft",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774yrbjfbty2",
+    "university": "1769835363774b7ea92x6u",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637741xp4dpgs1",
+    "university": "1769835363774b7ea92x6u",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774yof223c8d",
+    "university": "1769835363774b7ea92x6u",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774suxco5by1",
+    "university": "1769835363774b7ea92x6u",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774nmzktuldt",
+    "university": "1769835363774b7ea92x6u",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774iqus88p65",
+    "university": "1769835363774mda3aod0s",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774w6w2ykuag",
+    "university": "1769835363774mda3aod0s",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774a28uj91yk",
+    "university": "1769835363774mda3aod0s",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774pph7ewyfu",
+    "university": "1769835363774mda3aod0s",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774q7zqn7wff",
+    "university": "176983536377427w6dqyg0",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774qtiu6otx4",
+    "university": "176983536377427w6dqyg0",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774acx360bw2",
+    "university": "176983536377427w6dqyg0",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774yw44id4kn",
+    "university": "176983536377427w6dqyg0",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774f7evmu0be",
+    "university": "1769835363774yx7nreos0",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774mobeghf4s",
+    "university": "1769835363774yx7nreos0",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774ho38q8rlj",
+    "university": "1769835363774yx7nreos0",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774z1xc0t8yf",
+    "university": "1769835363774yx7nreos0",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774lztwuzpt3",
+    "university": "1769835363774yx7nreos0",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774gc00lblj8",
+    "university": "1769835363774rh9qkoshy",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377469804jylq",
+    "university": "1769835363774rh9qkoshy",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774ua6n2cmz5",
+    "university": "1769835363774rh9qkoshy",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774a3wa9kfyj",
+    "university": "1769835363774rh9qkoshy",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774huqwpap6k",
+    "university": "176983536377469zagvj82",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774glbudb4gw",
+    "university": "176983536377469zagvj82",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637742ewf8u95b",
+    "university": "176983536377469zagvj82",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "17698353637748z9isnnx2",
+    "university": "176983536377469zagvj82",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363775b80zqhj1v",
+    "university": "1769835363775rxywmw19i",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637753jggyo9jw",
+    "university": "1769835363775rxywmw19i",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775vk7cq824b",
+    "university": "1769835363775rxywmw19i",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775wmyzc1eyd",
+    "university": "1769835363775wqxjowrsp",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775soeyxrewg",
+    "university": "1769835363775wqxjowrsp",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775mp33uyyly",
+    "university": "1769835363775wqxjowrsp",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637759wvdqd6cl",
+    "university": "1769835363775t6t0pzuxk",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637757ghi00fpr",
+    "university": "1769835363775t6t0pzuxk",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775p0rr8g1dp",
+    "university": "1769835363775t6t0pzuxk",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637753z109jzkr",
+    "university": "1769835363775yexqvll73",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775sovlj0bx1",
+    "university": "1769835363775yexqvll73",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775kqwnmmb00",
+    "university": "1769835363775yexqvll73",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775aiy9ca0b8",
+    "university": "1769835363775yexqvll73",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637757ljuk8u2f",
+    "university": "1769835363775mw7th7t12",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775fff91p1lk",
+    "university": "1769835363775mw7th7t12",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637757whcb9drx",
+    "university": "1769835363775mw7th7t12",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775pb62glhzv",
+    "university": "1769835363775mw7th7t12",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775bkwkrs5lw",
+    "university": "1769835363775mw7th7t12",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775z5b9n8zta",
+    "university": "1769835363775cwte6iqvs",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775kpkuv2sck",
+    "university": "1769835363775cwte6iqvs",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775h743l84xp",
+    "university": "1769835363775cwte6iqvs",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637756sidksm82",
+    "university": "1769835363775cwte6iqvs",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775yhrelrgin",
+    "university": "17698353637755wzheharg",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775npwlakwuf",
+    "university": "17698353637755wzheharg",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775cuujkaod9",
+    "university": "17698353637755wzheharg",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775lmvjse1or",
+    "university": "17698353637755wzheharg",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775k6dmffo2u",
+    "university": "1769835363775c2hjtk18a",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775xbi8szndp",
+    "university": "1769835363775c2hjtk18a",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637755czcqp97w",
+    "university": "1769835363775c2hjtk18a",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637750t1lf08r9",
+    "university": "1769835363775c2hjtk18a",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775eji52o9n0",
+    "university": "1769835363775c2hjtk18a",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775ict5ruyw3",
+    "university": "1769835363775hetu9u134",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775yraw3mfv7",
+    "university": "1769835363775hetu9u134",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637752awt2n2xe",
+    "university": "1769835363775hetu9u134",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "176983536377559j571ocv",
+    "university": "1769835363775hetu9u134",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775gm6whdnkj",
+    "university": "1769835363775sy9zir6cd",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775xzfdnjzb8",
+    "university": "1769835363775sy9zir6cd",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775r1ug5juhx",
+    "university": "1769835363775sy9zir6cd",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637758abnmo1mt",
+    "university": "1769835363775ff51qidiw",
+    "name": "BSc Computer Science",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$15,000/year",
+    "description": "Comprehensive computer science program covering AI, software engineering, and data science.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775wedmuquqr",
+    "university": "1769835363775ff51qidiw",
+    "name": "PhD in Engineering",
+    "level": "PhD",
+    "duration": "3-4 years",
+    "tuitionFee": "$10,000/year",
+    "description": "Research-focused degree pushing the boundaries of engineering knowledge.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775dgyql84i3",
+    "university": "1769835363775ff51qidiw",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775dbf15ptxl",
+    "university": "1769835363775ff51qidiw",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637752gkao2o04",
+    "university": "1769835363775ff51qidiw",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775t5v565jpw",
+    "university": "1769835363775kvtkj2wlr",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775z33p6alz6",
+    "university": "1769835363775kvtkj2wlr",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775s3gzoopj5",
+    "university": "1769835363775kvtkj2wlr",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775o7fdctix7",
+    "university": "17698353637750w8ck3axn",
+    "name": "Master of Business Administration (MBA)",
+    "level": "Masters",
+    "duration": "1-2 years",
+    "tuitionFee": "$20,000/total",
+    "description": "Advanced business leadership and management training.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775g074djn9j",
+    "university": "17698353637750w8ck3axn",
+    "name": "MSc Data Science",
+    "level": "Masters",
+    "duration": "1 year",
+    "tuitionFee": "$16,000/total",
+    "description": "Specialized training in big data analytics and machine learning.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637756kkr00mvs",
+    "university": "17698353637750w8ck3axn",
+    "name": "BEng Mechanical Engineering",
+    "level": "Bachelors",
+    "duration": "4 years",
+    "tuitionFee": "$18,000/year",
+    "description": "In-depth study of mechanical systems, thermodynamics, and design.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "176983536377598knygb14",
+    "university": "17698353637750w8ck3axn",
+    "name": "MBBS Medicine",
+    "level": "Bachelors",
+    "duration": "5 years",
+    "tuitionFee": "$25,000/year",
+    "description": "Professional medical degree training future doctors.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775sp4jodzno",
+    "university": "17698353637750w8ck3axn",
+    "name": "Bachelor of Business Administration",
+    "level": "Bachelors",
+    "duration": "3 years",
+    "tuitionFee": "$12,000/year",
+    "description": "Develop specific business skills in management, finance, and marketing.",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  }
+]

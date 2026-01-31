@@ -1,0 +1,502 @@
+[
+  {
+    "_id": "17698353637721i81ukiuv",
+    "name": "Taylor's University",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.taylor'suniversity.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Taylor's%20University",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773xzm021i3w",
+    "name": "Sunway University",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.sunwayuniversity.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Sunway%20University",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773k502xqdwf",
+    "name": "Monash University Malaysia",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.monashuniversitymalaysia.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Monash%20University%20Malaysia",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773tj76khyb7",
+    "name": "University of Nottingham Malaysia",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.universityofnottinghammalaysia.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=University%20of%20Nottingham%20Malaysia",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773e9qqrxzzf",
+    "name": "Asia Pacific University (APU)",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.asiapacificuniversity(apu).edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Asia%20Pacific%20University%20(APU)",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773sld5ii70o",
+    "name": "UCSI University",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.ucsiuniversity.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=UCSI%20University",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "176983536377387e3ww0b0",
+    "name": "Management and Science University (MSU)",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.managementandscienceuniversity(msu).edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Management%20and%20Science%20University%20(MSU)",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363773tkbhqvc5a",
+    "name": "Universiti Teknologi Petronas (UTP)",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.universititeknologipetronas(utp).edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Universiti%20Teknologi%20Petronas%20(UTP)",
+    "createdAt": "2026-01-31T04:56:03.773Z"
+  },
+  {
+    "_id": "1769835363774z4imh9ag2",
+    "name": "Universiti Tenaga Nasional (UNITEN)",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.universititenaganasional(uniten).edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Universiti%20Tenaga%20Nasional%20(UNITEN)",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774lda8ep1f8",
+    "name": "Multimedia University (MMU)",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.multimediauniversity(mmu).edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Multimedia%20University%20(MMU)",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774895pr2dnm",
+    "name": "Universiti Tunku Abdul Rahman (UTAR)",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.universititunkuabdulrahman(utar).edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Universiti%20Tunku%20Abdul%20Rahman%20(UTAR)",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774y8t7v0nwr",
+    "name": "Tunku Abdul Rahman UMT",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.tunkuabdulrahmanumt.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Tunku%20Abdul%20Rahman%20UMT",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377496ftxd29l",
+    "name": "HELP University",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.helpuniversity.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=HELP%20University",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774fzuf943wt",
+    "name": "INTI International University",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.intiinternationaluniversity.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=INTI%20International%20University",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774v376p6dmw",
+    "name": "SEGi University",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.segiuniversity.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=SEGi%20University",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774azojx9e50",
+    "name": "Limkokwing University",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.limkokwinguniversity.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Limkokwing%20University",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774dg433x5te",
+    "name": "University of Cyberjaya",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.universityofcyberjaya.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=University%20of%20Cyberjaya",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774g3snkh35r",
+    "name": "Nilai University",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.nilaiuniversity.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Nilai%20University",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774k5t3cek1r",
+    "name": "Manipal International University",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.manipalinternationaluniversity.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Manipal%20International%20University",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774qkpcbpj4o",
+    "name": "Quest International University",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.questinternationaluniversity.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Quest%20International%20University",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774c3262kxnx",
+    "name": "Raffles University",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.rafflesuniversity.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Raffles%20University",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774nns6f6ozy",
+    "name": "Berjaya University College",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.berjayauniversitycollege.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Berjaya%20University%20College",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774xy495sg5t",
+    "name": "UOW Malaysia KDU",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.uowmalaysiakdu.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=UOW%20Malaysia%20KDU",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774thwnkm3wq",
+    "name": "Heriot-Watt University Malaysia",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.heriot-wattuniversitymalaysia.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Heriot-Watt%20University%20Malaysia",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774s7vkec0cj",
+    "name": "Xiamen University Malaysia",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.xiamenuniversitymalaysia.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Xiamen%20University%20Malaysia",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774cycp2dz22",
+    "name": "Curtin University Malaysia",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.curtinuniversitymalaysia.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Curtin%20University%20Malaysia",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774i8yvootnr",
+    "name": "Swinburne University Sarawak",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.swinburneuniversitysarawak.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Swinburne%20University%20Sarawak",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774hshsgasl3",
+    "name": "Newcastle University Medicine Malaysia",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.newcastleuniversitymedicinemalaysia.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Newcastle%20University%20Medicine%20Malaysia",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774ndlm5aljt",
+    "name": "University of Southampton Malaysia",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.universityofsouthamptonmalaysia.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=University%20of%20Southampton%20Malaysia",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377459j15uw7j",
+    "name": "University of Reading Malaysia",
+    "country": "Malaysia",
+    "location": "Malaysia Campus",
+    "website": "https://www.universityofreadingmalaysia.edu",
+    "description": "A top-tier institution in Malaysia offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=University%20of%20Reading%20Malaysia",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774w2dolrmft",
+    "name": "Harvard University",
+    "country": "USA",
+    "location": "USA Campus",
+    "website": "https://www.harvarduniversity.edu",
+    "description": "A top-tier institution in USA offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Harvard%20University",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774b7ea92x6u",
+    "name": "Stanford University",
+    "country": "USA",
+    "location": "USA Campus",
+    "website": "https://www.stanforduniversity.edu",
+    "description": "A top-tier institution in USA offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Stanford%20University",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774mda3aod0s",
+    "name": "MIT",
+    "country": "USA",
+    "location": "USA Campus",
+    "website": "https://www.mit.edu",
+    "description": "A top-tier institution in USA offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=MIT",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377427w6dqyg0",
+    "name": "Caltech",
+    "country": "USA",
+    "location": "USA Campus",
+    "website": "https://www.caltech.edu",
+    "description": "A top-tier institution in USA offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Caltech",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774yx7nreos0",
+    "name": "UC Berkeley",
+    "country": "USA",
+    "location": "USA Campus",
+    "website": "https://www.ucberkeley.edu",
+    "description": "A top-tier institution in USA offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=UC%20Berkeley",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363774rh9qkoshy",
+    "name": "Yale University",
+    "country": "USA",
+    "location": "USA Campus",
+    "website": "https://www.yaleuniversity.edu",
+    "description": "A top-tier institution in USA offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Yale%20University",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "176983536377469zagvj82",
+    "name": "Princeton University",
+    "country": "USA",
+    "location": "USA Campus",
+    "website": "https://www.princetonuniversity.edu",
+    "description": "A top-tier institution in USA offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Princeton%20University",
+    "createdAt": "2026-01-31T04:56:03.774Z"
+  },
+  {
+    "_id": "1769835363775rxywmw19i",
+    "name": "Columbia University",
+    "country": "USA",
+    "location": "USA Campus",
+    "website": "https://www.columbiauniversity.edu",
+    "description": "A top-tier institution in USA offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Columbia%20University",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775wqxjowrsp",
+    "name": "University of Chicago",
+    "country": "USA",
+    "location": "USA Campus",
+    "website": "https://www.universityofchicago.edu",
+    "description": "A top-tier institution in USA offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=University%20of%20Chicago",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775t6t0pzuxk",
+    "name": "UCLA",
+    "country": "USA",
+    "location": "USA Campus",
+    "website": "https://www.ucla.edu",
+    "description": "A top-tier institution in USA offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=UCLA",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775yexqvll73",
+    "name": "University of Oxford",
+    "country": "UK",
+    "location": "UK Campus",
+    "website": "https://www.universityofoxford.edu",
+    "description": "A top-tier institution in UK offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=University%20of%20Oxford",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775mw7th7t12",
+    "name": "University of Cambridge",
+    "country": "UK",
+    "location": "UK Campus",
+    "website": "https://www.universityofcambridge.edu",
+    "description": "A top-tier institution in UK offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=University%20of%20Cambridge",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775cwte6iqvs",
+    "name": "Imperial College London",
+    "country": "UK",
+    "location": "UK Campus",
+    "website": "https://www.imperialcollegelondon.edu",
+    "description": "A top-tier institution in UK offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=Imperial%20College%20London",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637755wzheharg",
+    "name": "UCL",
+    "country": "UK",
+    "location": "UK Campus",
+    "website": "https://www.ucl.edu",
+    "description": "A top-tier institution in UK offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=UCL",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775c2hjtk18a",
+    "name": "University of Edinburgh",
+    "country": "UK",
+    "location": "UK Campus",
+    "website": "https://www.universityofedinburgh.edu",
+    "description": "A top-tier institution in UK offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=University%20of%20Edinburgh",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775hetu9u134",
+    "name": "University of Manchester",
+    "country": "UK",
+    "location": "UK Campus",
+    "website": "https://www.universityofmanchester.edu",
+    "description": "A top-tier institution in UK offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=University%20of%20Manchester",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775sy9zir6cd",
+    "name": "King's College London",
+    "country": "UK",
+    "location": "UK Campus",
+    "website": "https://www.king'scollegelondon.edu",
+    "description": "A top-tier institution in UK offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=King's%20College%20London",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775ff51qidiw",
+    "name": "LSE",
+    "country": "UK",
+    "location": "UK Campus",
+    "website": "https://www.lse.edu",
+    "description": "A top-tier institution in UK offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=LSE",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "1769835363775kvtkj2wlr",
+    "name": "University of Bristol",
+    "country": "UK",
+    "location": "UK Campus",
+    "website": "https://www.universityofbristol.edu",
+    "description": "A top-tier institution in UK offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=University%20of%20Bristol",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  },
+  {
+    "_id": "17698353637750w8ck3axn",
+    "name": "University of Warwick",
+    "country": "UK",
+    "location": "UK Campus",
+    "website": "https://www.universityofwarwick.edu",
+    "description": "A top-tier institution in UK offering world-class education.",
+    "logo": "https://placehold.co/600x400?text=University%20of%20Warwick",
+    "createdAt": "2026-01-31T04:56:03.775Z"
+  }
+]

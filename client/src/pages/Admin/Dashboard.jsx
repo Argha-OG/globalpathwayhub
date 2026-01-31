@@ -7,7 +7,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { addUniversity, addCourse, fetchCountries, fetchUniversities } from '@/lib/api';
+import { addUniversity, addCourse, fetchCountries, fetchUniversities, fetchCourses, updateUniversity, deleteUniversity, updateCourse, deleteCourse } from '@/lib/api';
+import { Card, CardContent } from "@/components/ui/card";
 
 const AdminDashboard = () => {
     const navigate = useNavigate();
@@ -19,8 +20,12 @@ const AdminDashboard = () => {
     const [universities, setUniversities] = useState([]);
 
     // Forms
-    const [uniForm, setUniForm] = useState({ name: '', country: '', location: '', website: '' });
-    const [courseForm, setCourseForm] = useState({ name: '', universityId: '', level: '', duration: '', tuitionFee: '' });
+    const [uniForm, setUniForm] = useState({ name: '', country: '', location: '', website: '', image: null });
+    const [courseForm, setCourseForm] = useState({ name: '', universityId: '', level: '', duration: '', tuitionFee: '', description: '' });
+
+    const [editingUni, setEditingUni] = useState(null);
+    const [editingCourse, setEditingCourse] = useState(null);
+    const [allCourses, setAllCourses] = useState([]);
 
     useEffect(() => {
         const userStr = localStorage.getItem('admin_user');
@@ -37,9 +42,11 @@ const AdminDashboard = () => {
         setCountries(countriesData);
         const unisData = await fetchUniversities();
         setUniversities(unisData);
+        const coursesData = await fetchCourses();
+        setAllCourses(coursesData);
         setStats({
             universities: unisData.length,
-            courses: 0 // need to fetch total courses if desired, or skip
+            courses: coursesData.length
         });
     };
 
@@ -50,24 +57,93 @@ const AdminDashboard = () => {
 
     const handleAddUni = async (e) => {
         e.preventDefault();
-        const res = await addUniversity(uniForm);
+
+        const data = new FormData();
+        data.append('name', uniForm.name);
+        data.append('country', uniForm.country);
+        data.append('location', uniForm.location);
+        data.append('website', uniForm.website);
+        if (uniForm.image) {
+            data.append('image', uniForm.image);
+        }
+
+        let res;
+        if (editingUni) {
+            res = await updateUniversity(editingUni._id, data);
+        } else {
+            res = await addUniversity(data);
+        }
+
         if (res.success) {
-            alert('University added successfully!');
-            setUniForm({ name: '', country: '', location: '', website: '' });
+            alert(editingUni ? 'University updated!' : 'University added!');
+            setUniForm({ name: '', country: '', location: '', website: '', image: null });
+            setEditingUni(null);
             refreshData();
         } else {
             alert('Error: ' + res.message);
         }
     };
 
+    const handleEditUni = (uni) => {
+        setEditingUni(uni);
+        setUniForm({
+            name: uni.name,
+            country: uni.country,
+            location: uni.location,
+            website: uni.website || '',
+            image: null // Can't preset file input
+        });
+        // Switch tab if needed, but we are likely on the tab
+    };
+
+    const handleDeleteUni = async (id) => {
+        if (!window.confirm("Are you sure? This will delete the university.")) return;
+        const res = await deleteUniversity(id);
+        if (res.success) {
+            refreshData();
+        } else {
+            alert(res.message);
+        }
+    };
+
     const handleAddCourse = async (e) => {
         e.preventDefault();
-        const res = await addCourse(courseForm);
+        let res;
+        if (editingCourse) {
+            res = await updateCourse(editingCourse._id, courseForm);
+        } else {
+            res = await addCourse(courseForm);
+        }
+
         if (res.success) {
-            alert('Course added successfully!');
-            setCourseForm({ name: '', universityId: '', level: '', duration: '', tuitionFee: '' });
+            alert(editingCourse ? 'Course updated!' : 'Course added!');
+            setCourseForm({ name: '', universityId: '', level: '', duration: '', tuitionFee: '', description: '' });
+            setEditingCourse(null);
+            refreshData();
         } else {
             alert('Error: ' + res.message);
+        }
+    };
+
+    const handleEditCourse = (course) => {
+        setEditingCourse(course);
+        setCourseForm({
+            name: course.name,
+            universityId: course.universityId || course.university?._id || course.university, // Handle populated or raw ID
+            level: course.level,
+            duration: course.duration,
+            tuitionFee: course.tuitionFee || '',
+            description: course.description || ''
+        });
+    };
+
+    const handleDeleteCourse = async (id) => {
+        if (!window.confirm("Are you sure? This will delete the course.")) return;
+        const res = await deleteCourse(id);
+        if (res.success) {
+            refreshData();
+        } else {
+            alert(res.message);
         }
     };
 
@@ -96,7 +172,15 @@ const AdminDashboard = () => {
                 <TabsContent value="university">
                     <GlassCard>
                         <form onSubmit={handleAddUni} className="space-y-4">
-                            <h2 className="text-xl font-bold mb-4">New University Details</h2>
+                            <div className="flex justify-between items-center mb-4">
+                                <h2 className="text-xl font-bold">{editingUni ? 'Edit University' : 'New University Details'}</h2>
+                                {editingUni && (
+                                    <Button type="button" variant="ghost" onClick={() => {
+                                        setEditingUni(null);
+                                        setUniForm({ name: '', country: '', location: '', website: '', image: null });
+                                    }}>Cancel Edit</Button>
+                                )}
+                            </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <Label>University Name</Label>
@@ -136,20 +220,55 @@ const AdminDashboard = () => {
                                     <Label>Website (Optional)</Label>
                                     <Input
                                         value={uniForm.website}
-                                        onChange={e => setUniForm({ ...uniForm, website: e.target.value })}
-                                        className="bg-white/5 border-white/10"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label>University Logo/Image</Label>
+                                    <Input
+                                        type="file"
+                                        accept="image/*"
+                                        onChange={e => setUniForm({ ...uniForm, image: e.target.files[0] })}
+                                        className="bg-white/5 border-white/10 text-foreground file:text-foreground"
                                     />
                                 </div>
                             </div>
-                            <Button type="submit" className="w-full mt-4">Save University</Button>
+                            <Button type="submit" className="w-full mt-4">{editingUni ? 'Update University' : 'Save University'}</Button>
                         </form>
+
+                        <div className="mt-12">
+                            <h3 className="text-lg font-bold mb-4">Existing Universities</h3>
+                            <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+                                {universities.map(uni => (
+                                    <Card key={uni._id} className="bg-white/5 border-white/10">
+                                        <CardContent className="p-4 flex justify-between items-center">
+                                            <div>
+                                                <h4 className="font-bold">{uni.name}</h4>
+                                                <p className="text-sm text-gray-400">{uni.country}</p>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <Button size="sm" variant="outline" className="text-blue-400 border-blue-400/20" onClick={() => handleEditUni(uni)}>Edit</Button>
+                                                <Button size="sm" variant="outline" className="text-red-400 border-red-400/20" onClick={() => handleDeleteUni(uni._id)}>Delete</Button>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                ))}
+                            </div>
+                        </div>
                     </GlassCard>
                 </TabsContent>
 
                 <TabsContent value="course">
                     <GlassCard>
                         <form onSubmit={handleAddCourse} className="space-y-4">
-                            <h2 className="text-xl font-bold mb-4">New Course Details</h2>
+                            <div className="flex justify-between items-center mb-4">
+                                <h2 className="text-xl font-bold">{editingCourse ? 'Edit Course' : 'New Course Details'}</h2>
+                                {editingCourse && (
+                                    <Button type="button" variant="ghost" onClick={() => {
+                                        setEditingCourse(null);
+                                        setCourseForm({ name: '', universityId: '', level: '', duration: '', tuitionFee: '', description: '' });
+                                    }}>Cancel Edit</Button>
+                                )}
+                            </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <Label>Course Name</Label>
@@ -203,9 +322,47 @@ const AdminDashboard = () => {
                                         className="bg-white/5 border-white/10"
                                     />
                                 </div>
+                                <div className="space-y-2">
+                                    <Label>Tuition Fee</Label>
+                                    <Input
+                                        value={courseForm.tuitionFee}
+                                        onChange={e => setCourseForm({ ...courseForm, tuitionFee: e.target.value })}
+                                        placeholder="e.g. $10,000/year"
+                                        className="bg-white/5 border-white/10"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label>Description</Label>
+                                    <Input
+                                        value={courseForm.description}
+                                        onChange={e => setCourseForm({ ...courseForm, description: e.target.value })}
+                                        placeholder="Brief course description"
+                                        className="bg-white/5 border-white/10"
+                                    />
+                                </div>
                             </div>
-                            <Button type="submit" className="w-full mt-4">Save Course</Button>
+                            <Button type="submit" className="w-full mt-4">{editingCourse ? 'Update Course' : 'Save Course'}</Button>
                         </form>
+
+                        <div className="mt-12">
+                            <h3 className="text-lg font-bold mb-4">Existing Courses</h3>
+                            <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+                                {allCourses.map(course => (
+                                    <Card key={course._id} className="bg-white/5 border-white/10">
+                                        <CardContent className="p-4 flex justify-between items-center">
+                                            <div>
+                                                <h4 className="font-bold">{course.name}</h4>
+                                                <p className="text-sm text-gray-400">{course.university?.name || 'Unknown University'} - {course.level}</p>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <Button size="sm" variant="outline" className="text-blue-400 border-blue-400/20" onClick={() => handleEditCourse(course)}>Edit</Button>
+                                                <Button size="sm" variant="outline" className="text-red-400 border-red-400/20" onClick={() => handleDeleteCourse(course._id)}>Delete</Button>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                ))}
+                            </div>
+                        </div>
                     </GlassCard>
                 </TabsContent>
             </Tabs>

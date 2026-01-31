@@ -8,7 +8,7 @@ import GlassCard from '@/components/GlassCard';
 
 const AdminLogin = () => {
     const navigate = useNavigate();
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
@@ -16,9 +16,9 @@ const AdminLogin = () => {
         e.preventDefault();
         setError('');
         try {
-            const res = await loginUser(email, password);
+            const res = await loginUser(username, password);
             if (res.success) {
-                navigate('/admin/dashboard');
+                navigate('/admin');
             } else {
                 setError(res.message);
             }
@@ -37,15 +37,15 @@ const AdminLogin = () => {
                 {error && <p className="text-red-400 text-center mb-4">{error}</p>}
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
+                        <Label htmlFor="username">Username</Label>
                         <Input
-                            id="email"
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            id="username"
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                             required
                             className="bg-white/5 border-white/10 text-foreground"
-                            placeholder="admin@example.com"
+                            placeholder="Enter Username"
                         />
                     </div>
                     <div className="space-y-2">
