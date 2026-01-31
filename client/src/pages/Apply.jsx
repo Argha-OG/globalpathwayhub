@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { submitApplication } from '@/lib/api'; // Import the API function
 import GlassCard from '@/components/GlassCard';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -55,14 +56,23 @@ const Apply = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Here you would normally send the data to your backend
-        console.log('Application submitted:', { ...formData, universityId });
-        setSubmitted(true);
 
-        // Scroll to top to show success message
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const payload = {
+            ...formData,
+            universityId,
+            universityName: university.name // Helpful to have name on backend too
+        };
+
+        const res = await submitApplication(payload);
+
+        if (res.success) {
+            setSubmitted(true);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            alert("Error submitting application: " + res.message);
+        }
     };
 
     if (!university) {

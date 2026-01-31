@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const universityRoutes = require('./routes/universities');
 const courseRoutes = require('./routes/courses');
+const applicationRoutes = require('./routes/applications');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,6 +20,7 @@ app.use('/uploads', express.static('uploads'));
 // Routes
 app.use('/api/universities', universityRoutes);
 app.use('/api/courses', courseRoutes);
+app.use('/api/applications', applicationRoutes);
 
 // Health Check
 app.get('/', (req, res) => {

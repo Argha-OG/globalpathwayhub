@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const getAuthHeaders = () => {
     const token = localStorage.getItem('admin_token');
@@ -166,6 +166,23 @@ export const deleteCourse = async (id) => {
         });
         const resData = await response.json();
         if (!response.ok) throw new Error(resData.message || 'Failed to delete course');
+        return { success: true, data: resData };
+    } catch (error) {
+        return { success: false, message: error.message };
+    }
+};
+
+export const submitApplication = async (data) => {
+    try {
+        const response = await fetch(`${API_URL}/applications`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        const resData = await response.json();
+        if (!response.ok) throw new Error(resData.message || 'Failed to submit application');
         return { success: true, data: resData };
     } catch (error) {
         return { success: false, message: error.message };
