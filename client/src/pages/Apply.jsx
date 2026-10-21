@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { getUniversityById } from '@/data/universitiesData';
 import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import { GraduationCap, User, Mail, Phone, Calendar, FileText, Send, CheckCircle } from 'lucide-react';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 const Apply = () => {
     const { universityId } = useParams();
@@ -79,7 +80,9 @@ const Apply = () => {
         return (
             <div className="flex justify-center items-center min-h-[60vh]">
                 <div className="text-center space-y-4">
-                    <div className="text-4xl">🔍</div>
+                    <div className="w-16 h-16 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+                        <FaMagnifyingGlass className="w-8 h-8 animate-pulse" />
+                    </div>
                     <p className="text-muted-foreground">Loading university information...</p>
                 </div>
             </div>

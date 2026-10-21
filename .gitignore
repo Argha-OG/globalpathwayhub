@@ -1,1 +1,12 @@
 node_modules
+.next
+.neon
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+**/.env.*.local
+**/.neon
+dist
+build

@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { fetchUniversities, fetchCourses } from '@/lib/api';
 import { MapPin, CheckCircle, DollarSign, ChevronDown, ChevronUp } from 'lucide-react';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 
 const Universities = () => {
@@ -462,8 +463,8 @@ const Universities = () => {
 
                         {displayItems.length === 0 && (
                             <div className="text-center py-20">
-                                <div className="inline-flex p-6 rounded-full bg-white/30 mb-4">
-                                    <div className="text-4xl">🔍</div>
+                                <div className="inline-flex p-6 rounded-full bg-white/30 mb-4 text-primary">
+                                    <FaMagnifyingGlass className="w-10 h-10" />
                                 </div>
                                 <h3 className="text-xl font-bold text-foreground">No matches found</h3>
                                 <p className="text-muted-foreground mt-2">Try adjusting your filters or search query.</p>
