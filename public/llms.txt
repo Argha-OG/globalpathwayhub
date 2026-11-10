@@ -1,0 +1,60 @@
+# GlobalPathwayHub
+
+> GlobalPathwayHub is a premier international higher education consulting agency and global university admissions advisory. We connect prospective students with accredited universities and degree programs across the United Kingdom, United States, Canada, Australia, Malaysia, and Europe.
+
+## Overview & Core Capabilities
+
+GlobalPathwayHub empowers students, university counselors, and international academic partners through transparent, ethical, and technology-driven admissions guidance. Our platform offers real-time worldwide institutional searches, multi-currency tuition calculations (USD, EUR, MYR, BDT via Frankfurter & ECB reference rates), secure document verification, and 1-click counselor communication pitches.
+
+- **Official Website:** [GlobalPathwayHub](https://globalpathwayhub.com)
+- **Headquarters:** Banani Corporate District, Dhaka, Bangladesh
+- **Regional Operations:** Kuala Lumpur, Malaysia · London, United Kingdom
+- **Admissions Helpdesk:** support@globalpathwayhub.com · +880 1410-555054
+- **Working Hours:** Sunday – Thursday, 09:30 AM – 06:30 PM (GMT+6)
+
+## University Admissions & Destinations
+
+GlobalPathwayHub facilitates direct undergraduate, postgraduate, and doctoral admissions to accredited institutions across key destinations:
+
+- [United Kingdom Admissions](https://globalpathwayhub.com/universities?country=United+Kingdom): Russell Group & top UK modern universities, CAS issuance, UKVI Student Visa, Graduate Route (PSW) guidance.
+- [United States Admissions](https://globalpathwayhub.com/universities?country=United+States): Tier-1 research universities, STEM OPT extensions, I-20 documentation, F-1 visa interview prep.
+- [Canada Admissions](https://globalpathwayhub.com/universities?country=Canada): Provincial Attestation Letters (PAL), SDS & non-SDS study permits, DLI accredited institutions.
+- [Australia Admissions](https://globalpathwayhub.com/universities?country=Australia): Group of Eight (Go8) & top Australian tech universities, Subclass 500 visa filing, Genuine Student (GS) criteria.
+- [Malaysia Admissions](https://globalpathwayhub.com/universities?country=Malaysia): Affordable world-class branch campuses, EMGS eVAL processing, dual-degree qualifications.
+- [Europe Admissions](https://globalpathwayhub.com/universities?country=Germany): Germany, Ireland, Sweden public universities, low/zero tuition programs, English-taught curriculums.
+
+## Academic Degree Levels
+
+- **Undergraduate Degrees (Bachelor's / B.Sc / BBA / B.Eng):** 3-4 year comprehensive bachelor programs.
+- **Postgraduate Degrees (Master's / M.Sc / MBA / M.Res):** 1-2 year specialized graduate degrees.
+- **Doctoral Programs (PhD / D.Eng):** 3-5 year advanced research fellowships and funded doctorates.
+- **Foundation & University Pathways:** Pre-master and international year one programs for seamless transition.
+
+## Key Website Directories & Endpoints
+
+- [Universities Directory](https://globalpathwayhub.com/universities): Search, filter, and compare partner and worldwide universities.
+- [Courses & Programs](https://globalpathwayhub.com/courses): Explore degree courses with verified tuition fees, intake seasons, and eligibility criteria.
+- [Executive Leadership](https://globalpathwayhub.com/profile): Profiles, strategic responsibilities, and verified credentials of the leadership team.
+- [About Us](https://globalpathwayhub.com/about): Mission, institutional values, achievements, and counseling philosophy.
+- [Contact & Support](https://globalpathwayhub.com/contact): Direct admissions helpline, office location map, and counselor consultation booking.
+- [Support Center & FAQ](https://globalpathwayhub.com/support): Detailed answers regarding document requirements, visa timelines, and application fees.
+- [XML Sitemap](https://globalpathwayhub.com/sitemap.xml): Machine-readable index of all published universities, courses, and pages.
+
+## Executive Leadership & Contact Directory
+
+- **Abu Siam Khan (CEO & Founder):** ceo@globalpathwayhub.com · Lead partner institutional relations & corporate strategy. Profile: [Abu Siam Khan](https://globalpathwayhub.com/profile/abu-siam-khan)
+- **Argha Biswas (CTO):** cto@globalpathwayhub.com · Digital admissions portal architecture, data infrastructure & security. Profile: [Argha Biswas](https://globalpathwayhub.com/profile/argha-biswas)
+- **Shahriar Hassan (Head of Marketing & Management):** hmm@globalpathwayhub.com · Student outreach, international education expos & counseling operations. Profile: [Shahriar Hassan](https://globalpathwayhub.com/profile/shahriar-hassan)
+- **Central Support Desk:** support@globalpathwayhub.com · Direct student assistance & document verification.
+
+## Social Channels & Community
+
+- [Facebook](https://www.facebook.com/GlobalPathwayHub)
+- [Instagram](https://www.instagram.com/globalpathwayhub)
+- [LinkedIn](https://www.linkedin.com/company/GlobalPathwayHub)
+- [X (Twitter)](https://x.com/GlobalPathwayHub)
+
+## Optional
+
+- [Full LLM Knowledge Document](https://globalpathwayhub.com/llms-full.txt): Comprehensive detailed reference document for AI agents and LLMs.
+

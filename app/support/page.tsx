@@ -5,6 +5,8 @@ import { useSearchParams } from 'next/navigation';
 import GlassCard from '@/components/GlassCard';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { FaCircleQuestion, FaShieldHalved, FaFileContract } from 'react-icons/fa6';
+import JsonLd from '@/components/JsonLd';
+import { getFaqSchema, getBreadcrumbSchema } from '@/lib/seo';
 
 const faqs = [
     { question: 'How do I apply to a university?', answer: "Browse our Universities page, select your preferred institution, and click on 'Apply Now'. You'll be guided through the application process with step-by-step instructions." },
@@ -26,11 +28,24 @@ function SupportContent() {
         if (tab && ['faq', 'privacy', 'terms'].includes(tab)) setActiveTab(tab);
     }, [searchParams]);
 
+    const faqSchema = getFaqSchema(faqs);
+    const breadcrumbSchema = getBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Support Center', url: '/support' },
+    ]);
+
     return (
         <div className="space-y-8 pb-20 container mx-auto px-4 pt-24">
+            <JsonLd data={faqSchema} />
+            <JsonLd data={breadcrumbSchema} />
+
             <div className="text-center space-y-4">
                 <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Support Center</h1>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Find answers to your questions and learn more about our policies</p>
+                <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 px-4 py-2 rounded-full text-xs sm:text-sm text-blue-700 font-semibold">
+                    <span>Direct Support Helpdesk:</span>
+                    <a href="mailto:support@globalpathwayhub.com" className="font-bold underline hover:text-blue-900">support@globalpathwayhub.com</a>
+                </div>
             </div>
 
             <GlassCard className="p-6 sm:p-8">

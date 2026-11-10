@@ -23,15 +23,18 @@ const COURSE_JOIN_SELECT = `
   LEFT JOIN universities u ON c.university_id = u.id
 `;
 
-export async function GET(request) {
+export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const universityId = searchParams.get('universityId');
     const search = searchParams.get('search');
+    const level = searchParams.get('level');
+    const excludeId = searchParams.get('excludeId');
+    const limit = searchParams.get('limit');
 
     let sql = COURSE_JOIN_SELECT;
-    const params = [];
-    const conditions = [];
+    const params: any[] = [];
+    const conditions: string[] = [];
 
     if (universityId) {
       params.push(universityId);
@@ -40,7 +43,17 @@ export async function GET(request) {
 
     if (search) {
       params.push(`%${search}%`);
-      conditions.push(`c.name ILIKE $${params.length}`);
+      conditions.push(`(c.name ILIKE $${params.length} OR c.description ILIKE $${params.length} OR u.name ILIKE $${params.length})`);
+    }
+
+    if (level && level.toLowerCase() !== 'all') {
+      params.push(`%${level}%`);
+      conditions.push(`c.level ILIKE $${params.length}`);
+    }
+
+    if (excludeId) {
+      params.push(excludeId);
+      conditions.push(`c.id != $${params.length}`);
     }
 
     if (conditions.length > 0) {
@@ -49,10 +62,15 @@ export async function GET(request) {
 
     sql += ' ORDER BY c.created_at DESC';
 
+    if (limit && !isNaN(Number(limit))) {
+      params.push(parseInt(limit, 10));
+      sql += ` LIMIT $${params.length}`;
+    }
+
     const result = await query(sql, params);
     const formatted = result.rows.map((row) => formatCourse(row));
     return NextResponse.json(formatted);
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error in GET /api/courses:', err);
     return NextResponse.json({ message: err.message }, { status: 500 });
   }

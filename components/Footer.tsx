@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaFacebookF, FaLinkedinIn, FaXTwitter, FaShieldHalved } from 'react-icons/fa6';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter, FaShieldHalved } from 'react-icons/fa6';
 
 const Footer = () => {
     return (
@@ -15,7 +15,7 @@ const Footer = () => {
                                 className="h-16 w-auto object-contain"
                             />
                             <span className="font-bold text-xl text-foreground">
-                                Global Pathway Hub
+                                GlobalPathwayHub
                             </span>
                         </div>
                         <p className="text-muted-foreground text-sm">
@@ -26,9 +26,10 @@ const Footer = () => {
                     <div>
                         <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
                         <ul className="space-y-2 text-sm">
-                            <li><Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
                             <li><Link href="/universities" className="text-muted-foreground hover:text-primary transition-colors">Universities</Link></li>
-                            <li><Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
+                            <li><Link href="/courses" className="text-muted-foreground hover:text-primary transition-colors">Courses & Programs</Link></li>
+                            <li><Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
+                            <li><Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact Us</Link></li>
                         </ul>
                     </div>
 
@@ -38,6 +39,7 @@ const Footer = () => {
                             <li><Link href="/support?tab=faq" className="text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
                             <li><Link href="/support?tab=privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link></li>
                             <li><Link href="/support?tab=terms" className="text-muted-foreground hover:text-primary transition-colors">Terms of Service</Link></li>
+                            <li><a href="mailto:support@globalpathwayhub.com" className="text-primary font-medium hover:underline">support@globalpathwayhub.com</a></li>
                         </ul>
                     </div>
 
@@ -52,6 +54,15 @@ const Footer = () => {
                                 aria-label="Facebook"
                             >
                                 <FaFacebookF className="h-4 w-4" />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/globalpathwayhub"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 rounded-full bg-pink-500/10 text-pink-600 hover:bg-pink-600 hover:text-white transition-all flex items-center justify-center shadow-sm"
+                                aria-label="Instagram"
+                            >
+                                <FaInstagram className="h-4 w-4" />
                             </a>
                             <a
                                 href="https://x.com/GlobalPathwayHub"

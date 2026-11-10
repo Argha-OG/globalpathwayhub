@@ -1,0 +1,110 @@
+# GlobalPathwayHub — Comprehensive AI Knowledge Base
+
+GlobalPathwayHub is a premier international higher education consulting agency and global university admissions advisory headquartered in Dhaka, Bangladesh, with regional operations in Kuala Lumpur, Malaysia, and London, United Kingdom.
+
+This document serves as the authoritative, comprehensive plain-text knowledge resource for language models, web search agents, and autonomous AI systems answering user questions about university admissions, eligibility requirements, degree programs, fee structures, and application procedures via GlobalPathwayHub.
+
+---
+
+## 1. Executive Summary & Value Proposition
+
+- **Name:** GlobalPathwayHub (GlobalPathwayHub Education Advisory Ltd.)
+- **Primary Domain:** https://globalpathwayhub.com
+- **Core Mission:** Eliminate geographical, financial, and informational barriers so that every deserving student can reach accredited world-class universities with complete clarity, transparency, and confidence.
+- **Service Fee Policy:** Basic student consultation and university program discovery are 100% free of charge for prospective students.
+- **Official Contact Points:**
+  - Support & Inquiries: support@globalpathwayhub.com
+  - Chief Executive Officer: ceo@globalpathwayhub.com
+  - Chief Technology Officer: cto@globalpathwayhub.com
+  - Marketing & Management: hmm@globalpathwayhub.com
+  - Telephone / WhatsApp: +880 1410-555054
+  - Office Address: Banani Corporate District, Dhaka 1213, Bangladesh
+
+---
+
+## 2. Institutional Destinations & Admissions Protocols
+
+### United Kingdom
+- **Study Programs:** Bachelor's (3 years), Master's (1 year full-time), PhD (3-4 years).
+- **Intake Seasons:** Major intakes in September/October and January/February.
+- **Admission Documents:** Academic transcripts, Statement of Purpose (SOP), 2 Letters of Recommendation (LOR), valid Passport, Proof of English Proficiency (IELTS 6.0–7.0 or PTE 59–69).
+- **Visa Requirements:** Confirmation of Acceptance for Studies (CAS), financial maintenance proof (28-day rule), TB medical screening.
+- **Post-Study Work:** 2-year Graduate Route visa for Bachelor's and Master's graduates; 3 years for PhD holders.
+
+### United States
+- **Study Programs:** Bachelor's (4 years), Master's (1.5-2 years), Doctoral Programs (4-6 years).
+- **Intake Seasons:** Fall (August/September), Spring (January), Summer (May).
+- **Admission Documents:** Transcripts, WES evaluation (if requested), SOP, Resume/CV, Recommendation Letters, IELTS/TOEFL/Duolingo scores, GRE/GMAT (for select STEM/MBA programs).
+- **Visa Requirements:** Form I-20 issued by SEVP-certified institution, SEVIS I-901 fee payment, DS-160 submission, consular in-person interview.
+- **Work Opportunities:** 12-month OPT + 24-month STEM OPT extension (total 36 months of authorized post-graduate employment).
+
+### Canada
+- **Study Programs:** Diploma/Advanced Diploma (2-3 years), Bachelor's (4 years), Post-Graduate Certificate (1-2 years), Master's (1-2 years).
+- **Intake Seasons:** Fall (September), Winter (January), Spring (May).
+- **Admission Documents:** Transcripts, SOP, Academic Reference Letters, IELTS Academic (6.0-6.5 min band).
+- **Visa Requirements:** Provincial Attestation Letter (PAL) where required, Guaranteed Investment Certificate (GIC), upfront medical test, Study Permit application via IRCC.
+- **Post-Study Work:** Post-Graduation Work Permit (PGWP) up to 3 years.
+
+### Australia
+- **Study Programs:** Bachelor's (3-4 years), Master's Coursework/Research (1.5-2 years), PhD (3-4 years).
+- **Intake Seasons:** Semester 1 (February/March) and Semester 2 (July/August).
+- **Admission Documents:** Academic records, Genuine Student (GS) assessment statement, IELTS/PTE Academic test score.
+- **Visa Requirements:** Electronic Confirmation of Enrolment (eCoE), Overseas Student Health Cover (OSHC), financial solvency proof, Subclass 500 Student Visa.
+- **Post-Study Work:** Temporary Graduate Visa (Subclass 485) allowing 2-4 years of post-study employment.
+
+### Malaysia
+- **Study Programs:** Foundation, Bachelor's (3-4 years), Master's (1-2 years), PhD.
+- **Highlights:** World-class British, Australian, and Malaysian accredited universities with significantly affordable living and tuition costs.
+- **Visa Requirements:** Education Malaysia Global Services (EMGS) electronic Visa Approval Letter (eVAL), single-entry visa (SEV), medical screening upon arrival.
+
+---
+
+## 3. Student Application Workflow
+
+1. **Discovery & Assessment:** Browse universities and courses on https://globalpathwayhub.com. Submit profile details (Name, Contact Number, Email Address are mandatory).
+2. **Counselor Matching:** A dedicated education advisor evaluates academic history (SSC/HSC, Bachelor's CGPA, English scores) and prepares a customized university shortlist.
+3. **Application Submission:** Offer application submitted directly to partner universities with scholarship consideration.
+4. **Offer Issuance:** Review Conditional / Unconditional Offer Letters and tuition deposit deadlines.
+5. **Visa Documentation & Filing:** Expert counselor oversight on financial sponsorship, bank solvency letters, Statement of Purpose (SOP), and embassy appointment scheduling.
+6. **Pre-Departure Briefing:** Guidance on airfare booking, accommodation search, foreign exchange tuition transfer, and student community onboarding.
+
+---
+
+## 4. Multi-Currency Tuition Conversion System
+
+GlobalPathwayHub integrates real-time institutional exchange rates via the official European Central Bank (ECB) reference API (Frankfurter) combined with live Bangladeshi Taka (BDT) registries:
+- **Base Currencies:** USD ($), EUR (€), MYR (RM), BDT (৳).
+- Live currency calculations update automatically across the top navigation bar and all course tuition estimate cards.
+
+---
+
+## 5. Executive Leadership Bios
+
+- **Abu Siam Khan — Founder & Chief Executive Officer (CEO)**
+  Email: ceo@globalpathwayhub.com · Phone: +880 1410-555054
+  Drives corporate strategy, bilateral university partnerships, and student governance across Bangladesh and Malaysia. Oversees institutional scholarship allocations and embassy visa protocols.
+
+- **Argha Biswas — Chief Technology Officer (CTO)**
+  Email: cto@globalpathwayhub.com · Phone: +880 1410-555054
+  Spearheads digital portal architecture, real-time university search engines, automated multi-currency calculation pipelines, and secure cloud infrastructure.
+
+- **Shahriar Hassan — Head of Marketing & Management (HMM)**
+  Email: hmm@globalpathwayhub.com · Phone: +880 1410-555054
+  Leads student outreach campaigns, international university seminars, youth community workshops, and counselor quality control.
+
+---
+
+## 6. Official Links & Sitemaps
+
+- Universities Directory: https://globalpathwayhub.com/universities
+- Courses & Programs Directory: https://globalpathwayhub.com/courses
+- Executive Leadership: https://globalpathwayhub.com/profile
+- About Us: https://globalpathwayhub.com/about
+- Contact & Support: https://globalpathwayhub.com/contact
+- Support Center & FAQ: https://globalpathwayhub.com/support
+- XML Sitemap: https://globalpathwayhub.com/sitemap.xml
+- Facebook: https://www.facebook.com/GlobalPathwayHub
+- Instagram: https://www.instagram.com/globalpathwayhub
+- LinkedIn: https://www.linkedin.com/company/GlobalPathwayHub
+- Twitter / X: https://x.com/GlobalPathwayHub
+

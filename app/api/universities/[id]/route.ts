@@ -10,15 +10,76 @@ function checkAuth(req) {
   return token === 'siam-secret-token';
 }
 
-export async function GET(request, { params }) {
+export async function GET(request: Request, { params }: { params: { id: string } }) {
   try {
     const { id } = params;
-    const result = await query('SELECT * FROM universities WHERE id = $1', [id]);
-    if (result.rows.length === 0) {
-      return NextResponse.json({ message: 'University not found' }, { status: 404 });
+    const decodedId = decodeURIComponent(id);
+
+    // 1. Try querying PostgreSQL database
+    let dbUni: any = null;
+
+    // First check by direct ID (which is TEXT in PostgreSQL)
+    const resultById = await query('SELECT * FROM universities WHERE id = $1', [decodedId]);
+    if (resultById.rows.length > 0) {
+      dbUni = resultById.rows[0];
     }
-    return NextResponse.json(formatUniversity(result.rows[0]));
-  } catch (err) {
+
+    // Then check by institution name
+    if (!dbUni) {
+      const resultByName = await query('SELECT * FROM universities WHERE name ILIKE $1', [decodedId]);
+      if (resultByName.rows.length > 0) {
+        dbUni = resultByName.rows[0];
+      }
+    }
+
+    if (dbUni) {
+      return NextResponse.json(formatUniversity(dbUni));
+    }
+
+    // 2. Fallback to API-Ninjas Global University Registry
+    const apiKey = process.env.API_NINJAS_KEY || '6j5g1y06W28zsTpVD6BJm5YlhVD4o2vgcn9hJGtt';
+    const targetUrl = new URL('https://api.api-ninjas.com/v1/university');
+    const isNumeric = /^\d+$/.test(decodedId);
+
+    if (isNumeric) {
+      targetUrl.searchParams.set('id', decodedId);
+    } else {
+      targetUrl.searchParams.set('name', decodedId);
+    }
+
+    const apiRes = await fetch(targetUrl.toString(), {
+      headers: { 'X-Api-Key': apiKey },
+      next: { revalidate: 3600 },
+    });
+
+    if (apiRes.ok) {
+      const list = await apiRes.json();
+      if (Array.isArray(list) && list.length > 0) {
+        // Find best match
+        const uni = list.find((u: any) => u.name.toLowerCase() === decodedId.toLowerCase()) || list[0];
+        const formatted = {
+          _id: uni.id ? String(uni.id) : decodedId,
+          name: uni.name,
+          country: uni.country || '',
+          location: [uni.address, uni.city, uni.state, uni.country].filter(Boolean).join(', ') || uni.country || '',
+          website: uni.website || '',
+          description: `${uni.name} is an accredited ${uni.level || 'university'} (${uni.institution_type || uni.control || 'higher education institution'}) located in ${[uni.city, uni.state, uni.country].filter(Boolean).join(', ')}, established in ${uni.founded || 'established institution'}.`,
+          logo: `https://ui-avatars.com/api/?name=${encodeURIComponent(uni.name)}&size=200&background=2563eb&color=fff&bold=true`,
+          details: uni,
+          programs: (uni.degree_types || []).map((deg: string) => ({
+            title: deg,
+            category: deg,
+            fee: uni.tuition || uni.tuition_out_of_state || 0,
+            feeString: uni.tuition ? `$${Number(uni.tuition).toLocaleString()}/yr` : 'Consult Counselor',
+            duration: uni.years || '3-4 years',
+          })),
+        };
+        return NextResponse.json(formatted);
+      }
+    }
+
+    return NextResponse.json({ message: 'University not found' }, { status: 404 });
+  } catch (err: any) {
     console.error('Error in GET /api/universities/[id]:', err);
     return NextResponse.json({ message: err.message }, { status: 500 });
   }
@@ -44,6 +105,7 @@ export async function PUT(request, { params }) {
     let updatedWebsite = existing.website;
     let updatedDescription = existing.description;
     let updatedLogo = existing.logo;
+    let updatedDetails = existing.details || {};
 
     if (contentType.includes('multipart/form-data')) {
       const formData = await request.formData();
@@ -53,6 +115,12 @@ export async function PUT(request, { params }) {
       if (formData.has('website')) updatedWebsite = formData.get('website');
       if (formData.has('description')) updatedDescription = formData.get('description');
       if (formData.has('logo')) updatedLogo = formData.get('logo');
+      if (formData.has('details')) {
+        try {
+          const d = formData.get('details');
+          updatedDetails = typeof d === 'string' ? JSON.parse(d) : d;
+        } catch {}
+      }
 
       const file = formData.get('image');
       if (file && typeof file === 'object' && file.name) {
@@ -75,12 +143,13 @@ export async function PUT(request, { params }) {
       if (body.website !== undefined) updatedWebsite = body.website;
       if (body.description !== undefined) updatedDescription = body.description;
       if (body.logo !== undefined) updatedLogo = body.logo;
+      if (body.details !== undefined) updatedDetails = body.details;
     }
 
     const updateSql = `
       UPDATE universities
-      SET name = $1, country = $2, location = $3, website = $4, description = $5, logo = $6
-      WHERE id = $7
+      SET name = $1, country = $2, location = $3, website = $4, description = $5, logo = $6, details = $7
+      WHERE id = $8
       RETURNING *
     `;
 
@@ -91,6 +160,7 @@ export async function PUT(request, { params }) {
       updatedWebsite,
       updatedDescription,
       updatedLogo,
+      JSON.stringify(updatedDetails),
       id,
     ]);
 

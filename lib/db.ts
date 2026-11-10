@@ -44,6 +44,7 @@ export function formatUniversity(row) {
     website: row.website,
     description: row.description,
     logo: row.logo,
+    details: row.details || {},
     createdAt: row.created_at ? new Date(row.created_at).toISOString() : new Date().toISOString(),
   };
 }
@@ -204,8 +205,10 @@ export async function initDatabase() {
         website TEXT,
         description TEXT,
         logo TEXT,
+        details JSONB DEFAULT '{}'::jsonb,
         created_at TIMESTAMPTZ DEFAULT NOW()
       );
+      ALTER TABLE universities ADD COLUMN IF NOT EXISTS details JSONB DEFAULT '{}'::jsonb;
 
       CREATE TABLE IF NOT EXISTS courses (
         id TEXT PRIMARY KEY,

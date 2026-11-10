@@ -58,6 +58,7 @@ export async function POST(request) {
     let website = null;
     let description = null;
     let logo = null;
+    let details = {};
 
     if (contentType.includes('multipart/form-data')) {
       const formData = await request.formData();
@@ -67,6 +68,10 @@ export async function POST(request) {
       website = formData.get('website') || null;
       description = formData.get('description') || null;
       logo = formData.get('logo') || null;
+      const detailsRaw = formData.get('details');
+      if (detailsRaw) {
+        try { details = typeof detailsRaw === 'string' ? JSON.parse(detailsRaw) : detailsRaw; } catch {}
+      }
 
       const file = formData.get('image');
       if (file && typeof file === 'object' && file.name) {
@@ -84,6 +89,7 @@ export async function POST(request) {
       website = body.website || null;
       description = body.description || null;
       logo = body.logo || null;
+      details = body.details || {};
     }
 
     if (!name || !country || !location) {
@@ -95,12 +101,12 @@ export async function POST(request) {
 
     const id = Date.now().toString() + Math.random().toString(36).substring(2, 8);
     const insertSql = `
-      INSERT INTO universities (id, name, country, location, website, description, logo, created_at)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, NOW())
+      INSERT INTO universities (id, name, country, location, website, description, logo, details, created_at)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, NOW())
       RETURNING *
     `;
 
-    const result = await query(insertSql, [id, name, country, location, website, description, logo]);
+    const result = await query(insertSql, [id, name, country, location, website, description, logo, JSON.stringify(details)]);
     return NextResponse.json(formatUniversity(result.rows[0]), { status: 201 });
   } catch (err) {
     console.error('Error in POST /api/universities:', err);

@@ -1,7 +1,9 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import GlassCard from '@/components/GlassCard';
+import { Button } from '@/components/ui/button';
 import {
     FaBullseye,
     FaEye,
@@ -12,7 +14,14 @@ import {
     FaBuildingColumns,
     FaUserGraduate,
     FaBriefcase,
+    FaUserTie,
+    FaEnvelope,
+    FaLinkedin,
+    FaArrowRight,
 } from 'react-icons/fa6';
+import { TEAM_LIST } from '@/lib/team';
+import JsonLd from '@/components/JsonLd';
+import { getBreadcrumbSchema } from '@/lib/seo';
 
 const About = () => {
     const values = [
@@ -40,8 +49,14 @@ const About = () => {
         { number: '95%', label: 'Satisfaction Rate' }
     ];
 
+    const breadcrumbSchema = getBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'About Us', url: '/about' },
+    ]);
+
     return (
         <div className="space-y-16 pb-20 container mx-auto px-4 pt-24">
+            <JsonLd data={breadcrumbSchema} />
             <div className="text-center space-y-4">
                 <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
                     About GlobalPathwayHub
@@ -59,6 +74,86 @@ const About = () => {
                     <p>With partnerships across 20+ leading universities and a track record of helping over 50,000 students, we continue to evolve and improve our services to meet the changing needs of modern education seekers.</p>
                 </div>
             </GlassCard>
+
+            {/* Executive Leadership Team */}
+            <div className="space-y-8">
+                <div className="text-center space-y-3">
+                    <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full">
+                        Executive Leadership
+                    </span>
+                    <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
+                        Meet Our Leadership Team
+                    </h2>
+                    <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
+                        The visionary leadership driving GlobalPathwayHub’s mission to connect students with world-class universities and global career opportunities.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {TEAM_LIST.map((member) => (
+                        <GlassCard
+                            key={member.slug}
+                            className={`p-6 space-y-5 bg-white/80 backdrop-blur-xl border ${member.borderColor} shadow-lg hover:shadow-2xl transition-all duration-300 rounded-3xl group flex flex-col justify-between`}
+                        >
+                            <div className="space-y-4">
+                                {/* Member Photo Frame */}
+                                <Link href={`/profile/${member.slug}`} className="block relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/5] shadow-inner cursor-pointer">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                    <div className="absolute top-3 right-3">
+                                        <span className="px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-white/90 backdrop-blur-md text-slate-900 shadow-md">
+                                            {member.role}
+                                        </span>
+                                    </div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                        <span className="text-xs text-white/90 font-medium">
+                                            {member.badge}
+                                        </span>
+                                    </div>
+                                </Link>
+
+                                {/* Details */}
+                                <div>
+                                    <Link href={`/profile/${member.slug}`}>
+                                        <h3 className="text-xl sm:text-2xl font-black text-slate-900 group-hover:text-blue-600 transition-colors">
+                                            {member.name}
+                                        </h3>
+                                    </Link>
+                                    <p className="text-xs font-bold text-blue-600 uppercase tracking-wider mt-0.5">
+                                        {member.fullRole}
+                                    </p>
+                                    <a
+                                        href={`mailto:${member.email}`}
+                                        className="text-xs font-semibold text-slate-700 hover:text-blue-600 inline-flex items-center gap-1.5 mt-1 transition-colors"
+                                    >
+                                        <FaEnvelope className="h-3 w-3 text-blue-500 flex-shrink-0" />
+                                        <span className="font-mono">{member.email}</span>
+                                    </a>
+                                </div>
+
+                                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3">
+                                    {member.headline}
+                                </p>
+                            </div>
+
+                            <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
+                                <Link href={`/profile/${member.slug}`} className="w-full">
+                                    <Button
+                                        variant="outline"
+                                        className="w-full border-blue-200 text-blue-700 bg-blue-50/60 hover:bg-blue-600 hover:text-white rounded-xl text-xs font-bold h-10 shadow-xs flex items-center justify-center gap-1.5 transition-all"
+                                    >
+                                        <span>View Profile Details</span>
+                                        <FaArrowRight className="h-3 w-3" />
+                                    </Button>
+                                </Link>
+                            </div>
+                        </GlassCard>
+                    ))}
+                </div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {values.map((value, index) => (

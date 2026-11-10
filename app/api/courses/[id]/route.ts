@@ -23,18 +23,19 @@ const COURSE_JOIN_SELECT = `
   LEFT JOIN universities u ON c.university_id = u.id
 `;
 
-export async function GET(request, { params }) {
+export async function GET(request: Request, { params }: { params: { id: string } }) {
   try {
     const { id } = params;
-    const sql = `${COURSE_JOIN_SELECT} WHERE c.id = $1`;
-    const result = await query(sql, [id]);
+    const decodedId = decodeURIComponent(id);
+    const sql = `${COURSE_JOIN_SELECT} WHERE c.id = $1 OR c.name ILIKE $1 LIMIT 1`;
+    const result = await query(sql, [decodedId]);
 
     if (result.rows.length === 0) {
       return NextResponse.json({ message: 'Course not found' }, { status: 404 });
     }
 
     return NextResponse.json(formatCourse(result.rows[0]));
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error in GET /api/courses/[id]:', err);
     return NextResponse.json({ message: err.message }, { status: 500 });
   }
