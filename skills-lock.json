@@ -55,13 +55,6 @@
       "skillPath": "skills/gateway-workers/SKILL.md",
       "computedHash": "4937cba120a8564e2559764dcfd8beab835fd045426ca0512c98f2da5c7d3e26"
     },
-    "impeccable": {
-      "source": "pbakaus/impeccable",
-      "commit": "b49177d32788f2dc585c42831d845dacf1ebed2c",
-      "sourceType": "github",
-      "skillPath": ".agents/skills/impeccable/SKILL.md",
-      "computedHash": "08bd5bf141cb507f46bd8347890cd985865606f15adf88295ed3a73bc9ad5d96"
-    },
     "k2": {
       "source": "cloudflare/skills",
       "sourceType": "github",
