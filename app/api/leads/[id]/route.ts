@@ -1,8 +1,14 @@
 import { NextResponse } from 'next/server';
 import { query, formatLead } from '@/lib/db';
+import { getCurrentUser } from '@/lib/auth';
 
 export async function GET(request, { params }) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const { id } = params;
     const res = await query(
       `SELECT l.*, u.name as agent_name 
@@ -25,6 +31,11 @@ export async function GET(request, { params }) {
 
 export async function PUT(request, { params }) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const { id } = params;
     const body = await request.json();
 
@@ -74,6 +85,11 @@ export async function PUT(request, { params }) {
 
 export async function DELETE(request, { params }) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const { id } = params;
     await query('DELETE FROM leads WHERE id = $1', [id]);
     return NextResponse.json({ success: true, message: 'Lead removed' });

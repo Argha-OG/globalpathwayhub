@@ -21,7 +21,7 @@ const MouseTracker = () => {
         <div
             className="pointer-events-none fixed inset-0 z-50 transition-opacity duration-300"
             style={{
-                background: `radial-gradient(600px at ${position.x}px ${position.y}px, rgba(109, 40, 217, 0.15), transparent 80%)`,
+                background: `radial-gradient(650px at ${position.x}px ${position.y}px, rgba(37, 99, 235, 0.08), transparent 75%)`,
             }}
         />
     );

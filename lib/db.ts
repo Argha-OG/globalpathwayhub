@@ -188,6 +188,40 @@ export function formatRevenue(row) {
   };
 }
 
+export function formatGuide(row: any) {
+  if (!row) return null;
+  let parsedImages: Array<{ url: string; caption?: string }> = [];
+  if (Array.isArray(row.images)) {
+    parsedImages = row.images;
+  } else if (typeof row.images === 'string') {
+    try {
+      const p = JSON.parse(row.images);
+      if (Array.isArray(p)) parsedImages = p;
+    } catch {
+      parsedImages = [];
+    }
+  }
+
+  return {
+    id: row.id,
+    slug: row.slug,
+    title: row.title,
+    category: row.category || 'Survival Guide',
+    country: row.country || 'Global',
+    excerpt: row.excerpt || '',
+    content: row.content || '',
+    coverImage: row.cover_image || null,
+    images: parsedImages,
+    authorName: row.author_name || 'GlobalPathwayHub Advisory',
+    authorRole: row.author_role || 'Student Advisory Desk',
+    readTime: row.read_time || '5 min read',
+    featured: Boolean(row.featured),
+    status: row.status || 'published',
+    createdAt: row.created_at ? new Date(row.created_at).toISOString() : new Date().toISOString(),
+    updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : new Date().toISOString(),
+  };
+}
+
 export async function initDatabase() {
   const migrationClient = new Client({
     connectionString: unpooledConnectionString,
@@ -363,9 +397,31 @@ export async function initDatabase() {
         visited_at TIMESTAMPTZ DEFAULT NOW()
       );
 
+      CREATE TABLE IF NOT EXISTS guides (
+        id TEXT PRIMARY KEY,
+        slug TEXT NOT NULL UNIQUE,
+        title TEXT NOT NULL,
+        category TEXT NOT NULL DEFAULT 'Survival Guide',
+        country TEXT DEFAULT 'Global',
+        excerpt TEXT,
+        content TEXT NOT NULL,
+        cover_image TEXT,
+        cover_r2_key TEXT,
+        images JSONB DEFAULT '[]'::jsonb,
+        author_name TEXT DEFAULT 'GlobalPathwayHub Advisory',
+        author_role TEXT DEFAULT 'Student Advisory Desk',
+        read_time TEXT DEFAULT '5 min read',
+        featured BOOLEAN DEFAULT FALSE,
+        status TEXT DEFAULT 'published',
+        created_at TIMESTAMPTZ DEFAULT NOW(),
+        updated_at TIMESTAMPTZ DEFAULT NOW()
+      );
+
       CREATE INDEX IF NOT EXISTS idx_courses_university_id ON courses(university_id);
       CREATE INDEX IF NOT EXISTS idx_courses_name ON courses(name);
       CREATE INDEX IF NOT EXISTS idx_universities_country ON universities(country);
+      CREATE INDEX IF NOT EXISTS idx_guides_slug ON guides(slug);
+      CREATE INDEX IF NOT EXISTS idx_guides_status ON guides(status);
     `);
   } finally {
     await migrationClient.end();

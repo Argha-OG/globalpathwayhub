@@ -1,9 +1,17 @@
 import { NextResponse } from 'next/server';
 import { query, getDatabaseStorageStats } from '@/lib/db';
 import { getR2StorageStats } from '@/lib/r2';
+import { getCurrentUser } from '@/lib/auth';
 
-export async function GET() {
+export const dynamic = 'force-dynamic';
+
+export async function GET(request: Request) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     // Run aggregated metric queries in parallel
     const [
       revenueRes,

@@ -1,12 +1,26 @@
 import './globals.css';
-import MouseTracker from '@/components/MouseTracker';
+import { Outfit, Hind_Siliguri } from 'next/font/google';
 import ClientShell from '@/components/ClientShell';
 import JsonLd from '@/components/JsonLd';
 import { getEducationalOrganizationSchema, getWebSiteSchema, SITE_URL } from '@/lib/seo';
 import type { Metadata, Viewport } from 'next';
 
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
+
+const hindSiliguri = Hind_Siliguri({
+  subsets: ['bengali', 'latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-bangla',
+  display: 'swap',
+});
+
 export const viewport: Viewport = {
-  themeColor: '#2563eb',
+  themeColor: '#144272',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -29,6 +43,8 @@ export const metadata: Metadata = {
     'Universities in Canada',
     'Study in Australia',
     'Universities in Malaysia',
+    'Study in France',
+    'Universities in Germany',
     'Degree Programs Worldwide',
     'Higher Education Scholarships',
     'Student Visa Filing',
@@ -50,7 +66,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'GlobalPathwayHub | Study Abroad, Universities & Degrees Worldwide',
     description:
-      'Discover 5,000+ top universities, compare accredited degree courses, calculate live currency tuition costs, and apply with certified education counselors.',
+      'Discover 5,000+ top universities, compare accredited degree courses, calculate estimated tuition costs, and apply with certified education counselors.',
     url: SITE_URL,
     siteName: 'GlobalPathwayHub',
     locale: 'en_US',
@@ -106,13 +122,12 @@ export default function RootLayout({
   const webSiteSchema = getWebSiteSchema();
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${outfit.variable} ${hindSiliguri.variable}`}>
       <head>
         <JsonLd data={orgSchema} />
         <JsonLd data={webSiteSchema} />
       </head>
-      <body className="min-h-screen bg-gradient-to-br from-background via-background to-background/95 text-foreground relative overflow-x-hidden antialiased">
-        <MouseTracker />
+      <body className="min-h-screen bg-background text-foreground relative overflow-x-hidden antialiased">
         <ClientShell>{children}</ClientShell>
       </body>
     </html>

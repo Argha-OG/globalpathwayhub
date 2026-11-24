@@ -55,12 +55,22 @@ export async function POST(request) {
 
     const token = generateSessionToken(userData);
 
-    return NextResponse.json({
+    const response = NextResponse.json({
       success: true,
       message: 'Authentication successful',
       token,
       user: userData,
     });
+
+    response.cookies.set('gph_session', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      path: '/',
+      maxAge: 7 * 24 * 60 * 60, // 7 days
+    });
+
+    return response;
   } catch (error) {
     console.error('Login error:', error);
     return NextResponse.json(

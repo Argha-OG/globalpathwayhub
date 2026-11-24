@@ -1,13 +1,14 @@
 # GlobalPathwayHub
 
-> GlobalPathwayHub is a premier international higher education consulting agency and global university admissions advisory. We connect prospective students with accredited universities and degree programs across the United Kingdom, United States, Canada, Australia, Malaysia, and Europe.
+> GlobalPathwayHub is a premier international higher education consulting agency and global university admissions advisory. We connect prospective students with accredited universities and degree programs across Malaysia, Canada, Australia, the United Kingdom, France, the United States, Germany, and Ireland.
 
 ## Overview & Core Capabilities
 
-GlobalPathwayHub empowers students, university counselors, and international academic partners through transparent, ethical, and technology-driven admissions guidance. Our platform offers real-time worldwide institutional searches, multi-currency tuition calculations (USD, EUR, MYR, BDT via Frankfurter & ECB reference rates), secure document verification, and 1-click counselor communication pitches.
+GlobalPathwayHub empowers students, university counselors, and international academic partners through transparent, ethical, and technology-driven admissions guidance. Our platform offers real-time worldwide institutional searches, verified tuition fee insights, secure document verification, and direct counselor communication desks.
 
 - **Official Website:** [GlobalPathwayHub](https://globalpathwayhub.com)
-- **Headquarters:** Banani Corporate District, Dhaka, Bangladesh
+- **Headquarters Office:** 6-A, Jass Nibash, Section-10, Block-B, Road Avenue-1, Plot-5, Mirpur-10, Mirpur, Dhaka - 1216.
+- **Coordinates:** 23.809391, 90.368409
 - **Regional Operations:** Kuala Lumpur, Malaysia · London, United Kingdom
 - **Admissions Helpdesk:** support@globalpathwayhub.com · +880 1410-555054
 - **Working Hours:** Sunday – Thursday, 09:30 AM – 06:30 PM (GMT+6)
@@ -16,12 +17,13 @@ GlobalPathwayHub empowers students, university counselors, and international aca
 
 GlobalPathwayHub facilitates direct undergraduate, postgraduate, and doctoral admissions to accredited institutions across key destinations:
 
-- [United Kingdom Admissions](https://globalpathwayhub.com/universities?country=United+Kingdom): Russell Group & top UK modern universities, CAS issuance, UKVI Student Visa, Graduate Route (PSW) guidance.
-- [United States Admissions](https://globalpathwayhub.com/universities?country=United+States): Tier-1 research universities, STEM OPT extensions, I-20 documentation, F-1 visa interview prep.
-- [Canada Admissions](https://globalpathwayhub.com/universities?country=Canada): Provincial Attestation Letters (PAL), SDS & non-SDS study permits, DLI accredited institutions.
-- [Australia Admissions](https://globalpathwayhub.com/universities?country=Australia): Group of Eight (Go8) & top Australian tech universities, Subclass 500 visa filing, Genuine Student (GS) criteria.
 - [Malaysia Admissions](https://globalpathwayhub.com/universities?country=Malaysia): Affordable world-class branch campuses, EMGS eVAL processing, dual-degree qualifications.
-- [Europe Admissions](https://globalpathwayhub.com/universities?country=Germany): Germany, Ireland, Sweden public universities, low/zero tuition programs, English-taught curriculums.
+- [Canada Admissions](https://globalpathwayhub.com/universities?country=Canada): Provincial Attestation Letters (PAL), PGWP up to 3 years, DLI accredited institutions.
+- [Australia Admissions](https://globalpathwayhub.com/universities?country=Australia): Group of Eight (Go8) & top Australian tech universities, Subclass 500 visa filing, 2-4 yr Subclass 485 stay.
+- [United Kingdom Admissions](https://globalpathwayhub.com/universities?country=United+Kingdom): Russell Group & top UK modern universities, CAS issuance, fast 1-year Master's, 2-yr Graduate Route.
+- [France Admissions](https://globalpathwayhub.com/universities?country=France): Subsidized public & Grandes Écoles business degrees, CAF housing aid, 2-year APS stay-back visa.
+- [United States Admissions](https://globalpathwayhub.com/universities?country=United+States): Tier-1 research universities, 36-month STEM OPT extensions, I-20 documentation, F-1 visa interview prep.
+- [Germany & Ireland Admissions](https://globalpathwayhub.com/universities?country=Germany): Low/zero tuition German public universities (18-mo Job Seeker visa) & Irish EU tech hubs (2-yr stay-back).
 
 ## Academic Degree Levels
 
@@ -34,6 +36,7 @@ GlobalPathwayHub facilitates direct undergraduate, postgraduate, and doctoral ad
 
 - [Universities Directory](https://globalpathwayhub.com/universities): Search, filter, and compare partner and worldwide universities.
 - [Courses & Programs](https://globalpathwayhub.com/courses): Explore degree courses with verified tuition fees, intake seasons, and eligibility criteria.
+- [Student Survival Guide & Blog](https://globalpathwayhub.com/guide): Honest student field guides covering current study abroad reality, housing, legal part-time work caps, budgeting, and survival strategies.
 - [Executive Leadership](https://globalpathwayhub.com/profile): Profiles, strategic responsibilities, and verified credentials of the leadership team.
 - [About Us](https://globalpathwayhub.com/about): Mission, institutional values, achievements, and counseling philosophy.
 - [Contact & Support](https://globalpathwayhub.com/contact): Direct admissions helpline, office location map, and counselor consultation booking.
@@ -42,9 +45,9 @@ GlobalPathwayHub facilitates direct undergraduate, postgraduate, and doctoral ad
 
 ## Executive Leadership & Contact Directory
 
-- **Abu Siam Khan (CEO & Founder):** ceo@globalpathwayhub.com · Lead partner institutional relations & corporate strategy. Profile: [Abu Siam Khan](https://globalpathwayhub.com/profile/abu-siam-khan)
-- **Argha Biswas (CTO):** cto@globalpathwayhub.com · Digital admissions portal architecture, data infrastructure & security. Profile: [Argha Biswas](https://globalpathwayhub.com/profile/argha-biswas)
-- **Shahriar Hassan (Head of Marketing & Management):** hmm@globalpathwayhub.com · Student outreach, international education expos & counseling operations. Profile: [Shahriar Hassan](https://globalpathwayhub.com/profile/shahriar-hassan)
+- **Abu Siam Khan (CEO & Founder):** ceo@globalpathwayhub.com · Phone/WhatsApp: +880 1410-555054 · Lead partner institutional relations & corporate strategy. Profile: [Abu Siam Khan](https://globalpathwayhub.com/profile/abu-siam-khan)
+- **Argha Biswas (CTO):** cto@globalpathwayhub.com · Phone/WhatsApp: +880 1999-389199 · Digital admissions portal architecture, data infrastructure & security. Profile: [Argha Biswas](https://globalpathwayhub.com/profile/argha-biswas)
+- **Shahriar Hassan (Head of Marketing & Management):** hmm@globalpathwayhub.com · Phone/WhatsApp: +60 17-536 0551 · Student outreach, international education expos & counseling operations. Profile: [Shahriar Hassan](https://globalpathwayhub.com/profile/shahriar-hassan)
 - **Central Support Desk:** support@globalpathwayhub.com · Direct student assistance & document verification.
 
 ## Social Channels & Community

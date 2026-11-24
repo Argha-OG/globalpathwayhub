@@ -1,10 +1,14 @@
 import { NextResponse } from 'next/server';
+import { revalidateTag, revalidatePath } from 'next/cache';
 import { query, formatUniversity } from '@/lib/db';
+import { getCurrentUser } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
 
-function checkAuth(req) {
-  const authHeader = req.headers.get('authorization');
+async function checkAuth(req) {
+  const user = await getCurrentUser(req);
+  if (user) return true;
+  const authHeader = req.headers?.get ? req.headers.get('authorization') : null;
   if (!authHeader) return false;
   const token = authHeader.replace(/^Bearer\s+/i, '');
   return token === 'siam-secret-token';
@@ -33,49 +37,9 @@ export async function GET(request: Request, { params }: { params: { id: string }
     }
 
     if (dbUni) {
-      return NextResponse.json(formatUniversity(dbUni));
-    }
-
-    // 2. Fallback to API-Ninjas Global University Registry
-    const apiKey = process.env.API_NINJAS_KEY || '6j5g1y06W28zsTpVD6BJm5YlhVD4o2vgcn9hJGtt';
-    const targetUrl = new URL('https://api.api-ninjas.com/v1/university');
-    const isNumeric = /^\d+$/.test(decodedId);
-
-    if (isNumeric) {
-      targetUrl.searchParams.set('id', decodedId);
-    } else {
-      targetUrl.searchParams.set('name', decodedId);
-    }
-
-    const apiRes = await fetch(targetUrl.toString(), {
-      headers: { 'X-Api-Key': apiKey },
-      next: { revalidate: 3600 },
-    });
-
-    if (apiRes.ok) {
-      const list = await apiRes.json();
-      if (Array.isArray(list) && list.length > 0) {
-        // Find best match
-        const uni = list.find((u: any) => u.name.toLowerCase() === decodedId.toLowerCase()) || list[0];
-        const formatted = {
-          _id: uni.id ? String(uni.id) : decodedId,
-          name: uni.name,
-          country: uni.country || '',
-          location: [uni.address, uni.city, uni.state, uni.country].filter(Boolean).join(', ') || uni.country || '',
-          website: uni.website || '',
-          description: `${uni.name} is an accredited ${uni.level || 'university'} (${uni.institution_type || uni.control || 'higher education institution'}) located in ${[uni.city, uni.state, uni.country].filter(Boolean).join(', ')}, established in ${uni.founded || 'established institution'}.`,
-          logo: `https://ui-avatars.com/api/?name=${encodeURIComponent(uni.name)}&size=200&background=2563eb&color=fff&bold=true`,
-          details: uni,
-          programs: (uni.degree_types || []).map((deg: string) => ({
-            title: deg,
-            category: deg,
-            fee: uni.tuition || uni.tuition_out_of_state || 0,
-            feeString: uni.tuition ? `$${Number(uni.tuition).toLocaleString()}/yr` : 'Consult Counselor',
-            duration: uni.years || '3-4 years',
-          })),
-        };
-        return NextResponse.json(formatted);
-      }
+      return NextResponse.json(formatUniversity(dbUni), {
+        headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300' },
+      });
     }
 
     return NextResponse.json({ message: 'University not found' }, { status: 404 });
@@ -87,7 +51,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
 
 export async function PUT(request, { params }) {
   try {
-    if (!checkAuth(request)) {
+    if (!(await checkAuth(request))) {
       return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
     }
 
@@ -164,6 +128,10 @@ export async function PUT(request, { params }) {
       id,
     ]);
 
+    revalidateTag('universities');
+    revalidateTag('courses');
+    revalidatePath('/');
+    revalidatePath('/universities');
     return NextResponse.json(formatUniversity(result.rows[0]));
   } catch (err) {
     console.error('Error in PUT /api/universities/[id]:', err);
@@ -173,7 +141,7 @@ export async function PUT(request, { params }) {
 
 export async function DELETE(request, { params }) {
   try {
-    if (!checkAuth(request)) {
+    if (!(await checkAuth(request))) {
       return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
     }
 
@@ -191,6 +159,10 @@ export async function DELETE(request, { params }) {
     if (result.rows.length === 0) {
       return NextResponse.json({ message: 'University not found' }, { status: 404 });
     }
+    revalidateTag('universities');
+    revalidateTag('courses');
+    revalidatePath('/');
+    revalidatePath('/universities');
     return NextResponse.json({ message: 'University deleted' });
   } catch (err) {
     console.error('Error in DELETE /api/universities/[id]:', err);

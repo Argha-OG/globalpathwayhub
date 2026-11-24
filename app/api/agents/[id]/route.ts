@@ -1,9 +1,14 @@
 import { NextResponse } from 'next/server';
 import { query } from '@/lib/db';
-import { hashPassword } from '@/lib/auth';
+import { hashPassword, getCurrentUser } from '@/lib/auth';
 
 export async function GET(request, { params }) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const { id } = params;
     const res = await query('SELECT id, name, email, role, phone, branch, commission_rate, status, created_at FROM users WHERE id = $1', [id]);
     if (res.rows.length === 0) {
@@ -36,6 +41,11 @@ export async function GET(request, { params }) {
 
 export async function PUT(request, { params }) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user || user.role !== 'admin') {
+      return NextResponse.json({ success: false, message: 'Unauthorized access. Administrator privileges required.' }, { status: 403 });
+    }
+
     const { id } = params;
     const body = await request.json();
 

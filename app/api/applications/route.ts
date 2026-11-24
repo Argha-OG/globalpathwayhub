@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { query, formatApplication } from '@/lib/db';
+import { getCurrentUser } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
 
@@ -112,8 +113,13 @@ export async function POST(request: Request) {
   }
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const result = await query('SELECT * FROM applications ORDER BY submitted_at DESC');
     const formatted = result.rows.map(formatApplication);
     return NextResponse.json(formatted);

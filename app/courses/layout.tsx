@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Courses & Programs Directory | Find Bachelor, Master & PhD Degrees',
   description:
-    'Browse thousands of accredited academic courses and degree programs worldwide. Filter by degree level, duration, and tuition fee with live currency conversion.',
+    'Browse thousands of accredited academic courses and degree programs worldwide. Filter by degree level, duration, and tuition fee.',
   alternates: {
     canonical: `${SITE_URL}/courses`,
   },

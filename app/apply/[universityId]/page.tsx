@@ -42,16 +42,8 @@ function UniversityInitialsAvatar({ name }: { name: string }) {
         .map((w) => w[0]?.toUpperCase())
         .join('');
 
-    const hash = (name || 'UN').split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
-    const hue = (hash * 37) % 360;
-
     return (
-        <div
-            className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center rounded-3xl text-white font-black text-2xl sm:text-3xl shadow-lg flex-shrink-0"
-            style={{
-                background: `linear-gradient(135deg, hsl(${hue}, 65%, 45%), hsl(${(hue + 40) % 360}, 75%, 35%))`,
-            }}
-        >
+        <div className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center rounded-lg bg-[#144272] text-[#FFD749] border border-[#3FC1C9]/30 font-black text-2xl sm:text-3xl shadow-xs flex-shrink-0">
             {initials || 'UN'}
         </div>
     );
@@ -203,8 +195,8 @@ export default function ApplyPage() {
         return (
             <div className="flex justify-center items-center min-h-[70vh] pt-24">
                 <div className="text-center space-y-3">
-                    <div className="h-10 w-10 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto" />
-                    <p className="text-slate-500 font-medium text-sm">Loading university information...</p>
+                    <div className="h-10 w-10 border-4 border-[#144272] border-t-transparent rounded-[9999px] animate-spin mx-auto" />
+                    <p className="text-[#144272] font-medium text-sm">Loading university information...</p>
                 </div>
             </div>
         );
@@ -213,39 +205,39 @@ export default function ApplyPage() {
     if (submitted) {
         return (
             <div className="max-w-2xl mx-auto space-y-8 pb-20 pt-28 px-4">
-                <GlassCard className="p-8 sm:p-12 text-center space-y-6 bg-white/80 backdrop-blur-xl border border-emerald-200 shadow-xl rounded-3xl">
-                    <div className="w-20 h-20 mx-auto bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 shadow-sm">
-                        <FaCircleCheck className="h-10 w-10 text-emerald-600" />
+                <GlassCard className="p-8 sm:p-12 text-center space-y-6 bg-white border border-[#144272]/15 shadow-xs rounded-lg">
+                    <div className="w-20 h-20 mx-auto bg-[#3FC1C9]/20 rounded-lg flex items-center justify-center text-[#144272] shadow-xs">
+                        <FaCircleCheck className="h-10 w-10 text-[#144272]" />
                     </div>
 
                     <div>
-                        <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 uppercase tracking-wider">
+                        <span className="text-xs font-bold px-3 py-1 rounded-lg bg-[#FFD749] text-black border border-[#144272]/20 uppercase tracking-wider">
                             Application Received
                         </span>
-                        <h1 className="text-2xl sm:text-3xl font-black text-slate-900 mt-3">
+                        <h1 className="text-2xl sm:text-3xl font-black text-[#144272] mt-3">
                             Application Submitted Successfully!
                         </h1>
-                        <p className="text-sm text-slate-600 mt-2">
-                            Thank you for applying to <strong className="text-blue-700">{university?.name}</strong>.
+                        <p className="text-sm text-black/70 mt-2">
+                            Thank you for applying to <strong className="text-[#144272]">{university?.name}</strong>.
                         </p>
                     </div>
 
                     {/* Reference Box */}
-                    <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
-                        <span className="text-[11px] uppercase tracking-wider font-bold text-slate-400 block">
+                    <div className="p-4 rounded-lg bg-[#F5F5F5] border border-[#144272]/20 text-center space-y-1">
+                        <span className="text-[11px] uppercase tracking-wider font-bold text-black/50 block">
                             Application Reference ID
                         </span>
-                        <span className="text-lg font-mono font-black text-slate-900 tracking-wider">
+                        <span className="text-lg font-mono font-black text-[#144272] tracking-wider">
                             #{applicationRef}
                         </span>
                     </div>
 
-                    <div className="space-y-3 text-left bg-blue-50/60 p-5 rounded-2xl border border-blue-100 text-xs sm:text-sm text-slate-700">
-                        <h3 className="font-bold text-slate-900 flex items-center gap-2">
-                            <Sparkles className="h-4 w-4 text-blue-600" />
+                    <div className="space-y-3 text-left bg-[#3FC1C9]/15 p-5 rounded-lg border border-[#3FC1C9]/30 text-xs sm:text-sm text-black/80">
+                        <h3 className="font-bold text-[#144272] flex items-center gap-2">
+                            <Sparkles className="h-4 w-4 text-[#144272]" />
                             Next Steps:
                         </h3>
-                        <ul className="space-y-2 list-disc pl-5 text-slate-600">
+                        <ul className="space-y-2 list-disc pl-5 text-black/70">
                             <li>Our senior admissions counselor will review your academic qualifications.</li>
                             <li>You will be contacted via WhatsApp ({formData.phone}) or Email ({formData.email}) within 24 hours.</li>
                             <li>We will assist you with offer letter issuance, document verification, and embassy visa filing.</li>
@@ -254,12 +246,12 @@ export default function ApplyPage() {
 
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
                         <Link href="/universities" className="flex-1">
-                            <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl h-11 text-xs font-bold shadow-md">
+                            <Button className="w-full bg-[#144272] hover:bg-[#144272]/90 text-[#FFD749] rounded-lg h-11 text-xs font-bold uppercase tracking-wider shadow-xs">
                                 Browse Other Universities
                             </Button>
                         </Link>
                         <Link href="/" className="flex-1">
-                            <Button variant="outline" className="w-full rounded-xl h-11 text-xs font-bold border-slate-300">
+                            <Button variant="outline" className="w-full rounded-lg h-11 text-xs font-bold border-[#144272]/30 text-[#144272]">
                                 Back to Home
                             </Button>
                         </Link>
@@ -278,7 +270,7 @@ export default function ApplyPage() {
             {/* Back link */}
             <Link
                 href={`/universities/${encodeURIComponent(university?._id || university?.id || universityId)}`}
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 hover:text-blue-600 transition-colors"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#144272]/70 hover:text-[#144272] transition-colors"
             >
                 <FaArrowLeft className="h-3.5 w-3.5" />
                 Back to {university?.name || 'University'}
@@ -286,34 +278,34 @@ export default function ApplyPage() {
 
             {/* University Header Banner (Uses InitialsAvatar - NO broken logo images) */}
             {university && (
-                <GlassCard className="p-6 sm:p-8 bg-white/80 backdrop-blur-xl border border-white/60 shadow-lg rounded-3xl">
+                <GlassCard className="p-6 sm:p-8 bg-white border border-[#144272]/15 shadow-xs rounded-lg">
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
                         {/* Colored Initials Avatar */}
                         <UniversityInitialsAvatar name={university.name} />
 
                         <div className="flex-1 text-center sm:text-left space-y-2">
                             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-                                <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-blue-100 text-blue-800 uppercase tracking-wider">
+                                <span className="px-2.5 py-0.5 rounded-lg text-[11px] font-bold bg-[#F5F5F5] text-[#144272] border border-[#144272]/20 uppercase tracking-wider">
                                     {university.country || 'International'}
                                 </span>
-                                <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1">
-                                    <FaCircleCheck className="h-3 w-3 text-emerald-500" />
+                                <span className="px-2.5 py-0.5 rounded-lg text-[11px] font-semibold bg-[#FFD749] text-black border border-[#144272]/20 flex items-center gap-1">
+                                    <FaCircleCheck className="h-3 w-3 text-[#144272]" />
                                     Verified Institution
                                 </span>
                             </div>
 
-                            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">
+                            <h1 className="text-2xl sm:text-3xl font-black text-[#144272] leading-tight">
                                 {university.name}
                             </h1>
 
-                            <p className="text-xs sm:text-sm text-slate-500 flex items-center justify-center sm:justify-start gap-1.5">
-                                <FaLocationDot className="h-3.5 w-3.5 text-rose-500 flex-shrink-0" />
+                            <p className="text-xs sm:text-sm text-black/60 flex items-center justify-center sm:justify-start gap-1.5 font-medium">
+                                <FaLocationDot className="h-3.5 w-3.5 text-[#144272] flex-shrink-0" />
                                 {university.location || university.country}
                             </p>
 
                             {tuition && (
-                                <p className="text-xs font-semibold text-slate-600">
-                                    Estimated Annual Tuition: <span className="text-emerald-700 font-bold">${Number(tuition).toLocaleString()}</span>
+                                <p className="text-xs font-semibold text-black/70">
+                                    Estimated Annual Tuition: <span className="text-[#144272] font-bold">${Number(tuition).toLocaleString()}</span>
                                 </p>
                             )}
                         </div>
@@ -325,7 +317,7 @@ export default function ApplyPage() {
                             <Button
                                 type="button"
                                 variant="outline"
-                                className="border-blue-200 text-blue-700 bg-blue-50/70 hover:bg-blue-100 rounded-xl text-xs font-bold h-10 px-4"
+                                className="border-[#3FC1C9] text-[#144272] bg-[#3FC1C9]/20 hover:bg-[#3FC1C9]/40 rounded-lg text-xs font-bold h-10 px-4"
                             >
                                 <FaBookOpen className="h-3.5 w-3.5 mr-1.5" />
                                 View Profile
@@ -336,14 +328,14 @@ export default function ApplyPage() {
             )}
 
             {/* Instruction Banner */}
-            <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 flex items-start gap-3">
-                <Sparkles className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                <div className="text-xs sm:text-sm text-slate-700 space-y-0.5">
-                    <p className="font-bold text-slate-900">
+            <div className="p-4 rounded-lg bg-[#3FC1C9]/15 border border-[#3FC1C9]/40 flex items-start gap-3">
+                <Sparkles className="h-5 w-5 text-[#144272] flex-shrink-0 mt-0.5" />
+                <div className="text-xs sm:text-sm text-black/80 space-y-0.5">
+                    <p className="font-bold text-[#144272]">
                         Official Admission Application
                     </p>
-                    <p className="text-slate-600">
-                        Only <strong className="text-rose-600">Name</strong>, <strong className="text-rose-600">Contact Number</strong>, and <strong className="text-rose-600">Email Address</strong> are mandatory. All educational details and document attachments are optional but help speed up your offer letter.
+                    <p className="text-black/70">
+                        Only <strong className="text-[#144272]">Name</strong>, <strong className="text-[#144272]">Contact Number</strong>, and <strong className="text-[#144272]">Email Address</strong> are mandatory. All educational details and document attachments are optional but help speed up your offer letter.
                     </p>
                 </div>
             </div>
@@ -351,18 +343,18 @@ export default function ApplyPage() {
             {/* Application Form */}
             <form onSubmit={handleSubmit} className="space-y-6">
                 {/* 1. Mandatory & Personal Information */}
-                <GlassCard className="p-6 sm:p-8 space-y-6 bg-white/80 backdrop-blur-xl border border-white/60 shadow-md rounded-3xl">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                <GlassCard className="p-6 sm:p-8 space-y-6 bg-white border border-[#144272]/15 shadow-xs rounded-lg">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#144272]/10">
                         <div className="flex items-center gap-2.5">
-                            <div className="p-2 rounded-xl bg-blue-100 text-blue-700">
+                            <div className="p-2 rounded-lg bg-[#3FC1C9]/20 text-[#144272]">
                                 <FaUser className="h-4 w-4" />
                             </div>
                             <div>
-                                <h2 className="text-lg font-black text-slate-900">Applicant Information</h2>
-                                <p className="text-xs text-slate-500">Contact details so counselors can reach you</p>
+                                <h2 className="text-lg font-black text-[#144272]">Applicant Information</h2>
+                                <p className="text-xs text-black/60">Contact details so counselors can reach you</p>
                             </div>
                         </div>
-                        <span className="text-[11px] font-bold text-rose-600 bg-rose-50 border border-rose-200 px-2.5 py-0.5 rounded-full">
+                        <span className="text-[11px] font-bold text-black bg-[#FFD749] border border-[#144272]/20 px-2.5 py-0.5 rounded-lg">
                             * Mandatory Fields
                         </span>
                     </div>
@@ -370,8 +362,8 @@ export default function ApplyPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                         {/* Full Name (MANDATORY) */}
                         <div className="space-y-1.5">
-                            <Label htmlFor="fullName" className="text-xs font-bold text-slate-800 flex items-center gap-1">
-                                Full Name <span className="text-rose-600 font-black">*</span>
+                            <Label htmlFor="fullName" className="text-xs font-bold text-[#144272] flex items-center gap-1">
+                                Full Name <span className="text-[#144272] font-black">*</span>
                             </Label>
                             <Input
                                 id="fullName"
@@ -380,14 +372,14 @@ export default function ApplyPage() {
                                 onChange={handleTextChange}
                                 required
                                 placeholder="e.g. Mohammad Argha Biswas"
-                                className="bg-white border-slate-300 rounded-xl text-sm h-11 focus:border-blue-500"
+                                className="bg-white border-[#144272]/20 rounded-lg text-sm h-11 text-black focus:border-[#3FC1C9]"
                             />
                         </div>
 
                         {/* Contact Number (MANDATORY) */}
                         <div className="space-y-1.5">
-                            <Label htmlFor="phone" className="text-xs font-bold text-slate-800 flex items-center gap-1">
-                                Contact Number / WhatsApp <span className="text-rose-600 font-black">*</span>
+                            <Label htmlFor="phone" className="text-xs font-bold text-[#144272] flex items-center gap-1">
+                                Contact Number / WhatsApp <span className="text-[#144272] font-black">*</span>
                             </Label>
                             <Input
                                 id="phone"
@@ -397,14 +389,14 @@ export default function ApplyPage() {
                                 onChange={handleTextChange}
                                 required
                                 placeholder="e.g. +880 1712-345678"
-                                className="bg-white border-slate-300 rounded-xl text-sm h-11 focus:border-blue-500"
+                                className="bg-white border-[#144272]/20 rounded-lg text-sm h-11 text-black focus:border-[#3FC1C9]"
                             />
                         </div>
 
                         {/* Mail Address (MANDATORY) */}
                         <div className="space-y-1.5 sm:col-span-2">
-                            <Label htmlFor="email" className="text-xs font-bold text-slate-800 flex items-center gap-1">
-                                Mail Address <span className="text-rose-600 font-black">*</span>
+                            <Label htmlFor="email" className="text-xs font-bold text-[#144272] flex items-center gap-1">
+                                Mail Address <span className="text-[#144272] font-black">*</span>
                             </Label>
                             <Input
                                 id="email"
@@ -414,15 +406,15 @@ export default function ApplyPage() {
                                 onChange={handleTextChange}
                                 required
                                 placeholder="e.g. student@example.com"
-                                className="bg-white border-slate-300 rounded-xl text-sm h-11 focus:border-blue-500"
+                                className="bg-white border-[#144272]/20 rounded-lg text-sm h-11 text-black focus:border-[#3FC1C9]"
                             />
                         </div>
 
                         {/* Present Address (OPTIONAL) */}
                         <div className="space-y-1.5 sm:col-span-2">
-                            <Label htmlFor="address" className="text-xs font-semibold text-slate-700 flex items-center justify-between">
+                            <Label htmlFor="address" className="text-xs font-semibold text-black/70 flex items-center justify-between">
                                 <span>Present / Permanent Address</span>
-                                <span className="text-[10px] text-slate-400 font-normal">Optional</span>
+                                <span className="text-[10px] text-black/40 font-normal">Optional</span>
                             </Label>
                             <Input
                                 id="address"
@@ -430,15 +422,15 @@ export default function ApplyPage() {
                                 value={formData.address}
                                 onChange={handleTextChange}
                                 placeholder="e.g. House #12, Road #4, Dhanmondi, Dhaka-1205"
-                                className="bg-white border-slate-300 rounded-xl text-sm h-11 focus:border-blue-500"
+                                className="bg-white border-[#144272]/20 rounded-lg text-sm h-11 text-black focus:border-[#3FC1C9]"
                             />
                         </div>
 
                         {/* Passport if have (OPTIONAL) */}
                         <div className="space-y-1.5">
-                            <Label htmlFor="passportNumber" className="text-xs font-semibold text-slate-700 flex items-center justify-between">
+                            <Label htmlFor="passportNumber" className="text-xs font-semibold text-black/70 flex items-center justify-between">
                                 <span>Passport Number (If Have)</span>
-                                <span className="text-[10px] text-slate-400 font-normal">Optional</span>
+                                <span className="text-[10px] text-black/40 font-normal">Optional</span>
                             </Label>
                             <Input
                                 id="passportNumber"
@@ -446,15 +438,15 @@ export default function ApplyPage() {
                                 value={formData.passportNumber}
                                 onChange={handleTextChange}
                                 placeholder="e.g. A01234567"
-                                className="bg-white border-slate-300 rounded-xl text-sm h-11 focus:border-blue-500 uppercase"
+                                className="bg-white border-[#144272]/20 rounded-lg text-sm h-11 text-black focus:border-[#3FC1C9] uppercase"
                             />
                         </div>
 
                         {/* Passport Copy File (OPTIONAL) */}
                         <div className="space-y-1.5">
-                            <Label htmlFor="passportFile" className="text-xs font-semibold text-slate-700 flex items-center justify-between">
+                            <Label htmlFor="passportFile" className="text-xs font-semibold text-black/70 flex items-center justify-between">
                                 <span>Passport Copy (If Have)</span>
-                                <span className="text-[10px] text-slate-400 font-normal">Optional</span>
+                                <span className="text-[10px] text-black/40 font-normal">Optional</span>
                             </Label>
                             <div className="relative">
                                 <Input
@@ -462,7 +454,7 @@ export default function ApplyPage() {
                                     type="file"
                                     accept=".pdf,.jpg,.jpeg,.png"
                                     onChange={(e) => handleFileChange('passportFile', e)}
-                                    className="bg-white border-slate-300 rounded-xl text-xs h-11 file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer"
+                                    className="bg-white border-[#144272]/20 rounded-lg text-xs h-11 file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-[#3FC1C9]/20 file:text-[#144272] hover:file:bg-[#3FC1C9]/30 cursor-pointer"
                                 />
                             </div>
                         </div>
@@ -470,25 +462,25 @@ export default function ApplyPage() {
                 </GlassCard>
 
                 {/* 2. Desired Degree & Program */}
-                <GlassCard className="p-6 sm:p-8 space-y-6 bg-white/80 backdrop-blur-xl border border-white/60 shadow-md rounded-3xl">
-                    <div className="flex items-center gap-2.5 pb-3 border-b border-slate-100">
-                        <div className="p-2 rounded-xl bg-indigo-100 text-indigo-700">
+                <GlassCard className="p-6 sm:p-8 space-y-6 bg-white border border-[#144272]/15 shadow-xs rounded-lg">
+                    <div className="flex items-center gap-2.5 pb-3 border-b border-[#144272]/10">
+                        <div className="p-2 rounded-lg bg-[#3FC1C9]/20 text-[#144272]">
                             <FaGraduationCap className="h-4 w-4" />
                         </div>
                         <div>
-                            <h2 className="text-lg font-black text-slate-900">Study Preferences</h2>
-                            <p className="text-xs text-slate-500">Select your intended degree level and intake</p>
+                            <h2 className="text-lg font-black text-[#144272]">Study Preferences</h2>
+                            <p className="text-xs text-black/60">Select your intended degree level and intake</p>
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div className="space-y-1.5">
-                            <Label className="text-xs font-semibold text-slate-700">Applying Level</Label>
+                            <Label className="text-xs font-semibold text-black/80">Applying Level</Label>
                             <Select
                                 value={formData.applyingLevel}
                                 onValueChange={(val) => handleSelectChange('applyingLevel', val)}
                             >
-                                <SelectTrigger className="bg-white border-slate-300 rounded-xl text-sm h-11">
+                                <SelectTrigger className="bg-white border-[#144272]/20 rounded-lg text-sm h-11 text-black">
                                     <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -502,13 +494,13 @@ export default function ApplyPage() {
                         </div>
 
                         <div className="space-y-1.5 sm:col-span-2">
-                            <Label className="text-xs font-semibold text-slate-700">Intended Course / Program</Label>
+                            <Label className="text-xs font-semibold text-black/80">Intended Course / Program</Label>
                             {courses.length > 0 ? (
                                 <Select
                                     value={formData.desiredProgram}
                                     onValueChange={(val) => handleSelectChange('desiredProgram', val)}
                                 >
-                                    <SelectTrigger className="bg-white border-slate-300 rounded-xl text-sm h-11">
+                                    <SelectTrigger className="bg-white border-[#144272]/20 rounded-lg text-sm h-11 text-black">
                                         <SelectValue placeholder="Choose a course or type below" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -526,7 +518,7 @@ export default function ApplyPage() {
                                     value={formData.desiredProgram}
                                     onChange={handleTextChange}
                                     placeholder="e.g. Computer Science, MBA, Engineering..."
-                                    className="bg-white border-slate-300 rounded-xl text-sm h-11"
+                                    className="bg-white border-[#144272]/20 rounded-lg text-sm h-11 text-black"
                                 />
                             )}
                         </div>
@@ -534,96 +526,96 @@ export default function ApplyPage() {
                 </GlassCard>
 
                 {/* 3. Secondary & Higher Secondary (SSC & HSC) */}
-                <GlassCard className="p-6 sm:p-8 space-y-6 bg-white/80 backdrop-blur-xl border border-white/60 shadow-md rounded-3xl">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                <GlassCard className="p-6 sm:p-8 space-y-6 bg-white border border-[#144272]/15 shadow-xs rounded-lg">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#144272]/10">
                         <div className="flex items-center gap-2.5">
-                            <div className="p-2 rounded-xl bg-amber-100 text-amber-700">
+                            <div className="p-2 rounded-lg bg-[#FFD749] text-black">
                                 <FaAward className="h-4 w-4" />
                             </div>
                             <div>
-                                <h2 className="text-lg font-black text-slate-900">SSC &amp; HSC Academic Results</h2>
-                                <p className="text-xs text-slate-500">Provide points, passing year, and optional certificate upload</p>
+                                <h2 className="text-lg font-black text-[#144272]">SSC &amp; HSC Academic Results</h2>
+                                <p className="text-xs text-black/60">Provide points, passing year, and optional certificate upload</p>
                             </div>
                         </div>
-                        <span className="text-[11px] font-semibold text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded-full">
+                        <span className="text-[11px] font-semibold text-black/60 bg-[#F5F5F5] px-2.5 py-0.5 rounded-lg border border-[#144272]/20">
                             Optional
                         </span>
                     </div>
 
                     <div className="space-y-6">
                         {/* SSC Sub-section */}
-                        <div className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/80 space-y-3">
-                            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
-                                <FaCircleCheck className="h-3.5 w-3.5 text-blue-600" />
+                        <div className="p-4 rounded-lg bg-[#F5F5F5] border border-[#144272]/15 space-y-3">
+                            <h3 className="text-xs font-bold uppercase tracking-wider text-[#144272] flex items-center gap-1.5">
+                                <FaCircleCheck className="h-3.5 w-3.5 text-[#144272]" />
                                 Secondary School Certificate (SSC / O-Levels / 10th)
                             </h3>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                 <div className="space-y-1">
-                                    <Label className="text-xs text-slate-600">SSC Point / GPA</Label>
+                                    <Label className="text-xs text-black/70">SSC Point / GPA</Label>
                                     <Input
                                         name="sscPoint"
                                         value={formData.sscPoint}
                                         onChange={handleTextChange}
                                         placeholder="e.g. 5.00"
-                                        className="bg-white border-slate-300 rounded-xl text-xs h-10"
+                                        className="bg-white border-[#144272]/20 rounded-lg text-xs h-10 text-black"
                                     />
                                 </div>
                                 <div className="space-y-1">
-                                    <Label className="text-xs text-slate-600">Passing Year</Label>
+                                    <Label className="text-xs text-black/70">Passing Year</Label>
                                     <Input
                                         name="sscYear"
                                         value={formData.sscYear}
                                         onChange={handleTextChange}
                                         placeholder="e.g. 2020"
-                                        className="bg-white border-slate-300 rounded-xl text-xs h-10"
+                                        className="bg-white border-[#144272]/20 rounded-lg text-xs h-10 text-black"
                                     />
                                 </div>
                                 <div className="space-y-1">
-                                    <Label className="text-xs text-slate-600">Attach SSC Transcript</Label>
+                                    <Label className="text-xs text-black/70">Attach SSC Transcript</Label>
                                     <Input
                                         type="file"
                                         accept=".pdf,.jpg,.jpeg,.png"
                                         onChange={(e) => handleFileChange('sscFile', e)}
-                                        className="bg-white border-slate-300 rounded-xl text-xs h-10 file:mr-2 file:py-0.5 file:px-2 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 cursor-pointer"
+                                        className="bg-white border-[#144272]/20 rounded-lg text-xs h-10 file:mr-2 file:py-0.5 file:px-2 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-[#3FC1C9]/20 file:text-[#144272] cursor-pointer"
                                     />
                                 </div>
                             </div>
                         </div>
 
                         {/* HSC Sub-section */}
-                        <div className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/80 space-y-3">
-                            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
-                                <FaCircleCheck className="h-3.5 w-3.5 text-indigo-600" />
+                        <div className="p-4 rounded-lg bg-[#F5F5F5] border border-[#144272]/15 space-y-3">
+                            <h3 className="text-xs font-bold uppercase tracking-wider text-[#144272] flex items-center gap-1.5">
+                                <FaCircleCheck className="h-3.5 w-3.5 text-[#144272]" />
                                 Higher Secondary Certificate (HSC / A-Levels / 12th)
                             </h3>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                 <div className="space-y-1">
-                                    <Label className="text-xs text-slate-600">HSC Point / GPA</Label>
+                                    <Label className="text-xs text-black/70">HSC Point / GPA</Label>
                                     <Input
                                         name="hscPoint"
                                         value={formData.hscPoint}
                                         onChange={handleTextChange}
                                         placeholder="e.g. 5.00"
-                                        className="bg-white border-slate-300 rounded-xl text-xs h-10"
+                                        className="bg-white border-[#144272]/20 rounded-lg text-xs h-10 text-black"
                                     />
                                 </div>
                                 <div className="space-y-1">
-                                    <Label className="text-xs text-slate-600">Passing Year</Label>
+                                    <Label className="text-xs text-black/70">Passing Year</Label>
                                     <Input
                                         name="hscYear"
                                         value={formData.hscYear}
                                         onChange={handleTextChange}
                                         placeholder="e.g. 2022"
-                                        className="bg-white border-slate-300 rounded-xl text-xs h-10"
+                                        className="bg-white border-[#144272]/20 rounded-lg text-xs h-10 text-black"
                                     />
                                 </div>
                                 <div className="space-y-1">
-                                    <Label className="text-xs text-slate-600">Attach HSC Transcript</Label>
+                                    <Label className="text-xs text-black/70">Attach HSC Transcript</Label>
                                     <Input
                                         type="file"
                                         accept=".pdf,.jpg,.jpeg,.png"
                                         onChange={(e) => handleFileChange('hscFile', e)}
-                                        className="bg-white border-slate-300 rounded-xl text-xs h-10 file:mr-2 file:py-0.5 file:px-2 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 cursor-pointer"
+                                        className="bg-white border-[#144272]/20 rounded-lg text-xs h-10 file:mr-2 file:py-0.5 file:px-2 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-[#3FC1C9]/20 file:text-[#144272] cursor-pointer"
                                     />
                                 </div>
                             </div>
@@ -633,20 +625,20 @@ export default function ApplyPage() {
 
                 {/* 4. Bachelor (BS) Section - Highlighted for MS applicants */}
                 <GlassCard
-                    className={`p-6 sm:p-8 space-y-6 bg-white/80 backdrop-blur-xl border shadow-md rounded-3xl transition-all ${
-                        isMS ? 'border-purple-300 ring-2 ring-purple-100' : 'border-white/60'
+                    className={`p-6 sm:p-8 space-y-6 bg-white border shadow-xs rounded-lg transition-all ${
+                        isMS ? 'border-[#3FC1C9] ring-2 ring-[#3FC1C9]/20' : 'border-[#144272]/15'
                     }`}
                 >
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#144272]/10">
                         <div className="flex items-center gap-2.5">
-                            <div className="p-2 rounded-xl bg-purple-100 text-purple-700">
+                            <div className="p-2 rounded-lg bg-[#3FC1C9]/20 text-[#144272]">
                                 <FaBookOpen className="h-4 w-4" />
                             </div>
                             <div>
-                                <h2 className="text-lg font-black text-slate-900">
+                                <h2 className="text-lg font-black text-[#144272]">
                                     Undergraduate / Bachelor (BS) Degree
                                 </h2>
-                                <p className="text-xs text-slate-500">
+                                <p className="text-xs text-black/60">
                                     {isMS
                                         ? 'Required for Master’s (MS) applicants'
                                         : 'Fill this section if applying for Master’s / MS / Postgrad'}
@@ -654,11 +646,11 @@ export default function ApplyPage() {
                             </div>
                         </div>
                         {isMS ? (
-                            <span className="text-[11px] font-bold text-purple-700 bg-purple-50 border border-purple-200 px-2.5 py-0.5 rounded-full">
+                            <span className="text-[11px] font-bold text-black bg-[#FFD749] border border-[#144272]/20 px-2.5 py-0.5 rounded-lg">
                                 Recommended for MS
                             </span>
                         ) : (
-                            <span className="text-[11px] font-semibold text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded-full">
+                            <span className="text-[11px] font-semibold text-black/60 bg-[#F5F5F5] px-2.5 py-0.5 rounded-lg border border-[#144272]/20">
                                 Optional
                             </span>
                         )}
@@ -666,7 +658,7 @@ export default function ApplyPage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-1.5 sm:col-span-2">
-                            <Label className="text-xs font-semibold text-slate-700">
+                            <Label className="text-xs font-semibold text-black/80">
                                 BS Degree Title / Major Subject
                             </Label>
                             <Input
@@ -674,12 +666,12 @@ export default function ApplyPage() {
                                 value={formData.bsTitle}
                                 onChange={handleTextChange}
                                 placeholder="e.g. BSc in Computer Science & Engineering, BBA in Finance"
-                                className="bg-white border-slate-300 rounded-xl text-sm h-11"
+                                className="bg-white border-[#144272]/20 rounded-lg text-sm h-11 text-black"
                             />
                         </div>
 
                         <div className="space-y-1.5">
-                            <Label className="text-xs font-semibold text-slate-700">
+                            <Label className="text-xs font-semibold text-black/80">
                                 BS Point / CGPA
                             </Label>
                             <Input
@@ -687,12 +679,12 @@ export default function ApplyPage() {
                                 value={formData.bsPoint}
                                 onChange={handleTextChange}
                                 placeholder="e.g. 3.65 (out of 4.00)"
-                                className="bg-white border-slate-300 rounded-xl text-sm h-11"
+                                className="bg-white border-[#144272]/20 rounded-lg text-sm h-11 text-black"
                             />
                         </div>
 
                         <div className="space-y-1.5">
-                            <Label className="text-xs font-semibold text-slate-700">
+                            <Label className="text-xs font-semibold text-black/80">
                                 Certificate / Registration Number &amp; Year
                             </Label>
                             <Input
@@ -700,56 +692,56 @@ export default function ApplyPage() {
                                 value={formData.bsNumber}
                                 onChange={handleTextChange}
                                 placeholder="e.g. Reg #18104523, Year 2024"
-                                className="bg-white border-slate-300 rounded-xl text-sm h-11"
+                                className="bg-white border-[#144272]/20 rounded-lg text-sm h-11 text-black"
                             />
                         </div>
 
                         <div className="space-y-1.5 sm:col-span-2">
-                            <Label className="text-xs font-semibold text-slate-700">
+                            <Label className="text-xs font-semibold text-black/80">
                                 Attach BS Certificate / Transcript
                             </Label>
                             <Input
                                 type="file"
                                 accept=".pdf,.jpg,.jpeg,.png"
                                 onChange={(e) => handleFileChange('bsFile', e)}
-                                className="bg-white border-slate-300 rounded-xl text-xs h-11 file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100 cursor-pointer"
+                                className="bg-white border-[#144272]/20 rounded-lg text-xs h-11 file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-[#3FC1C9]/20 file:text-[#144272] hover:file:bg-[#3FC1C9]/30 cursor-pointer"
                             />
                         </div>
                     </div>
                 </GlassCard>
 
                 {/* 5. Additional Documents & Counselor Notes */}
-                <GlassCard className="p-6 sm:p-8 space-y-6 bg-white/80 backdrop-blur-xl border border-white/60 shadow-md rounded-3xl">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                <GlassCard className="p-6 sm:p-8 space-y-6 bg-white border border-[#144272]/15 shadow-xs rounded-lg">
+                    <div className="flex items-center justify-between pb-3 border-b border-[#144272]/10">
                         <div className="flex items-center gap-2.5">
-                            <div className="p-2 rounded-xl bg-teal-100 text-teal-700">
+                            <div className="p-2 rounded-lg bg-[#3FC1C9]/20 text-[#144272]">
                                 <FaFileLines className="h-4 w-4" />
                             </div>
                             <div>
-                                <h2 className="text-lg font-black text-slate-900">Additional Documents &amp; Notes</h2>
-                                <p className="text-xs text-slate-500">Attach any other supporting documents (CV, IELTS, Recommendations)</p>
+                                <h2 className="text-lg font-black text-[#144272]">Additional Documents &amp; Notes</h2>
+                                <p className="text-xs text-black/60">Attach any other supporting documents (CV, IELTS, Recommendations)</p>
                             </div>
                         </div>
-                        <span className="text-[11px] font-semibold text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded-full">
+                        <span className="text-[11px] font-semibold text-black/60 bg-[#F5F5F5] px-2.5 py-0.5 rounded-lg border border-[#144272]/20">
                             Optional
                         </span>
                     </div>
 
                     <div className="space-y-4">
                         <div className="space-y-1.5">
-                            <Label className="text-xs font-semibold text-slate-700">
+                            <Label className="text-xs font-semibold text-black/80">
                                 Attach Other Supporting Documents (PDF / Image)
                             </Label>
                             <Input
                                 type="file"
                                 accept=".pdf,.jpg,.jpeg,.png"
                                 onChange={(e) => handleFileChange('additionalFile', e)}
-                                className="bg-white border-slate-300 rounded-xl text-xs h-11 file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-teal-50 file:text-teal-700 hover:file:bg-teal-100 cursor-pointer"
+                                className="bg-white border-[#144272]/20 rounded-lg text-xs h-11 file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-[#3FC1C9]/20 file:text-[#144272] hover:file:bg-[#3FC1C9]/30 cursor-pointer"
                             />
                         </div>
 
                         <div className="space-y-1.5">
-                            <Label htmlFor="notes" className="text-xs font-semibold text-slate-700">
+                            <Label htmlFor="notes" className="text-xs font-semibold text-black/80">
                                 Special Inquiries or Counselor Notes
                             </Label>
                             <Textarea
@@ -758,7 +750,7 @@ export default function ApplyPage() {
                                 value={formData.notes}
                                 onChange={handleTextChange}
                                 placeholder="Any specific requirements, questions regarding scholarships, embassy visa, or accommodation..."
-                                className="bg-white border-slate-300 rounded-xl text-sm min-h-[90px]"
+                                className="bg-white border-[#144272]/20 rounded-lg text-sm min-h-[90px] text-black"
                             />
                         </div>
                     </div>
@@ -770,18 +762,18 @@ export default function ApplyPage() {
                         type="button"
                         variant="outline"
                         onClick={() => router.back()}
-                        className="w-full sm:w-auto rounded-xl h-11 px-6 border-slate-300 text-xs font-bold"
+                        className="w-full sm:w-auto rounded-lg h-11 px-6 border-[#144272]/30 text-xs font-bold text-[#144272]"
                     >
                         Cancel
                     </Button>
                     <Button
                         type="submit"
                         disabled={submitting}
-                        className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white rounded-xl h-11 px-8 text-xs font-bold shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2"
+                        className="w-full sm:w-auto bg-[#144272] hover:bg-[#144272]/90 text-[#FFD749] rounded-lg h-11 px-8 text-xs font-bold uppercase tracking-wider shadow-xs flex items-center justify-center gap-2"
                     >
                         {submitting ? (
                             <>
-                                <div className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                <div className="h-4 w-4 border-2 border-[#FFD749] border-t-transparent rounded-[9999px] animate-spin" />
                                 Submitting Application...
                             </>
                         ) : (

@@ -1,10 +1,14 @@
 import { NextResponse } from 'next/server';
+import { revalidateTag, revalidatePath } from 'next/cache';
 import { query } from '@/lib/db';
+import { getCurrentUser } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
 
-function checkAuth(req: Request) {
-  const authHeader = req.headers.get('authorization');
+async function checkAuth(req: Request) {
+  const user = await getCurrentUser(req);
+  if (user) return true;
+  const authHeader = req.headers?.get ? req.headers.get('authorization') : null;
   if (!authHeader) return false;
   const token = authHeader.replace(/^Bearer\s+/i, '');
   return token === 'siam-secret-token';
@@ -12,7 +16,7 @@ function checkAuth(req: Request) {
 
 export async function DELETE(request: Request) {
   try {
-    if (!checkAuth(request)) {
+    if (!(await checkAuth(request))) {
       return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
     }
 
@@ -26,6 +30,9 @@ export async function DELETE(request: Request) {
     }
 
     const res = await query('DELETE FROM courses WHERE id = ANY($1)', [ids]);
+    revalidateTag('courses');
+    revalidatePath('/courses');
+    revalidatePath('/universities');
 
     return NextResponse.json({
       success: true,

@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'Universities Directory | Search Top Global Institutions',
   description:
-    'Explore 5,000+ accredited universities across the UK, USA, Canada, Australia, Malaysia, and Europe. Compare rankings, admission standards, and campus locations.',
+    'Explore accredited universities across Malaysia, Canada, Australia, the UK, France, the USA, Germany, and Ireland. Compare admission standards, post-study work pathways, and campus locations.',
   alternates: {
     canonical: `${SITE_URL}/universities`,
   },

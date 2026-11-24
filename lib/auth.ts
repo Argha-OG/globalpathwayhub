@@ -51,12 +51,33 @@ export function verifySessionToken(token) {
 }
 
 export async function getCurrentUser(request) {
-  const authHeader = request.headers.get('authorization') || '';
-  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+  if (!request) return null;
+
+  let token: string | null = null;
+
+  // 1. Check Authorization header
+  const authHeader = request.headers?.get ? request.headers.get('authorization') : null;
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    token = authHeader.slice(7).trim();
+  }
+
+  // 2. Check Cookie (gph_session) via NextRequest cookies API or Cookie header
+  if (!token) {
+    if (typeof request.cookies?.get === 'function') {
+      token = request.cookies.get('gph_session')?.value || null;
+    } else if (request.headers?.get) {
+      const cookieHeader = request.headers.get('cookie') || '';
+      const match = cookieHeader.match(/(?:^|;\s*)gph_session=([^;]+)/);
+      if (match) {
+        token = decodeURIComponent(match[1]);
+      }
+    }
+  }
+
   if (!token) return null;
 
   const payload = verifySessionToken(token);
-  if (!payload) return null;
+  if (!payload || !payload.id) return null;
 
   const res = await query('SELECT id, name, email, role, phone, branch, commission_rate, status FROM users WHERE id = $1', [payload.id]);
   if (!res.rows[0] || res.rows[0].status !== 'active') return null;

@@ -7,7 +7,7 @@ const GlassCard: React.FC<GlassCardProps> = ({ children, className, ...props }) 
     return (
         <div
             className={cn(
-                "backdrop-blur-xl bg-white/60 border border-white/40 shadow-lg rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:bg-white/70 hover:-translate-y-1",
+                "bg-white border border-[#144272]/15 shadow-xs rounded-lg p-6 transition-all duration-200 hover:shadow-md hover:border-[#3FC1C9] hover:-translate-y-0.5",
                 className
             )}
             {...props}

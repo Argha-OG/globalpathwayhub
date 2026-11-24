@@ -1,8 +1,14 @@
 import { NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { getCurrentUser } from '@/lib/auth';
 
 export async function PUT(request) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const { ids, status, assignedAgentId } = await request.json();
 
     if (!Array.isArray(ids) || ids.length === 0) {
@@ -44,6 +50,11 @@ export async function PUT(request) {
 
 export async function DELETE(request) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const { ids } = await request.json();
 
     if (!Array.isArray(ids) || ids.length === 0) {

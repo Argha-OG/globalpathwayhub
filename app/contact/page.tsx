@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -16,10 +16,8 @@ import {
     FaLinkedinIn,
     FaXTwitter,
     FaCircleCheck,
-    FaCircleQuestion,
     FaWhatsapp,
     FaArrowRight,
-    FaUserTie,
 } from 'react-icons/fa6';
 import toast from 'react-hot-toast';
 import { TEAM_LIST } from '@/lib/team';
@@ -31,10 +29,10 @@ const Contact = () => {
     const [submitted, setSubmitted] = useState(false);
     const [submitting, setSubmitting] = useState(false);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setSubmitting(true);
-        const toastId = toast.loading('Sending your message to our counseling team...');
+        const toastId = toast.loading('Sending inquiry...');
 
         try {
             await fetch('/api/leads', {
@@ -43,40 +41,64 @@ const Contact = () => {
                 body: JSON.stringify({
                     fullName: formData.name,
                     email: formData.email,
-                    phone: formData.phone || 'Web Form (No phone provided)',
+                    phone: formData.phone || 'Web Form',
                     leadSource: 'website_inquiry',
                     priority: 'medium',
                     notes: `Subject: ${formData.subject}\n\nMessage: ${formData.message}`,
                 }),
             });
 
-            toast.success('Message received! Our team will get back to you within 24 hours.', { id: toastId });
+            toast.success('Inquiry sent. Expect a reply within 24 hours.', { id: toastId });
             setSubmitted(true);
             setTimeout(() => {
                 setSubmitted(false);
                 setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
             }, 4000);
         } catch {
-            toast.error('Failed to send message. Please contact us via WhatsApp or email directly.', { id: toastId });
+            toast.error('Send failed. Please message us on WhatsApp.', { id: toastId });
         } finally {
             setSubmitting(false);
         }
     };
 
-    const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+        setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const contactInfo = [
-        { icon: <FaEnvelope className="h-6 w-6" />, title: 'Email Us', details: ['support@globalpathwayhub.com'] },
-        { icon: <FaPhone className="h-6 w-6" />, title: 'Call Us', details: ['+880 1410-555054'] },
-        { icon: <FaLocationDot className="h-6 w-6" />, title: 'Visit Us', details: ['Dhaka, Bangladesh'] },
-        { icon: <FaGlobe className="h-6 w-6" />, title: 'Website', details: ['globalpathwayhub.com'] }
+        {
+            icon: <FaEnvelope className="h-5 w-5" />,
+            title: 'Email',
+            details: ['support@globalpathwayhub.com'],
+        },
+        {
+            icon: <FaPhone className="h-5 w-5" />,
+            title: 'Call & WhatsApp',
+            details: [
+                'Abu Siam Khan (Founder & CEO): +880 1410-555054',
+                'Argha Biswas (CTO): +880 1999-389199',
+                'Shahriar Hassan (Head of Marketing): +60 17-536 0551',
+            ],
+        },
+        {
+            icon: <FaLocationDot className="h-5 w-5" />,
+            title: 'Head Office',
+            details: [
+                '6-A, Jass Nibash, Section-10, Block-B',
+                'Road Avenue-1, Plot-5, Mirpur-10, Dhaka - 1216',
+            ],
+        },
+        {
+            icon: <FaGlobe className="h-5 w-5" />,
+            title: 'Portal',
+            details: ['globalpathwayhub.com'],
+        },
     ];
 
     const faqs = [
-        { question: 'How do I apply to a university?', answer: 'Browse our universities page, select your preferred institution, and click \'Apply Now\'. We\'ll guide you through the application process.' },
-        { question: 'Is your consultation service free?', answer: 'Yes! We offer free initial consultation to help you choose the right university and program.' },
-        { question: 'Can you help with scholarship applications?', answer: 'Absolutely! We provide information about available scholarships and assist with the application process.' },
-        { question: 'How long does the application process take?', answer: 'The timeline varies by university, but typically takes 2-4 weeks from application submission to admission decision.' }
+        { question: 'How do I apply?', answer: 'Pick a university, open its page, and submit your application form.' },
+        { question: 'Is counseling free?', answer: 'Yes. Student advisory and shortlisting are 100% free.' },
+        { question: 'Do you assist with scholarships?', answer: 'Yes, we handle merit award and fee waiver requests.' },
+        { question: 'How long do offers take?', answer: 'Usually 1 to 4 weeks depending on the university.' },
     ];
 
     const faqSchema = getFaqSchema(faqs);
@@ -86,119 +108,105 @@ const Contact = () => {
     ]);
 
     return (
-        <div className="space-y-16 pb-20 container mx-auto px-4 pt-24">
+        <div className="space-y-12 pb-20 container mx-auto px-4 pt-24 max-w-6xl text-black">
             <JsonLd data={faqSchema} />
             <JsonLd data={breadcrumbSchema} />
 
-            <div className="text-center space-y-4">
-                <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Get In Touch</h1>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Have questions? We're here to help you find the perfect university</p>
+            {/* Clean Concise Header */}
+            <div className="text-center space-y-2 max-w-xl mx-auto">
+                <h1 className="text-4xl md:text-5xl font-black tracking-tight gradient-title">Contact Us</h1>
+                <p className="text-sm sm:text-base text-black/75">
+                    Reach our Dhaka office or message a director directly.
+                </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* 4 Contact Summary Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {contactInfo.map((info, index) => (
-                    <GlassCard key={index} className="p-6 space-y-4 hover:border-primary/50 transition-all hover:shadow-2xl hover:shadow-primary/20 group cursor-pointer">
-                        <div className="text-primary group-hover:scale-110 transition-transform">{info.icon}</div>
-                        <h3 className="font-bold text-lg">{info.title}</h3>
-                        <div className="space-y-1">{info.details.map((detail, idx) => <p key={idx} className="text-muted-foreground text-sm">{detail}</p>)}</div>
+                    <GlassCard key={index} className="p-5 space-y-3 bg-white border border-[#144272]/20 hover:border-[#3FC1C9] rounded-lg transition-all">
+                        <div className="text-[#144272]">{info.icon}</div>
+                        <h3 className="font-black text-sm uppercase tracking-wider text-[#144272]">{info.title}</h3>
+                        <div className="space-y-1">
+                            {info.details.map((detail, idx) => (
+                                <p key={idx} className="text-black/75 text-xs font-medium">{detail}</p>
+                            ))}
+                        </div>
                     </GlassCard>
                 ))}
             </div>
 
             {/* Direct Leadership Contacts */}
-            <div className="space-y-8">
-                <div className="text-center space-y-3">
-                    <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 border border-blue-200 px-3.5 py-1.5 rounded-full">
-                        Executive Directory
-                    </span>
-                    <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-                        Direct Leadership &amp; Department Contacts
-                    </h2>
-                    <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
-                        Need executive guidance, university partnership discussions, or technical support? Connect directly with our leadership team.
-                    </p>
-                </div>
+            <div className="space-y-5">
+                <h2 className="text-2xl sm:text-3xl font-black text-[#144272] tracking-tight">
+                    Leadership Contacts
+                </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {TEAM_LIST.map((member) => (
                         <GlassCard
                             key={member.slug}
-                            className={`p-6 space-y-5 bg-white/80 backdrop-blur-xl border ${member.borderColor} shadow-lg hover:shadow-2xl transition-all duration-300 rounded-3xl group flex flex-col justify-between`}
+                            className="p-5 space-y-4 bg-white border border-[#144272]/20 hover:border-[#3FC1C9] transition-all rounded-lg group flex flex-col justify-between"
                         >
-                            <div className="space-y-4">
-                                {/* Photo */}
-                                <Link href={`/profile/${member.slug}`} className="block relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/5] shadow-inner cursor-pointer">
+                            <div className="space-y-3">
+                                <Link href={`/profile/${member.slug}`} className="block relative overflow-hidden rounded-lg bg-[#F5F5F5] aspect-[4/4] border border-[#144272]/15">
                                     <img
                                         src={member.image}
                                         alt={member.name}
-                                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                                     />
-                                    <div className="absolute top-3 right-3">
-                                        <span className="px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-white/95 backdrop-blur-md text-slate-900 shadow-md">
-                                            {member.role}
-                                        </span>
-                                    </div>
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                        <span className="text-xs text-white/90 font-medium">
-                                            {member.badge}
-                                        </span>
-                                    </div>
+                                    <span className="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-lg text-[10px] font-black uppercase bg-[#144272] text-[#FFD749]">
+                                        {member.role}
+                                    </span>
                                 </Link>
 
                                 <div>
                                     <Link href={`/profile/${member.slug}`}>
-                                        <h3 className="text-xl font-black text-slate-900 group-hover:text-blue-600 transition-colors">
+                                        <h3 className="text-lg font-black text-[#144272] group-hover:text-[#3FC1C9] transition-colors">
                                             {member.name}
                                         </h3>
                                     </Link>
-                                    <p className="text-xs font-bold text-blue-600 uppercase tracking-wider mt-0.5">
-                                        {member.fullRole}
-                                    </p>
+                                    <p className="text-xs font-bold text-[#3FC1C9] uppercase">{member.fullRole}</p>
                                     <a
                                         href={`mailto:${member.email}`}
-                                        className="text-xs font-semibold text-slate-700 hover:text-blue-600 flex items-center gap-1.5 mt-1.5 transition-colors"
+                                        className="text-xs font-mono text-black/75 hover:text-[#3FC1C9] flex items-center gap-1.5 mt-1"
                                     >
-                                        <FaEnvelope className="h-3 w-3 text-blue-500 flex-shrink-0" />
-                                        <span className="font-mono">{member.email}</span>
+                                        <FaEnvelope className="h-3 w-3 text-[#144272]" />
+                                        <span>{member.email}</span>
                                     </a>
-                                    <p className="text-xs text-slate-500 flex items-center gap-1.5 mt-1">
-                                        <FaLocationDot className="h-3 w-3 text-rose-500 flex-shrink-0" />
-                                        {member.location}
-                                    </p>
-                                </div>
-
-                                <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
-                                    {member.headline}
-                                </p>
-                            </div>
-
-                            {/* Direct Connect Buttons */}
-                            <div className="space-y-2 pt-2 border-t border-slate-100">
-                                <div className="grid grid-cols-2 gap-2">
                                     <a
-                                        href={`https://api.whatsapp.com/send?phone=${member.whatsapp}&text=${encodeURIComponent(
-                                            `Hello ${member.name}, I am contacting you from the GlobalPathwayHub website.`
-                                        )}`}
+                                        href={`https://api.whatsapp.com/send?phone=${member.whatsapp}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-full"
+                                        className="text-xs font-mono font-bold text-[#144272] hover:text-[#3FC1C9] flex items-center gap-1.5 mt-0.5"
+                                    >
+                                        <FaWhatsapp className="h-3.5 w-3.5 text-[#3FC1C9]" />
+                                        <span>{member.phone}</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="space-y-2 pt-2 border-t border-[#144272]/10">
+                                <div className="grid grid-cols-2 gap-2">
+                                    <a
+                                        href={`https://api.whatsapp.com/send?phone=${member.whatsapp}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                     >
                                         <Button
                                             type="button"
-                                            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold h-9 shadow-xs gap-1.5 flex items-center justify-center"
+                                            className="w-full bg-[#3FC1C9] hover:bg-[#34b0b8] text-[#144272] rounded-lg text-xs font-bold h-9 gap-1.5"
                                         >
                                             <FaWhatsapp className="h-3.5 w-3.5" />
                                             WhatsApp
                                         </Button>
                                     </a>
-
-                                    <a href={`mailto:${member.email}`} className="w-full">
+                                    <a href={`mailto:${member.email}`}>
                                         <Button
                                             type="button"
                                             variant="outline"
-                                            className="w-full border-slate-300 hover:bg-slate-50 rounded-xl text-xs font-bold h-9 gap-1.5 text-slate-700 flex items-center justify-center"
+                                            className="w-full border-[#144272]/25 hover:bg-[#F5F5F5] rounded-lg text-xs font-bold h-9 gap-1.5 text-[#144272]"
                                         >
-                                            <FaEnvelope className="h-3.5 w-3.5 text-blue-600" />
+                                            <FaEnvelope className="h-3.5 w-3.5" />
                                             Email
                                         </Button>
                                     </a>
@@ -208,9 +216,9 @@ const Contact = () => {
                                     <Button
                                         type="button"
                                         variant="outline"
-                                        className="w-full border-blue-200 text-blue-700 bg-blue-50/60 hover:bg-blue-600 hover:text-white rounded-xl text-xs font-bold h-9 shadow-xs flex items-center justify-center gap-1.5 transition-all"
+                                        className="w-full border-[#144272]/25 text-[#144272] bg-[#F5F5F5] hover:bg-[#144272] hover:text-white rounded-lg text-xs font-bold h-9 gap-1.5"
                                     >
-                                        <span>View Profile Details</span>
+                                        <span>View Profile</span>
                                         <FaArrowRight className="h-3 w-3" />
                                     </Button>
                                 </Link>
@@ -220,105 +228,162 @@ const Contact = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <GlassCard className="p-8 space-y-6">
-                    <div className="space-y-2">
-                        <h2 className="text-2xl font-bold">Send Us a Message</h2>
-                        <p className="text-muted-foreground">Fill out the form below and we'll get back to you within 24 hours</p>
+            {/* Office Location & Interactive Google Map */}
+            <GlassCard className="p-6 sm:p-8 bg-white border border-[#144272]/20 rounded-lg">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                    <div className="lg:col-span-1 space-y-4">
+                        <div className="space-y-1.5">
+                            <h2 className="text-xl font-black text-[#144272]">Head Office</h2>
+                            <p className="text-xs sm:text-sm text-black/80 leading-relaxed font-medium">
+                                6-A, Jass Nibash, Section-10, Block-B, Road Avenue-1, Plot-5, Mirpur-10, Mirpur, Dhaka - 1216.
+                            </p>
+                        </div>
+
+                        <div className="space-y-2.5 pt-2 border-t border-[#144272]/10 text-xs">
+                            <div>
+                                <span className="text-[10px] font-bold uppercase tracking-wider text-black/50 block font-mono">
+                                    Hours
+                                </span>
+                                <span className="font-semibold text-black">
+                                    Sat — Thu: 10:00 AM — 6:30 PM (BST)
+                                </span>
+                            </div>
+                            <div>
+                                <span className="text-[10px] font-bold uppercase tracking-wider text-black/50 block font-mono">
+                                    Direct WhatsApp Support
+                                </span>
+                                <div className="space-y-1.5 pt-1">
+                                    <a
+                                        href="https://api.whatsapp.com/send?phone=8801410555054"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[#144272] hover:text-[#3FC1C9] font-bold flex items-center gap-1.5"
+                                    >
+                                        <FaWhatsapp className="h-3.5 w-3.5 text-[#3FC1C9]" />
+                                        <span>Abu Siam Khan (Founder &amp; CEO): +880 1410-555054</span>
+                                    </a>
+                                    <a
+                                        href="https://api.whatsapp.com/send?phone=8801999389199"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[#144272] hover:text-[#3FC1C9] font-bold flex items-center gap-1.5"
+                                    >
+                                        <FaWhatsapp className="h-3.5 w-3.5 text-[#3FC1C9]" />
+                                        <span>Argha Biswas (CTO): +880 1999-389199</span>
+                                    </a>
+                                    <a
+                                        href="https://api.whatsapp.com/send?phone=60175360551"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[#144272] hover:text-[#3FC1C9] font-bold flex items-center gap-1.5"
+                                    >
+                                        <FaWhatsapp className="h-3.5 w-3.5 text-[#3FC1C9]" />
+                                        <span>Shahriar Hassan (Head of Marketing): +60 17-536 0551</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="pt-1 flex flex-wrap gap-2">
+                            <a
+                                href="https://maps.google.com/?q=23.809391,90.368409"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 min-w-[130px]"
+                            >
+                                <Button
+                                    type="button"
+                                    className="w-full bg-[#144272] hover:bg-[#144272]/90 text-[#FFD749] rounded-lg text-xs font-bold h-9 gap-1.5 uppercase tracking-wider"
+                                >
+                                    <FaLocationDot className="h-3.5 w-3.5" />
+                                    Directions
+                                </Button>
+                            </a>
+                            <a
+                                href="https://api.whatsapp.com/send?phone=8801410555054"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 min-w-[130px]"
+                            >
+                                <Button
+                                    type="button"
+                                    className="w-full bg-[#3FC1C9] text-[#144272] hover:bg-[#34b0b8] rounded-lg text-xs font-bold h-9 gap-1.5 uppercase tracking-wider"
+                                >
+                                    <FaWhatsapp className="h-3.5 w-3.5" />
+                                    CEO Desk
+                                </Button>
+                            </a>
+                        </div>
                     </div>
+
+                    <div className="lg:col-span-2 w-full h-[360px] sm:h-[420px] rounded-lg overflow-hidden border border-[#144272]/20 bg-[#F5F5F5]">
+                        <iframe
+                            src="https://maps.google.com/maps?q=23.809391,90.368409+(GlobalPathwayHub+-+Jass+Nibash)&t=&z=18&ie=UTF8&iwloc=B&output=embed"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            title="GlobalPathwayHub Head Office Location Map"
+                            className="w-full h-full rounded-lg"
+                        />
+                    </div>
+                </div>
+            </GlassCard>
+
+            {/* Form + Quick FAQ */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <GlassCard className="p-6 sm:p-8 space-y-5 bg-white border border-[#144272]/20 rounded-lg">
+                    <h2 className="text-xl font-black text-[#144272]">Send a Message</h2>
                     {submitted ? (
                         <div className="text-center py-8 space-y-3">
-                            <div className="flex justify-center">
-                                <FaCircleCheck className="w-12 h-12 text-emerald-500 animate-in zoom-in" />
-                            </div>
-                            <p className="text-lg font-semibold text-emerald-500">Message sent! We'll get back to you soon.</p>
+                            <FaCircleCheck className="w-10 h-10 text-[#3FC1C9] mx-auto" />
+                            <p className="text-base font-bold text-[#144272]">Received. We will reply within 24 hours.</p>
                         </div>
                     ) : (
-                        <form onSubmit={handleSubmit} className="space-y-4">
-                            <div className="space-y-2">
-                                <label className="text-sm font-medium">Your Name *</label>
-                                <Input required name="name" value={formData.name} onChange={handleChange} placeholder="Tanvir Ahmed" className="bg-white/50" />
+                        <form onSubmit={handleSubmit} className="space-y-3.5">
+                            <Input required name="name" value={formData.name} onChange={handleChange} placeholder="Full Name *" className="bg-[#F5F5F5] border-[#144272]/20 rounded-lg" />
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <Input required type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email Address *" className="bg-[#F5F5F5] border-[#144272]/20 rounded-lg" />
+                                <Input name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone / WhatsApp" className="bg-[#F5F5F5] border-[#144272]/20 rounded-lg" />
                             </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium">Email Address *</label>
-                                    <Input required type="email" name="email" value={formData.email} onChange={handleChange} placeholder="tanvir@example.com" className="bg-white/50" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium">Phone Number</label>
-                                    <Input name="phone" value={formData.phone} onChange={handleChange} placeholder="+880 1700-000000" className="bg-white/50" />
-                                </div>
-                            </div>
-                            <div className="space-y-2">
-                                <label className="text-sm font-medium">Subject</label>
-                                <Input name="subject" value={formData.subject} onChange={handleChange} placeholder="Inquiry about UK Master's Programs" className="bg-white/50" />
-                            </div>
-                            <div className="space-y-2">
-                                <label className="text-sm font-medium">Your Message *</label>
-                                <textarea required rows={4} name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your educational background and target universities..." className="w-full px-3 py-2 rounded-xl border border-input bg-white/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary" />
-                            </div>
-                            <Button type="submit" disabled={submitting} className="w-full bg-primary hover:bg-primary/90 text-white font-semibold flex items-center justify-center gap-2">
-                                <FaPaperPlane className="w-4 h-4" />
-                                {submitting ? 'Transmitting...' : 'Send Message'}
+                            <Input name="subject" value={formData.subject} onChange={handleChange} placeholder="Target Country or Subject" className="bg-[#F5F5F5] border-[#144272]/20 rounded-lg" />
+                            <textarea required rows={3} name="message" value={formData.message} onChange={handleChange} placeholder="Your message or academic background *" className="w-full px-3 py-2 rounded-lg border border-[#144272]/20 bg-[#F5F5F5] text-sm focus:outline-none focus:ring-2 focus:ring-[#3FC1C9]" />
+                            <Button type="submit" disabled={submitting} className="w-full bg-[#144272] hover:bg-[#144272]/90 text-[#FFD749] font-bold rounded-lg h-10 gap-2">
+                                <FaPaperPlane className="w-3.5 h-3.5" />
+                                {submitting ? 'Sending...' : 'Send Message'}
                             </Button>
                         </form>
                     )}
                 </GlassCard>
 
-                {/* FAQ & Socials */}
                 <div className="space-y-6">
-                    <GlassCard className="p-8 space-y-6">
-                        <div className="flex items-center gap-2">
-                            <FaCircleQuestion className="w-5 h-5 text-primary" />
-                            <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
-                        </div>
-                        <div className="space-y-4">
+                    <GlassCard className="p-6 space-y-4 bg-white border border-[#144272]/20 rounded-lg">
+                        <h2 className="text-xl font-black text-[#144272]">Quick Answers</h2>
+                        <div className="space-y-3">
                             {faqs.map((faq, index) => (
-                                <div key={index} className="space-y-1 pb-4 border-b border-black/5 last:border-0 last:pb-0">
-                                    <h4 className="font-semibold text-foreground text-sm">{faq.question}</h4>
-                                    <p className="text-muted-foreground text-xs leading-relaxed">{faq.answer}</p>
+                                <div key={index} className="pb-3 border-b border-[#144272]/10 last:border-0 last:pb-0">
+                                    <h3 className="font-bold text-[#144272] text-sm">{faq.question}</h3>
+                                    <p className="text-black/70 text-xs mt-0.5">{faq.answer}</p>
                                 </div>
                             ))}
                         </div>
                     </GlassCard>
 
-                    <GlassCard className="p-6">
-                        <h3 className="font-bold text-sm text-foreground mb-3">Connect on Social Channels</h3>
-                        <div className="flex gap-3">
-                            <a
-                                href="https://www.facebook.com/GlobalPathwayHub"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white flex items-center justify-center transition-all shadow-sm"
-                                aria-label="Facebook"
-                            >
+                    <GlassCard className="p-5 bg-white border border-[#144272]/20 rounded-lg flex items-center justify-between">
+                        <span className="font-bold text-sm text-[#144272]">Follow Us</span>
+                        <div className="flex gap-2">
+                            <a href="https://www.facebook.com/GlobalPathwayHub" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-[#F5F5F5] border border-[#144272]/20 text-[#144272] hover:bg-[#3FC1C9] flex items-center justify-center" aria-label="Facebook">
                                 <FaFacebookF className="h-4 w-4" />
                             </a>
-                            <a
-                                href="https://www.instagram.com/globalpathwayhub"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-full bg-pink-500/10 text-pink-600 hover:bg-pink-600 hover:text-white flex items-center justify-center transition-all shadow-sm"
-                                aria-label="Instagram"
-                            >
+                            <a href="https://www.instagram.com/globalpathwayhub" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-[#F5F5F5] border border-[#144272]/20 text-[#144272] hover:bg-[#3FC1C9] flex items-center justify-center" aria-label="Instagram">
                                 <FaInstagram className="h-4 w-4" />
                             </a>
-                            <a
-                                href="https://x.com/GlobalPathwayHub"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white flex items-center justify-center transition-all shadow-sm"
-                                aria-label="X (formerly Twitter)"
-                            >
+                            <a href="https://x.com/GlobalPathwayHub" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-[#F5F5F5] border border-[#144272]/20 text-[#144272] hover:bg-[#3FC1C9] flex items-center justify-center" aria-label="X">
                                 <FaXTwitter className="h-4 w-4" />
                             </a>
-                            <a
-                                href="https://www.linkedin.com/company/GlobalPathwayHub"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white flex items-center justify-center transition-all shadow-sm"
-                                aria-label="LinkedIn"
-                            >
+                            <a href="https://www.linkedin.com/company/GlobalPathwayHub" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-[#F5F5F5] border border-[#144272]/20 text-[#144272] hover:bg-[#3FC1C9] flex items-center justify-center" aria-label="LinkedIn">
                                 <FaLinkedinIn className="h-4 w-4" />
                             </a>
                         </div>
@@ -330,3 +395,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+

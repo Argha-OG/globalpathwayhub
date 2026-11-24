@@ -30,6 +30,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: `${SITE_URL}/guide`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/about`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
@@ -65,6 +71,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   let universityRoutes: MetadataRoute.Sitemap = [];
   let courseRoutes: MetadataRoute.Sitemap = [];
+  let guideRoutes: MetadataRoute.Sitemap = [];
 
   try {
     // Fetch partner universities from Neon PostgreSQL
@@ -102,5 +109,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('Sitemap: Failed to fetch dynamic courses:', err);
   }
 
-  return [...staticRoutes, ...teamRoutes, ...universityRoutes, ...courseRoutes];
+  try {
+    const guideRes = await query(
+      "SELECT slug, updated_at, created_at FROM guides WHERE status = 'published' ORDER BY created_at DESC LIMIT 2000"
+    );
+    if (guideRes && guideRes.rows) {
+      const rows = guideRes.rows as Array<{ slug: string; updated_at?: string; created_at?: string }>;
+      guideRoutes = rows.map((g) => ({
+        url: `${SITE_URL}/guide/${encodeURIComponent(g.slug)}`,
+        lastModified: g.updated_at ? new Date(g.updated_at) : currentDate,
+        changeFrequency: 'weekly',
+        priority: 0.8,
+      }));
+    }
+  } catch (err) {
+    console.error('Sitemap: Failed to fetch dynamic guides:', err);
+  }
+
+  return [...staticRoutes, ...teamRoutes, ...universityRoutes, ...courseRoutes, ...guideRoutes];
 }

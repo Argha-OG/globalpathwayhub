@@ -1,10 +1,16 @@
 import { NextResponse } from 'next/server';
 import { query } from '@/lib/db';
+import { getCurrentUser } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
 
 export async function PUT(request: Request) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user || user.role !== 'admin') {
+      return NextResponse.json({ success: false, message: 'Unauthorized access. Administrator privileges required.' }, { status: 403 });
+    }
+
     const { ids, status, branch, role } = await request.json();
 
     if (!Array.isArray(ids) || ids.length === 0) {

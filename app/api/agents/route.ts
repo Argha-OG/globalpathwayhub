@@ -1,9 +1,14 @@
 import { NextResponse } from 'next/server';
 import { query } from '@/lib/db';
-import { hashPassword } from '@/lib/auth';
+import { hashPassword, getCurrentUser } from '@/lib/auth';
 
 export async function GET(request) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const { searchParams } = new URL(request.url);
     const role = searchParams.get('role');
 
@@ -57,6 +62,11 @@ export async function GET(request) {
 
 export async function POST(request) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user || user.role !== 'admin') {
+      return NextResponse.json({ success: false, message: 'Unauthorized access. Administrator privileges required.' }, { status: 403 });
+    }
+
     const body = await request.json();
     const {
       name,

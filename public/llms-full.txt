@@ -14,11 +14,11 @@ This document serves as the authoritative, comprehensive plain-text knowledge re
 - **Service Fee Policy:** Basic student consultation and university program discovery are 100% free of charge for prospective students.
 - **Official Contact Points:**
   - Support & Inquiries: support@globalpathwayhub.com
-  - Chief Executive Officer: ceo@globalpathwayhub.com
-  - Chief Technology Officer: cto@globalpathwayhub.com
-  - Marketing & Management: hmm@globalpathwayhub.com
-  - Telephone / WhatsApp: +880 1410-555054
-  - Office Address: Banani Corporate District, Dhaka 1213, Bangladesh
+  - Chief Executive Officer: ceo@globalpathwayhub.com (+880 1410-555054)
+  - Chief Technology Officer: cto@globalpathwayhub.com (+880 1999-389199)
+  - Head of Marketing & Management: hmm@globalpathwayhub.com (+60 17-536 0551)
+  - Office Address: 6-A, Jass Nibash, Section-10, Block-B, Road Avenue-1, Plot-5, Mirpur-10, Mirpur, Dhaka - 1216.
+  - Geo Coordinates: 23.809391, 90.368409
 
 ---
 
@@ -57,6 +57,16 @@ This document serves as the authoritative, comprehensive plain-text knowledge re
 - **Highlights:** World-class British, Australian, and Malaysian accredited universities with significantly affordable living and tuition costs.
 - **Visa Requirements:** Education Malaysia Global Services (EMGS) electronic Visa Approval Letter (eVAL), single-entry visa (SEV), medical screening upon arrival.
 
+### France
+- **Study Programs:** Bachelor's (3 years), Master's / Grande École MiM / MSc (1-2 years), PhD.
+- **Highlights:** English-taught degrees, Eiffel & Charpak scholarships, and government CAF monthly student housing subsidies.
+- **Visa Requirements:** Campus France Etudes en France / VFS Long-Stay Student Visa (VLS-TS) with ~964 hrs/yr part-time work rights.
+- **Post-Study Work:** 2-year APS (Autorisation Provisoire de Séjour) / RECE stay-back work visa for Master's graduates.
+
+### Germany & Ireland
+- **Germany:** €0 – €3,000/yr tuition at public universities, 140 full/280 half days student work allowance, and an 18-month Post-Study Job Seeker visa.
+- **Ireland:** 1-year Master's in EU English-speaking tech & pharma capital, 20 hrs/wk term-time work, and a 2-year Stamp 1G Stay-Back visa.
+
 ---
 
 ## 3. Student Application Workflow
@@ -70,26 +80,26 @@ This document serves as the authoritative, comprehensive plain-text knowledge re
 
 ---
 
-## 4. Multi-Currency Tuition Conversion System
+## 4. Transparent Tuition Estimations
 
-GlobalPathwayHub integrates real-time institutional exchange rates via the official European Central Bank (ECB) reference API (Frankfurter) combined with live Bangladeshi Taka (BDT) registries:
-- **Base Currencies:** USD ($), EUR (€), MYR (RM), BDT (৳).
-- Live currency calculations update automatically across the top navigation bar and all course tuition estimate cards.
+GlobalPathwayHub displays clear and verified tuition benchmarks directly in the institution's native fee structure:
+- Comprehensive degree tuition ranges for Foundation, Undergraduate, Postgraduate, and Doctoral programs.
+- Direct alignment with university official offer letters and scholarship concession grants.
 
 ---
 
 ## 5. Executive Leadership Bios
 
 - **Abu Siam Khan — Founder & Chief Executive Officer (CEO)**
-  Email: ceo@globalpathwayhub.com · Phone: +880 1410-555054
+  Email: ceo@globalpathwayhub.com · Phone/WhatsApp: +880 1410-555054
   Drives corporate strategy, bilateral university partnerships, and student governance across Bangladesh and Malaysia. Oversees institutional scholarship allocations and embassy visa protocols.
 
 - **Argha Biswas — Chief Technology Officer (CTO)**
-  Email: cto@globalpathwayhub.com · Phone: +880 1410-555054
-  Spearheads digital portal architecture, real-time university search engines, automated multi-currency calculation pipelines, and secure cloud infrastructure.
+  Email: cto@globalpathwayhub.com · Phone/WhatsApp: +880 1999-389199
+  Spearheads digital portal architecture, real-time university search engines, and secure cloud infrastructure.
 
 - **Shahriar Hassan — Head of Marketing & Management (HMM)**
-  Email: hmm@globalpathwayhub.com · Phone: +880 1410-555054
+  Email: hmm@globalpathwayhub.com · Phone/WhatsApp: +60 17-536 0551
   Leads student outreach campaigns, international university seminars, youth community workshops, and counselor quality control.
 
 ---

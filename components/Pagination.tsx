@@ -52,24 +52,24 @@ export default function Pagination({
     const pages = getPageNumbers();
 
     return (
-        <div className={`flex flex-col sm:flex-row items-center justify-between gap-4 py-3 px-2 text-xs text-slate-600 ${className}`}>
+        <div className={`flex flex-col sm:flex-row items-center justify-between gap-4 py-3 px-2 text-xs text-black/70 ${className}`}>
             {/* Items count summary & page size */}
             <div className="flex items-center gap-3">
                 {totalItems > 0 && (
                     <span>
-                        Showing <strong className="font-semibold text-slate-800">{startItem}</strong> to{' '}
-                        <strong className="font-semibold text-slate-800">{endItem}</strong> of{' '}
-                        <strong className="font-semibold text-slate-800">{totalItems}</strong> entries
+                        Showing <strong className="font-bold text-[#144272]">{startItem}</strong> to{' '}
+                        <strong className="font-bold text-[#144272]">{endItem}</strong> of{' '}
+                        <strong className="font-bold text-[#144272]">{totalItems}</strong> entries
                     </span>
                 )}
 
                 {onPageSizeChange && (
-                    <div className="flex items-center gap-1.5 ml-2 pl-3 border-l border-slate-200">
-                        <span className="text-slate-500">Rows:</span>
+                    <div className="flex items-center gap-1.5 ml-2 pl-3 border-l border-[#144272]/15">
+                        <span className="text-black/60">Rows:</span>
                         <select
                             value={pageSize}
                             onChange={(e) => onPageSizeChange(Number(e.target.value))}
-                            className="bg-white/80 border border-slate-300 rounded px-2 py-1 text-xs text-slate-700 focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer"
+                            className="bg-white border border-[#144272]/20 rounded-lg px-2 py-1 text-xs text-black focus:outline-none focus:ring-1 focus:ring-[#3FC1C9] cursor-pointer"
                         >
                             {pageSizeOptions.map((opt) => (
                                 <option key={opt} value={opt}>
@@ -91,7 +91,7 @@ export default function Pagination({
                         size="sm"
                         onClick={() => onPageChange(1)}
                         disabled={currentPage <= 1}
-                        className="h-8 w-8 p-0 border-slate-200 hover:bg-slate-100 disabled:opacity-40"
+                        className="h-8 w-8 p-0 border-[#144272]/20 text-[#144272] hover:bg-[#F5F5F5] rounded-lg disabled:opacity-40"
                         title="First Page"
                     >
                         <FaAnglesLeft className="h-3 w-3" />
@@ -104,7 +104,7 @@ export default function Pagination({
                         size="sm"
                         onClick={() => onPageChange(currentPage - 1)}
                         disabled={currentPage <= 1}
-                        className="h-8 w-8 p-0 border-slate-200 hover:bg-slate-100 disabled:opacity-40"
+                        className="h-8 w-8 p-0 border-[#144272]/20 text-[#144272] hover:bg-[#F5F5F5] rounded-lg disabled:opacity-40"
                         title="Previous Page"
                     >
                         <FaChevronLeft className="h-3 w-3" />
@@ -120,10 +120,10 @@ export default function Pagination({
                                 variant={isActive ? 'default' : 'outline'}
                                 size="sm"
                                 onClick={() => onPageChange(p)}
-                                className={`h-8 w-8 p-0 text-xs font-semibold ${
+                                className={`h-8 w-8 p-0 text-xs font-bold rounded-lg ${
                                     isActive
-                                        ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
-                                        : 'border-slate-200 text-slate-700 hover:bg-slate-100'
+                                        ? 'bg-[#144272] text-[#FFD749] hover:bg-[#144272]/90 border-[#144272] shadow-sm'
+                                        : 'border-[#144272]/20 text-[#144272] hover:bg-[#F5F5F5]'
                                 }`}
                             >
                                 {p}
@@ -138,7 +138,7 @@ export default function Pagination({
                         size="sm"
                         onClick={() => onPageChange(currentPage + 1)}
                         disabled={currentPage >= totalPages}
-                        className="h-8 w-8 p-0 border-slate-200 hover:bg-slate-100 disabled:opacity-40"
+                        className="h-8 w-8 p-0 border-[#144272]/20 text-[#144272] hover:bg-[#F5F5F5] rounded-lg disabled:opacity-40"
                         title="Next Page"
                     >
                         <FaChevronRight className="h-3 w-3" />
@@ -151,7 +151,7 @@ export default function Pagination({
                         size="sm"
                         onClick={() => onPageChange(totalPages)}
                         disabled={currentPage >= totalPages}
-                        className="h-8 w-8 p-0 border-slate-200 hover:bg-slate-100 disabled:opacity-40"
+                        className="h-8 w-8 p-0 border-[#144272]/20 text-[#144272] hover:bg-[#F5F5F5] rounded-lg disabled:opacity-40"
                         title="Last Page"
                     >
                         <FaAnglesRight className="h-3 w-3" />

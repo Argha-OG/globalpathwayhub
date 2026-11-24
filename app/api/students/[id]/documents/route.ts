@@ -1,9 +1,15 @@
 import { NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 import { uploadToR2, deleteFromR2 } from '@/lib/r2';
+import { getCurrentUser } from '@/lib/auth';
 
 export async function POST(request, { params }) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const { id: studentId } = params;
     const formData = await request.formData();
     const file = formData.get('file');
@@ -51,6 +57,11 @@ export async function POST(request, { params }) {
 
 export async function DELETE(request, { params }) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const { searchParams } = new URL(request.url);
     const documentId = searchParams.get('documentId');
 

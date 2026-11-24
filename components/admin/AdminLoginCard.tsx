@@ -7,7 +7,7 @@ import GlassCard from '@/components/GlassCard';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { FaShieldHalved, FaUserCheck, FaArrowLeft, FaLock, FaEnvelope } from 'react-icons/fa6';
+import { FaArrowLeft, FaLock, FaEnvelope } from 'react-icons/fa6';
 import toast from 'react-hot-toast';
 
 export default function AdminLoginCard({ onLoginSuccess }: { onLoginSuccess?: (user: any) => void }) {
@@ -52,18 +52,6 @@ export default function AdminLoginCard({ onLoginSuccess }: { onLoginSuccess?: (u
         }
     };
 
-    const fillDemo = (role) => {
-        if (role === 'admin') {
-            setEmail('admin@globalpathwayhub.com');
-            setPassword('Admin@GPH2026!');
-            toast.success('Super Admin credentials loaded');
-        } else {
-            setEmail('tanvir@globalpathwayhub.com');
-            setPassword('Agent@GPH2026!');
-            toast.success('Partner Agent credentials loaded');
-        }
-    };
-
     return (
         <div
             className="flex items-center justify-center min-h-[90vh] px-4 py-12"
@@ -76,10 +64,10 @@ export default function AdminLoginCard({ onLoginSuccess }: { onLoginSuccess?: (u
                 `,
             }}
         >
-            <GlassCard className="w-full max-w-md space-y-6 p-8 shadow-2xl border-white/60 bg-white/85 backdrop-blur-2xl rounded-3xl">
+            <GlassCard className="w-full max-w-md space-y-6 p-8 shadow-xl border-slate-200 bg-white/95 backdrop-blur-2xl rounded-lg">
                 <div className="text-center space-y-2">
                     <img src="/globalpathwayhub-logo.png" alt="Logo" className="h-16 w-auto mx-auto mb-2 drop-shadow-md" />
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold border border-primary/20">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200">
                         <FaLock className="w-3 h-3" />
                         Admin & Agent Management Portal
                     </div>
@@ -90,7 +78,7 @@ export default function AdminLoginCard({ onLoginSuccess }: { onLoginSuccess?: (u
                 </div>
 
                 {error && (
-                    <div className="bg-rose-50 border border-rose-200 text-rose-600 p-3 rounded-xl text-xs text-center font-medium">
+                    <div className="bg-rose-50 border border-rose-200 text-rose-600 p-3 rounded-lg text-xs text-center font-medium">
                         {error}
                     </div>
                 )}
@@ -108,7 +96,7 @@ export default function AdminLoginCard({ onLoginSuccess }: { onLoginSuccess?: (u
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            className="bg-white/90 border-slate-200 text-slate-900 rounded-xl text-sm focus:ring-primary/20"
+                            className="bg-white border-slate-200 text-slate-900 rounded-lg text-sm focus:ring-primary/20"
                         />
                     </div>
                     <div className="space-y-1.5">
@@ -125,45 +113,16 @@ export default function AdminLoginCard({ onLoginSuccess }: { onLoginSuccess?: (u
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            className="bg-white/90 border-slate-200 text-slate-900 rounded-xl text-sm focus:ring-primary/20"
+                            className="bg-white border-slate-200 text-slate-900 rounded-lg text-sm focus:ring-primary/20"
                         />
                     </div>
-                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white rounded-xl shadow-lg shadow-primary/25 font-semibold h-11 text-sm" disabled={loading}>
+                    <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm font-bold h-10 text-xs uppercase tracking-wider" disabled={loading}>
                         {loading ? 'Authenticating...' : 'Enter Admin Portal'}
                     </Button>
                 </form>
 
-                {/* Quick 1-Click Demo Logins for Developers & Owners */}
-                <div className="pt-2 border-t border-slate-100 space-y-2">
-                    <p className="text-[11px] text-slate-500 text-center font-medium">Quick 1-Click Access for Testing:</p>
-                    <div className="grid grid-cols-2 gap-2">
-                        <button
-                            type="button"
-                            onClick={() => fillDemo('admin')}
-                            className="text-xs p-2.5 rounded-xl bg-amber-50/80 hover:bg-amber-100/90 border border-amber-200/80 text-left transition-colors flex items-center gap-2 shadow-sm"
-                        >
-                            <FaShieldHalved className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                            <div>
-                                <div className="font-semibold text-slate-900 text-[11px]">Super Admin</div>
-                                <div className="text-[10px] text-amber-800">Executive Access</div>
-                            </div>
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => fillDemo('agent')}
-                            className="text-xs p-2.5 rounded-xl bg-blue-50/80 hover:bg-blue-100/90 border border-blue-200/80 text-left transition-colors flex items-center gap-2 shadow-sm"
-                        >
-                            <FaUserCheck className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                            <div>
-                                <div className="font-semibold text-slate-900 text-[11px]">Partner Agent</div>
-                                <div className="text-[10px] text-blue-800">Counselor Access</div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-
-                <div className="text-center text-xs text-slate-500 pt-1">
-                    <Link href="/" className="hover:text-primary transition-colors flex items-center justify-center gap-1.5 font-medium">
+                <div className="text-center text-xs text-slate-500 pt-2 border-t border-slate-100">
+                    <Link href="/" className="hover:text-blue-600 transition-colors flex items-center justify-center gap-1.5 font-medium">
                         <FaArrowLeft className="w-3 h-3" />
                         Return to Public Website
                     </Link>

@@ -1,8 +1,14 @@
 import { NextResponse } from 'next/server';
 import { query, formatStudent } from '@/lib/db';
+import { getCurrentUser } from '@/lib/auth';
 
 export async function POST(request, { params }) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json({ success: false, message: 'Unauthorized access' }, { status: 401 });
+    }
+
     const { id: leadId } = params;
 
     const leadRes = await query('SELECT * FROM leads WHERE id = $1', [leadId]);

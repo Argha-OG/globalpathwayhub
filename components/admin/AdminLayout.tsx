@@ -12,6 +12,7 @@ import {
     FaArrowTrendDown,
     FaBuildingColumns,
     FaChartLine,
+    FaBookOpen,
     FaArrowRightFromBracket,
     FaBars,
     FaXmark,
@@ -30,6 +31,7 @@ const navItems = [
     { name: 'Revenue & Invoicing', path: '/admin/finance/revenue', icon: FaArrowTrendUp },
     { name: 'Cost & Expense Ledger', path: '/admin/finance/costs', icon: FaArrowTrendDown },
     { name: 'Universities & Courses', path: '/admin/universities', icon: FaBuildingColumns },
+    { name: 'Guides & Blog', path: '/admin/guides', icon: FaBookOpen },
     { name: 'Visitors & Analytics', path: '/admin/analytics', icon: FaChartLine },
 ];
 
@@ -55,7 +57,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         setLoading(false);
     }, [pathname]);
 
-    const handleLogout = () => {
+    const handleLogout = async () => {
+        try {
+            await fetch('/api/auth/logout', { method: 'POST' });
+        } catch {
+            // ignore network errors on logout
+        }
         localStorage.removeItem('admin_user');
         localStorage.removeItem('user');
         localStorage.removeItem('gph_token');

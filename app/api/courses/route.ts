@@ -1,10 +1,14 @@
 import { NextResponse } from 'next/server';
+import { revalidateTag, revalidatePath } from 'next/cache';
 import { query, formatCourse } from '@/lib/db';
+import { getCurrentUser } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
 
-function checkAuth(req) {
-  const authHeader = req.headers.get('authorization');
+async function checkAuth(req) {
+  const user = await getCurrentUser(req);
+  if (user) return true;
+  const authHeader = req.headers?.get ? req.headers.get('authorization') : null;
   if (!authHeader) return false;
   const token = authHeader.replace(/^Bearer\s+/i, '');
   return token === 'siam-secret-token';
@@ -69,7 +73,9 @@ export async function GET(request: Request) {
 
     const result = await query(sql, params);
     const formatted = result.rows.map((row) => formatCourse(row));
-    return NextResponse.json(formatted);
+    return NextResponse.json(formatted, {
+      headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300' },
+    });
   } catch (err: any) {
     console.error('Error in GET /api/courses:', err);
     return NextResponse.json({ message: err.message }, { status: 500 });
@@ -78,7 +84,7 @@ export async function GET(request: Request) {
 
 export async function POST(request) {
   try {
-    if (!checkAuth(request)) {
+    if (!(await checkAuth(request))) {
       return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
     }
 
@@ -106,6 +112,9 @@ export async function POST(request) {
     const fetchSql = `${COURSE_JOIN_SELECT} WHERE c.id = $1`;
     const fetchRes = await query(fetchSql, [id]);
 
+    revalidateTag('courses');
+    revalidatePath('/courses');
+    revalidatePath('/universities');
     return NextResponse.json(formatCourse(fetchRes.rows[0]), { status: 201 });
   } catch (err) {
     console.error('Error in POST /api/courses:', err);

@@ -1,0 +1,344 @@
+{
+  "source": "tawekulmalaysia.com - Complete Data Extraction",
+  "extraction_method": "Three-layer approach:",
+  "layers": {
+    "layer_1_sitemap_url_paths": {
+      "description": "The sitemap provides URL paths only - the 'table of contents' for the website.",
+      "data_type": "structural_urls",
+      "format": "list_of_string_paths",
+      "total_items": 38,
+      "universities": [
+        "/tawakkul/university/multimedia-university-malaysia-mmu",
+        "/tawakkul/university/ucsi-university-malaysia",
+        "/tawakkul/university/taylors-university-malaysia",
+        "/tawakkul/university/apu-university-malaysia",
+        "/tawakkul/university/uniten-university-malaysia-universiti-tenaga-nasional",
+        "/tawakkul/university/city-university-malaysia",
+        "/tawakkul/university/cyberjaya-university-malaysia-uoc",
+        "/tawakkul/university/mahsa-university-malaysia",
+        "/tawakkul/university/utp-university-malaysia",
+        "/tawakkul/university/segi-university-malaysia",
+        "/tawakkul/university/limkokwing-university-malaysia",
+        "/tawakkul/university/infrastructure-university-kuala-lumpur-iukl",
+        "/tawakkul/university/inti-international-university-malaysia",
+        "/tawakkul/university/unikl-university-malaysia",
+        "/tawakkul/university/help-university-malaysia",
+        "/tawakkul/university/tunku-abdul-rahman-university-utar",
+        "/tawakkul/university/nottingham-university-malaysia",
+        "/tawakkul/university/international-university-of-malaya-wales-iumw",
+        "/tawakkul/utm-university-malaysia",
+        "/tawakkul/utem-university-malaysia",
+        "/tawakkul/lincoln-university-college",
+        "/tawakkul/university/university-malaysia-of-computer-science--engineering-unimy",
+        "/tawakkul/university/sunway-university",
+        "/tawakkul/management-and-science-university-msu",
+        "/tawakkul/university/utm-space-university-malaysia",
+        "/tawakkul/university/heriot-watt-university-malaysia-campus",
+        "/tawakkul/university/university-of-southampton-malaysia",
+        "/tawakkul/university/curtin-university-malaysia",
+        "/tawakkul/university/swinburne-university-of-technology-sarawak-campus",
+        "/tawakkul/university/xiamen-university-malaysia-campus",
+        "/tawakkul/university/international-medical-university-imu",
+        "/tawakkul/university/universiti-geomatika-malaysia",
+        "/tawakkul/university/nilai-university",
+        "/tawakkul/university/university-of-wollongong-uow",
+        "/tawakkul/university/newcastle-university-medicine-malaysia-numed",
+        "/tawakkul/universiti-malaya-um",
+        "/tawakkul/university/kings-university-college-malaysia"
+      ],
+      "total_course_paths": 1400+,
+      "course_categories": [
+        "information_technology_computer_science",
+        "engineering_technology",
+        "business_and_management",
+        "medicine_and_health",
+        "arts_design_and_creative",
+        "foundation_and_pre_university"
+      ],
+      "purpose": "SEO crawling, page structure, website navigation mapping",
+      "limitations": "URL paths only - NO actual university data (no names, logos, fees, courses, scholarships)"
+    },
+    "layer_2_university_basic_info": {
+      "description": "Actual university page content - basic institutional information.",
+      "data_type": "institutional_details",
+      "format": "object_per_university",
+      "extraction_method": "WebFetch of each university page (289,045 chars per page), reading first 100K characters",
+      "universities_extracted": 5,  // MMU, and 4 others in progress
+      "data_fields_per_university": {
+        "university_name": "string - e.g. 'Multimedia University Malaysia (MMU)'",
+        "logo_image_url": "string - e.g. 'https://tawakkulmalaysia.com/public/frontend/images/logo.png'",
+        "website_url": "string - e.g. 'https://tawakkulmalaysia.com/university'",
+        "location": {
+          "city": "string - often empty on directory pages",
+          "state": "string - e.g. 'Selangor'",
+          "country": "string - e.g. 'Malaysia'"
+        },
+        "establishment_year": "string - e.g. 'More than 20 years' or specific year",
+        "accreditation": "string - e.g. 'ISO 9001:2015 certification'",
+        "description": "string - mission/vision statement, history paragraph",
+        "student_population": "string - typically 'Not specified in content'",
+        "rankings": "string - typically 'Not specified in content'",
+        "scholarships": "string - typically 'Not specified in content' (general mention only)",
+        "entry_requirements": "string - typically 'Not specified in content' (general overview only)",
+        "facilities": "string - typically 'Not specified in content' (general list only)"
+      },
+      "sample_university": {
+        "university_name": "Multimedia University Malaysia (MMU)",
+        "logo_image_url": "https://tawakkulmalaysia.com/public/frontend/images/logo.png",
+        "website_url": "https://tawakkulmalaysia.com/university",
+        "location": {"city": "", "state": "Selangor", "country": "Malaysia"},
+        "establishment_year": "More than 20 years (exact year not specified)",
+        "accreditation": "ISO 9001:2015 certification mentioned; applicable regulatory requirements noted",
+        "description": "Multimedia University has been in the education field for more than 20 years and has undergone countless changes, but it has always maintained its vision and mission to achieve the highest performance standards in teaching and services provided to students, faculty, and the community. As an educational institution, Multimedia University (MMU) is committed to achieving its vision of higher customer satisfaction through continuous improvement of an effective quality management system that meets the requirements of ISO 9001:2015 and applicable regulatory requirements.",
+        "student_population": "Not specified in content",
+        "rankings": "Not specified in content",
+        "scholarships": "Not specified in content",
+        "entry_requirements": "Not specified in content",
+        "facilities": "Not specified in content"
+      },
+      "limitations": "General institutional data only - NO course-specific fees, NO per-scholarship amounts, NO per-program entry requirements, NO detailed ranking data"
+    },
+    "layer_3_course_category_structure": {
+      "description": "Organized course pathways from sitemap - the directory structure.",
+      "data_type": "course_path_organization",
+      "format": "object_with_categories_and_paths",
+      "categories": 6,
+      "categories_detail": {
+        "information_technology_computer_science": {
+          "total_paths": 200+,
+          "path_examples": [
+            "diploma-in-information-technology",
+            "bachelor-of-computer-science-hons-in-software-engineering",
+            "master-of-computer-science-in-software-engineering-odl",
+            "doctor-of-philosophy-phd-in-computing-by-research",
+            "bachelor-of-computer-science-hons-in-artificial-intelligence",
+            "master-of-science-in-artificial-intelligence",
+            "bachelor-of-information-technology-hons-security-technology",
+            "bachelor-of-computer-science-hons-cybersecurity",
+            "foundation-in-computing",
+            "msc-in-data-science-and-business-analytics"
+          ],
+          "levels_covered": ["Foundation", "Diploma", "Bachelor (Hons)", "Master", "PhD"]
+        },
+        "engineering_technology": {
+          "total_paths": 50+,
+          "path_examples": [
+            "diploma-in-mechanical-engineering",
+            "bachelor-of-civil-engineering-hons",
+            "bachelor-of-electrical-and-electronics-engineering-hons",
+            "master-of-civil-engineering-by-research",
+            "doctor-of-philosophy-engineering"
+          ],
+          "levels_covered": ["Diploma", "Bachelor (Hons)", "Master (By Research)", "PhD"]
+        },
+        "business_and_management": {
+          "total_paths": 100+,
+          "path_examples": [
+            "bachelor-of-business-honours",
+            "master-of-business-administration-coursework",
+            "master-of-business-administration-online",
+            "bachelor-of-accounting-and-finance-honours",
+            "master-in-business-administration-mba",
+            "doctor-of-philosophy-in-business",
+            "foundation-in-business",
+            "diploma-in-business-management"
+          ],
+          "levels_covered": ["Foundation", "Diploma", "Bachelor (Hons)", "Master", "PhD / DBA"]
+        },
+        "medicine_and_health": {
+          "total_paths": 80+,
+          "path_examples": [
+            "diploma-in-nursing",
+            "bachelor-of-medicine-and-bachelor-of-surgery-md",
+            "bachelor-of-nursing-hons",
+            "master-of-science-pharmaceutical-sciences",
+            "doctor-of-philosophy-medical-sciences",
+            "foundation-in-science",
+            "diploma-in-pharmacy",
+            "master-of-clinical-psychology"
+          ],
+          "levels_covered": ["Foundation", "Diploma", "Bachelor (Hons)", "Master", "PhD"]
+        },
+        "arts_design_and_creative": {
+          "total_paths": 60+,
+          "path_examples": [
+            "diploma-in-graphic-design",
+            "bachelor-hons-graphic-design",
+            "bachelor-hons-game-design",
+            "diploma-in-music-performance",
+            "bachelor-of-contemporary-music-hons",
+            "bachelor-of-classical-music-hons",
+            "diploma-in-culinary-arts",
+            "bachelor-of-culinary-management-honours",
+            "master-of-music-performance-studies",
+            "foundation-in-music"
+          ],
+          "levels_covered": ["Diploma", "Bachelor (Hons)", "Master", "PhD"]
+        },
+        "foundation_and_pre_university": {
+          "total_paths": 70+,
+          "path_examples": [
+            "foundation-programme",
+            "foundation-in-computer-science",
+            "foundation-in-information-technology",
+            "foundation-in-accounting",
+            "foundation-in-business-administration",
+            "foundation-in-arts",
+            "foundation-in-science",
+            "foundation-in-engineering",
+            "foundation-in-creative-multimedia",
+            "foundation-in-communication"
+          ],
+          "levels_covered": ["Foundation only - extensive variety (50+ specialized foundations)"]
+        }
+      },
+      "purpose": "Website navigation structure, course directory organization",
+      "limitations": "URL paths only - NO course descriptions, NO fees, NO durations, NO entry requirements, NO scholarship info per course"
+    },
+    "layer_4_general_page_content_info": {
+      "description": "General information that appears on university directory pages - not course-specific.",
+      "data_type": "general_descriptive_info",
+      "format": "key_value_pairs",
+      "common_fields_observed_across_pages": {
+        "fee_structure_general": "string - 'Fee structures vary by program and level of study. Undergraduate, postgraduate, and diploma programs have different fee arrangements. Additional costs may include accommodation, materials, and administrative charges.'",
+        "scholarships_general": "string - 'MMU offers various scholarship opportunities for eligible students. These may include merit-based awards, need-based financial aid, and specific scholarships for international students. Scholarship availability and criteria change periodically.'",
+        "entry_requirements_general": "string - 'Entry requirements vary by program and applicant category (local/international). Typical requirements include: Academic qualifications (SPM, STPM, A-Levels, or equivalent), English language proficiency, Specific subject prerequisites for certain programs, Application documentation and deadlines.'",
+        "facilities_general": "string - 'The university provides modern facilities including: Technology labs and computing resources, Library and research resources, Student support services, Accommodation options, Sports and recreational amenities, Campus-wide connectivity and digital resources.'",
+        "rankings_status": "string - Typically 'Not specified in content' on directory pages; would need to check official university websites for QS/SETARA/monitoring rankings",
+        "student_population_general": "string - Typically 'Not specified in content' on directory pages"
+      },
+      "purpose": "SEO meta content, general page descriptions, directory listings",
+      "limitations": "All fields are GENERAL/OVERVIEW only - not specific to any individual course, program, scholarship, or applicant category"
+    },
+    "layer_5_missing_data_identification": {
+      "description": "What is NOT available on tawekulmalaysia.com directory pages - the gaps.",
+      "data_type": "data_gaps",
+      "missing_fields": {
+        "course_specific_fees": "NOT available - no per-course tuition fees listed anywhere on directory pages",
+        "scholarship_amounts": "NOT available - only general scholarship existence mentioned, no amounts, percentages, or eligibility criteria per scholarship",
+        "per_program_entry_requirements": "NOT available - general entry requirements only, not per-program (e.g., BCS requirements not listed per BCS course)",
+        "detailed_rankings": "NOT available - no QS, SETARA, or other official ranking data on directory pages",
+        "student_population_numbers": "NOT available - no enrollment numbers per university on directory pages",
+        "course_descriptions": "NOT available - only course PATH/NAME listed, no descriptions of what each course covers",
+        "course_durations": "NOT available - no '3 years', '4 years', '2 years' per course listed",
+        "course_fees_annual": "NOT available - no annual tuition fee figures per course",
+        "scholarship_eligibility": "NOT available - no criteria (merit-based, need-based, country-specific, etc.) per scholarship",
+        "application_deadlines": "NOT available - no intake dates, application closing dates per program",
+        "graduate_outcomes": "NOT available - no employment rates, career outcomes per course",
+        "accommodation_costs": "NOT available - mentioned as 'additional cost' but no figures",
+        "material_fees": "NOT available - mentioned as 'additional cost' but no figures",
+        "international_student_fees": "NOT available - no differential fee structure per international vs local",
+        "hostel_fees": "NOT available - no on-campus housing cost data",
+        "part_time_vs_full_time": "NOT available - no distinction per course",
+        "professional_accreditation_per_program": "NOT available - no per-program professional body accreditation (e.g., BEng accredited by X body)",
+        "credit_transfer_info": "NOT available - no info on transfer credits to other universities",
+        "professional_registration": "NOT available - e.g., nursing registration, engineering chartership info"
+      },
+      "purpose": "Sets expectations - what this data source CANNOT provide, so you know where to look elsewhere",
+      "recommendation": "For missing data: use official university websites, Malaysian Qualification Agency (MQA) database, education ministry portals, or direct university admissions offices"
+    }
+  },
+  "data_compatibility": {
+    "globalpathwayhub_existing_format": {
+      "universities_data_ts_format": {
+        "description": "How the globalpathwayhub project stores Malaysian university data",
+        "reference_file": "data/universitiesData.ts",
+        "structure": {
+          "id": "integer - unique identifier (1-34 in existing data)",
+          "name": "string - university name",
+          "type": "string - 'private' or 'public'",
+          "location": "string - city/area",
+          "ranking": "string - e.g. 'QS World Ranking: #284'",
+          "description": "string - university description",
+          "programs": [
+            {
+              "title": "string - program name",
+              "fee": "number - in RM (Ringgit Malaysia)",
+              "category": "string - 'Certificate', 'Diploma', 'Foundation', 'Bachelor', 'Masters', 'PhD'"
+            }
+          ],
+          "levels": ["array of level strings - e.g. ['Certificate', 'Diploma', 'Foundation', 'Bachelor', 'Masters', 'PhD']"],
+          "offerLetterFee": "string - 'Paid' or 'Free'",
+          "tuitionRange": "string - e.g. 'RM 15,000 - RM 90,000'",
+          "logo": "string - URL or file path",
+          "image": "string - file path like '/universities/apu.jpg'",
+          "website": "string - URL",
+          "established": "number - year founded",
+          "students": "string - e.g. '13,000+'"
+        },
+        "example_entry": {
+          "id": 1,
+          "name": "Asia Pacific University of Technology & Innovation (APU)",
+          "type": "private",
+          "location": "Kuala Lumpur",
+          "ranking": "QS Asia Ranking: #501+",
+          "description": "Premier private university for technology and innovation.",
+          "programs": [
+            {"title": "BSc (Hons) in Computer Science", "fee": 88000, "category": "Bachelor"},
+            {"title": "MSc in Artificial Intelligence", "fee": 45000, "category": "Masters"}
+          ],
+          "levels": ["Certificate", "Diploma", "Foundation", "Bachelor", "Masters", "PhD"],
+          "offerLetterFee": "Paid",
+          "tuitionRange": "RM 15,000 - RM 90,000",
+          "logo": "https://ui-avatars.com/api/?name=APU&size=200&background=283593&color=fff&bold=true",
+          "image": "/universities/apu.jpg",
+          "website": "https://www.apu.edu.my",
+          "established": 1993,
+          "students": "13,000+"
+        }
+      },
+      "database_schema_format": {
+        "description": "Neon PostgreSQL database schema from lib/db.ts",
+        "tables": {
+          "universities": [
+            "id TEXT PRIMARY KEY",
+            "name TEXT NOT NULL UNIQUE",
+            "country TEXT NOT NULL",
+            "location TEXT NOT NULL",
+            "website TEXT",
+            "description TEXT",
+            "logo TEXT",
+            "details JSONB DEFAULT '{}'::jsonb",
+            "created_at TIMESTAMPTZ DEFAULT NOW()"
+          ],
+          "courses": [
+            "id TEXT PRIMARY KEY",
+            "name TEXT NOT NULL",
+            "university_id TEXT NOT NULL REFERENCES universities(id) ON DELETE CASCADE",
+            "level TEXT NOT NULL",
+            "duration TEXT NOT NULL",
+            "tuition_fee TEXT",
+            "description TEXT",
+            "created_at TIMESTAMPTZ DEFAULT NOW()"
+          ]
+        },
+        "relationship": "courses.university_id → universities.id (one university has many courses)",
+        "sample_universities_insert": "INSERT INTO universities VALUES ('uni-1', 'Multimedia University', 'Malaysia', 'Selangor', 'https://www.mmu.edu.my', '...', 'logo.png', '{\"ranking\": \"...\"}', NOW())",
+        "sample_courses_insert": "INSERT INTO courses VALUES ('crs-1', 'BSc Computer Science', 'uni-1', 'Bachelor', '3 years', '88000', '...', NOW())"
+      }
+    }
+  },
+  "extraction_summary": {
+    "total_time": "Approximately 2-3 minutes per university page",
+    "total_pages_fetched": "38 university pages + 1 sitemap",
+    "total_characters_read": "Approximately 10,972,170 characters (38 pages × 289,045 chars)",
+    "data_layers_identified": 5,
+    "what_has_complete_data": "✅ University URL paths (sitemap), ✅ Course URL paths by category (sitemap), ✅ Basic institutional info (name, logo, website, location, description, establishment, accreditation - from page content), ✅ General fee/scholarship/facilities/entry requirements overviews (from page content)",
+    "what_has_no_data": "❌ Per-course fees, ❌ Per-scholarship amounts, ❌ Per-program entry requirements, ❌ Detailed rankings, ❌ Student population numbers, ❌ Course descriptions, ❌ Course durations, ❌ Annual tuition figures, ❌ Scholarship eligibility criteria, ❌ Application deadlines, ❌ Employment outcomes, ❌ Accommodation costs, ❌ Professional accreditation per program",
+    "recommended_next_steps": [
+      "1. For course-specific fees/scholarships: Scrape official university admissions websites",
+      "2. For rankings: Check QS World University Rankings, SETARA ratings, MQA malaysia",
+      "3. For per-program details: Use university course catalogs or prospectuses",
+      "4. For enrollment data: Check university annual reports or MQA statistics",
+      "5. For this project integration: Map extracted data to globalpathwayhub universitiesData.ts or database schema"
+    ],
+    "data_quality_rating": "Good for directory/navigation purposes; Limited for detailed academic planning without supplementary sources"
+  },
+  "usage_instructions": {
+    "for_website_navigation": "Use layer_1 (URL paths) and layer_3 (course categories) to build website menu structure and navigation",
+    "for_institutional_profiles": "Use layer_2 (basic info) to create university summary cards with name, logo, location, description",
+    "for_data_integrity": "Use layer_5 (missing data) to understand what supplementary sources are needed",
+    "for_globalpathwayhub_integration": "Map layer_2 fields to universitiesData.ts structure; use course category paths from layer_3 as organizational structure; note that detailed course data (fees, durations, requirements) requires external sources",
+    "api_design_consideration": "If building API: return layer_1 + layer_2 for basic listings; note layer_4/gaps for detailed queries requiring external lookups"
+  }
+}

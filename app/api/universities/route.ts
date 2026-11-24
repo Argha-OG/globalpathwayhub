@@ -1,10 +1,14 @@
 import { NextResponse } from 'next/server';
+import { revalidateTag, revalidatePath } from 'next/cache';
 import { query, formatUniversity } from '@/lib/db';
+import { getCurrentUser } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
 
-function checkAuth(req) {
-  const authHeader = req.headers.get('authorization');
+async function checkAuth(req) {
+  const user = await getCurrentUser(req);
+  if (user) return true;
+  const authHeader = req.headers?.get ? req.headers.get('authorization') : null;
   if (!authHeader) return false;
   const token = authHeader.replace(/^Bearer\s+/i, '');
   return token === 'siam-secret-token';
@@ -38,7 +42,9 @@ export async function GET(request) {
 
     const result = await query(sql, params);
     const formatted = result.rows.map(formatUniversity);
-    return NextResponse.json(formatted);
+    return NextResponse.json(formatted, {
+      headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300' },
+    });
   } catch (err) {
     console.error('Error in GET /api/universities:', err);
     return NextResponse.json({ message: err.message }, { status: 500 });
@@ -47,7 +53,7 @@ export async function GET(request) {
 
 export async function POST(request) {
   try {
-    if (!checkAuth(request)) {
+    if (!(await checkAuth(request))) {
       return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
     }
 
@@ -107,6 +113,9 @@ export async function POST(request) {
     `;
 
     const result = await query(insertSql, [id, name, country, location, website, description, logo, JSON.stringify(details)]);
+    revalidateTag('universities');
+    revalidatePath('/');
+    revalidatePath('/universities');
     return NextResponse.json(formatUniversity(result.rows[0]), { status: 201 });
   } catch (err) {
     console.error('Error in POST /api/universities:', err);

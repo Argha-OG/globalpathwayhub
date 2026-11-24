@@ -87,13 +87,6 @@ export default function AdminUniversitiesPage() {
     const [coursePage, setCoursePage] = useState(1);
     const [coursePageSize, setCoursePageSize] = useState(10);
 
-    // ── API-Ninjas Global Registry Lookup ─────────────────────────────────────
-    const [globalQuery, setGlobalQuery] = useState('');
-    const [globalResults, setGlobalResults] = useState<any[]>([]);
-    const [searchingGlobal, setSearchingGlobal] = useState(false);
-    const [showGlobalSearch, setShowGlobalSearch] = useState(false);
-    const [addingPartner, setAddingPartner] = useState<string | null>(null);
-
     const [selectedDossierUni, setSelectedDossierUni] = useState<any | null>(null);
 
     const refreshData = async () => {
@@ -306,102 +299,6 @@ export default function AdminUniversitiesPage() {
         }
     };
 
-    // ── Global Registry Search ─────────────────────────────────────────────────
-    const handleGlobalLookup = async (e?: React.FormEvent) => {
-        if (e) e.preventDefault();
-        if (!globalQuery.trim()) {
-            toast.error('Please enter a university name to search');
-            return;
-        }
-        setSearchingGlobal(true);
-        setGlobalResults([]);
-        try {
-            const res = await fetch(
-                `/api/universities/lookup?name=${encodeURIComponent(globalQuery.trim())}`
-            );
-            const data = await res.json();
-            if (Array.isArray(data)) {
-                setGlobalResults(data);
-                if (data.length === 0) toast('No universities found matching that name');
-            } else {
-                toast.error(data.error || 'Failed to search university registry');
-            }
-        } catch {
-            toast.error('Network error while searching registry');
-        } finally {
-            setSearchingGlobal(false);
-        }
-    };
-
-    const handleSelectGlobalUni = (uni: any) => {
-        let country = uni.country || '';
-        if (country === 'USA') country = 'United States';
-        else if (country === 'UK') country = 'United Kingdom';
-
-        const location =
-            [uni.city, uni.state, uni.country].filter(Boolean).join(', ') || uni.country || '';
-        const website =
-            uni.website || (uni.domains?.[0] ? `https://${uni.domains[0]}` : '');
-
-        setUniForm({
-            name: uni.name || '',
-            country: country,
-            location: location,
-            website: website,
-            details: uni,
-        });
-        setEditingUni(null);
-        toast.success(`Auto-filled form for ${uni.name}! Save to add as partner.`);
-        setShowGlobalSearch(false);
-    };
-
-    const handleAddAsPartner = async (uni: any) => {
-        const uniKey = uni.name;
-        setAddingPartner(uniKey);
-        const toastId = toast.loading(`Adding ${uni.name} as partner...`);
-
-        let country = uni.country || '';
-        if (country === 'USA') country = 'United States';
-        else if (country === 'UK') country = 'United Kingdom';
-
-        const location =
-            [uni.city, uni.state, uni.country].filter(Boolean).join(', ') || uni.country || '';
-        const website =
-            uni.website || (uni.domains?.[0] ? `https://${uni.domains[0]}` : '');
-
-        try {
-            const res = await fetch('/api/universities', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: 'Bearer siam-secret-token',
-                },
-                body: JSON.stringify({
-                    name: uni.name,
-                    country,
-                    location,
-                    website,
-                    logo: null,
-                    details: uni,
-                }),
-            }).then((r) => r.json());
-
-            if (res._id || res.id || res.name) {
-                toast.success(`${uni.name} added as partner university!`, { id: toastId });
-                await refreshData();
-                setShowGlobalSearch(false);
-                setGlobalResults([]);
-                setGlobalQuery('');
-            } else {
-                toast.error(res.message || 'Failed to add university', { id: toastId });
-            }
-        } catch {
-            toast.error('Network error', { id: toastId });
-        } finally {
-            setAddingPartner(null);
-        }
-    };
-
     // ── Form Submits ───────────────────────────────────────────────────────────
     const handleAddUni = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -593,167 +490,6 @@ export default function AdminUniversitiesPage() {
                 {/* ════════════════════ UNIVERSITIES TAB ════════════════════ */}
                 <TabsContent value="university" className="space-y-6">
 
-                    {/* Global Registry Search Panel */}
-                    <div className="p-5 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 space-y-4">
-                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-                            <div>
-                                <h2 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                                    <Globe className="w-4 h-4 text-blue-600" />
-                                    Global Registry Lookup
-                                </h2>
-                                <p className="text-xs text-slate-500 mt-0.5">
-                                    Search 10,000+ worldwide institutions and add directly as partner universities.
-                                </p>
-                            </div>
-                            <Button
-                                type="button"
-                                variant="outline"
-                                size="sm"
-                                onClick={() => setShowGlobalSearch(!showGlobalSearch)}
-                                className="border-blue-200 text-blue-700 hover:bg-blue-100 text-xs flex items-center gap-1.5"
-                            >
-                                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                                {showGlobalSearch ? 'Hide Search' : 'Search & Import University'}
-                            </Button>
-                        </div>
-
-                        {showGlobalSearch && (
-                            <div className="space-y-3">
-                                <form
-                                    onSubmit={handleGlobalLookup}
-                                    className="flex flex-col sm:flex-row gap-2"
-                                >
-                                    <div className="relative flex-1">
-                                        <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-                                        <Input
-                                            value={globalQuery}
-                                            onChange={(e) => setGlobalQuery(e.target.value)}
-                                            placeholder="Search institution name (e.g. Harvard, Oxford, Monash)..."
-                                            className="pl-9 bg-white border-blue-200 text-xs"
-                                        />
-                                    </div>
-                                    <Button
-                                        type="submit"
-                                        disabled={searchingGlobal}
-                                        size="sm"
-                                        className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold flex items-center gap-1.5"
-                                    >
-                                        {searchingGlobal ? (
-                                            <>
-                                                <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                                                Searching...
-                                            </>
-                                        ) : (
-                                            <>
-                                                <Search className="w-3.5 h-3.5" />
-                                                Search
-                                            </>
-                                        )}
-                                    </Button>
-                                </form>
-
-                                {globalResults.length > 0 && (
-                                    <div className="space-y-2">
-                                        <div className="flex items-center justify-between">
-                                            <p className="text-xs font-semibold text-slate-700">
-                                                Found {globalResults.length} institutions:
-                                            </p>
-                                            <button
-                                                type="button"
-                                                onClick={() => setGlobalResults([])}
-                                                className="text-xs text-slate-400 hover:text-slate-700 flex items-center gap-1"
-                                            >
-                                                <X className="w-3 h-3" /> Clear
-                                            </button>
-                                        </div>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-80 overflow-y-auto pr-1">
-                                            {globalResults.map((uni: any, idx: number) => {
-                                                const isAlreadyPartner = universities.some(
-                                                    (u: any) =>
-                                                        u.name?.toLowerCase() ===
-                                                        uni.name?.toLowerCase()
-                                                );
-                                                const isAdding = addingPartner === uni.name;
-                                                return (
-                                                    <div
-                                                        key={idx}
-                                                        className="p-3 bg-white border border-blue-100 rounded-xl hover:border-blue-300 hover:shadow-sm transition-all flex flex-col gap-2"
-                                                    >
-                                                        <div>
-                                                            <div className="flex items-start justify-between gap-2">
-                                                                <span className="font-bold text-xs text-slate-900 line-clamp-2 leading-snug">
-                                                                    {uni.name}
-                                                                </span>
-                                                                <span className="text-[10px] font-semibold bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded whitespace-nowrap">
-                                                                    {uni.country}
-                                                                </span>
-                                                            </div>
-                                                            <p className="text-[11px] text-slate-500 mt-0.5">
-                                                                📍{' '}
-                                                                {[uni.city, uni.state]
-                                                                    .filter(Boolean)
-                                                                    .join(', ') || uni.country}
-                                                            </p>
-                                                            {uni.tuition && (
-                                                                <p className="text-[11px] text-emerald-700 font-semibold mt-0.5">
-                                                                    💰 ${Number(uni.tuition).toLocaleString()} / yr
-                                                                </p>
-                                                            )}
-                                                            {uni.level && (
-                                                                <p className="text-[10px] text-indigo-600 capitalize mt-0.5">
-                                                                    🎓 {uni.level.replace(/_/g, ' ')}
-                                                                </p>
-                                                            )}
-                                                        </div>
-                                                        <div className="flex items-center gap-1.5 pt-1 border-t border-slate-100">
-                                                            <button
-                                                                type="button"
-                                                                onClick={() => setSelectedDossierUni(uni)}
-                                                                className="text-[11px] font-semibold text-blue-600 hover:text-blue-800 hover:underline"
-                                                            >
-                                                                All Data ↗
-                                                            </button>
-                                                            <span className="text-slate-200">|</span>
-                                                            <button
-                                                                type="button"
-                                                                onClick={() => handleSelectGlobalUni(uni)}
-                                                                className="text-[11px] font-semibold text-slate-500 hover:text-slate-800 hover:underline"
-                                                            >
-                                                                Fill Form
-                                                            </button>
-                                                            <div className="ml-auto">
-                                                                {isAlreadyPartner ? (
-                                                                    <span className="text-[11px] font-bold text-emerald-600 flex items-center gap-1">
-                                                                        <CheckCircle className="w-3 h-3" />
-                                                                        Partner
-                                                                    </span>
-                                                                ) : (
-                                                                    <button
-                                                                        type="button"
-                                                                        disabled={isAdding}
-                                                                        onClick={() => handleAddAsPartner(uni)}
-                                                                        className="text-[11px] font-bold text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-60 px-2.5 py-1 rounded-lg flex items-center gap-1 transition-colors"
-                                                                    >
-                                                                        {isAdding ? (
-                                                                            <Loader2 className="w-3 h-3 animate-spin" />
-                                                                        ) : (
-                                                                            <Plus className="w-3 h-3" />
-                                                                        )}
-                                                                        Add Partner
-                                                                    </button>
-                                                                )}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        )}
-                    </div>
-
                     {/* Manual Add / Edit Form */}
                     <div
                         id="uni-form"
@@ -762,10 +498,10 @@ export default function AdminUniversitiesPage() {
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 pb-3 border-b border-slate-200">
                             <div>
                                 <h2 className="text-base font-bold text-slate-900">
-                                    {editingUni ? '✏️ Edit University' : '＋ Manually Add University'}
+                                    {editingUni ? '✏️ Edit University' : '＋ Add University'}
                                 </h2>
                                 <p className="text-xs text-slate-500">
-                                    Use the Global Registry Lookup above to auto-fill, or type manually below.
+                                    Configure institutional profile, location, and academic information.
                                 </p>
                             </div>
                             {editingUni && (

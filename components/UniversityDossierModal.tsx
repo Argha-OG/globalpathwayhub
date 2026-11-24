@@ -177,17 +177,17 @@ export default function UniversityDossierModal({
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto">
             {/* Backdrop */}
             <div
-                className="fixed inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
+                className="fixed inset-0 bg-[#144272]/60 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
                 onClick={onClose}
             />
 
             {/* Modal Dialog Content */}
-            <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-slate-200/80 overflow-hidden z-10 flex flex-col max-h-[92vh] animate-in zoom-in-95 duration-200">
+            <div className="relative w-full max-w-4xl bg-white rounded-lg shadow-2xl border border-[#144272]/20 overflow-hidden z-10 flex flex-col max-h-[92vh] animate-in zoom-in-95 duration-200">
                 {/* Header Banner */}
-                <div className="relative bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-800 text-white p-6 sm:p-8 flex-shrink-0">
+                <div className="relative bg-[#144272] text-white p-6 sm:p-8 flex-shrink-0">
                     <button
                         onClick={onClose}
-                        className="absolute top-4 right-4 h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors focus:outline-none"
+                        className="absolute top-4 right-4 h-9 w-9 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors focus:outline-none"
                         aria-label="Close modal"
                     >
                         <FaXmark className="h-4 w-4" />
@@ -196,62 +196,62 @@ export default function UniversityDossierModal({
                     <div className="flex flex-wrap items-center gap-2 mb-3">
                         {status && (
                             <span
-                                className={`inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wider ${
+                                className={`inline-flex items-center gap-1.5 px-3 py-0.5 rounded-lg text-xs font-semibold uppercase tracking-wider ${
                                     status.toLowerCase() === 'active'
-                                        ? 'bg-emerald-500/20 text-emerald-200 border border-emerald-400/30'
-                                        : 'bg-rose-500/20 text-rose-200 border border-rose-400/30'
+                                        ? 'bg-[#3FC1C9]/20 text-[#3FC1C9] border border-[#3FC1C9]/40'
+                                        : 'bg-white/10 text-white border border-white/20'
                                 }`}
                             >
                                 {status.toLowerCase() === 'active' ? (
-                                    <FaCircleCheck className="h-3 w-3 text-emerald-400" />
+                                    <FaCircleCheck className="h-3 w-3 text-[#3FC1C9]" />
                                 ) : (
-                                    <FaCircleXmark className="h-3 w-3 text-rose-400" />
+                                    <FaCircleXmark className="h-3 w-3 text-white" />
                                 )}
                                 {status} Status
                             </span>
                         )}
 
                         {recognition && (
-                            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-semibold bg-amber-400/20 text-amber-200 border border-amber-300/30">
-                                <FaAward className="h-3 w-3 text-amber-300" />
+                            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-lg text-xs font-semibold bg-[#FFD749] text-black border border-[#144272]/20">
+                                <FaAward className="h-3 w-3 text-black" />
                                 Nationally {recognition}
                             </span>
                         )}
 
                         {level && (
-                            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-semibold bg-white/15 text-white border border-white/20 capitalize">
+                            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-lg text-xs font-semibold bg-white/15 text-[#FFD749] border border-white/20 capitalize">
                                 <FaBuildingColumns className="h-3 w-3" />
                                 {level.replace(/_/g, ' ')}
                             </span>
                         )}
 
                         {institutionType && (
-                            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-medium bg-white/10 text-slate-200 capitalize">
+                            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-lg text-xs font-medium bg-white/10 text-[#F5F5F5] capitalize">
                                 {institutionType.replace(/_/g, ' ')}
                             </span>
                         )}
 
                         {apiId && (
-                            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-white/10 text-blue-200">
+                            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-[11px] font-mono bg-[#3FC1C9]/20 text-[#3FC1C9]">
                                 ID #{apiId}
                             </span>
                         )}
                     </div>
 
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-2">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white mb-2">
                         {name}
                     </h2>
 
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-blue-100">
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#F5F5F5]/80">
                         <span className="inline-flex items-center gap-1.5">
-                            <FaLocationDot className="h-3.5 w-3.5 text-blue-300" />
+                            <FaLocationDot className="h-3.5 w-3.5 text-[#3FC1C9]" />
                             {[city, state, regionCode, country].filter(Boolean).join(', ') || country}
                             {countryCode && <span className="opacity-75">({countryCode})</span>}
                         </span>
 
                         {founded && (
                             <span className="inline-flex items-center gap-1.5">
-                                <FaLandmark className="h-3.5 w-3.5 text-blue-300" />
+                                <FaLandmark className="h-3.5 w-3.5 text-[#3FC1C9]" />
                                 Founded {founded} ({new Date().getFullYear() - Number(founded)} yrs established)
                             </span>
                         )}
@@ -259,11 +259,11 @@ export default function UniversityDossierModal({
 
                     {/* Alternate Names / Aliases */}
                     {aliases && aliases.length > 0 && (
-                        <div className="mt-4 pt-3 border-t border-white/15 text-xs text-blue-100/90">
+                        <div className="mt-4 pt-3 border-t border-white/15 text-xs text-[#F5F5F5]/80">
                             <div className="flex flex-wrap items-center gap-1.5">
-                                <span className="font-semibold text-white/90">Aliases & Schools ({aliases.length}):</span>
+                                <span className="font-semibold text-white/90">Aliases &amp; Schools ({aliases.length}):</span>
                                 {(showAllAliases ? aliases : aliases.slice(0, 5)).map((alias: string, i: number) => (
-                                    <span key={i} className="px-2 py-0.5 rounded-md bg-white/10 text-[11px]">
+                                    <span key={i} className="px-2 py-0.5 rounded-lg bg-white/10 text-[11px] text-[#FFD749]">
                                         {alias}
                                     </span>
                                 ))}
@@ -271,7 +271,7 @@ export default function UniversityDossierModal({
                                     <button
                                         type="button"
                                         onClick={() => setShowAllAliases(!showAllAliases)}
-                                        className="text-[11px] font-bold text-amber-300 hover:text-amber-200 underline ml-1 cursor-pointer"
+                                        className="text-[11px] font-bold text-[#FFD749] hover:underline ml-1 cursor-pointer"
                                     >
                                         {showAllAliases ? 'Show less' : `+${aliases.length - 5} more`}
                                     </button>
@@ -282,102 +282,102 @@ export default function UniversityDossierModal({
                 </div>
 
                 {/* Scrollable Body Container */}
-                <div className="p-6 sm:p-8 space-y-6 overflow-y-auto flex-1 text-slate-800">
+                <div className="p-6 sm:p-8 space-y-6 overflow-y-auto flex-1 text-black">
                     {/* Primary Key Performance Indicators Ribbon */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
                         {/* Tuition Card */}
-                        <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between">
-                            <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1">
-                                <FaDollarSign className="h-3 w-3 text-emerald-600" />
+                        <div className="p-4 rounded-lg bg-[#F5F5F5] border border-[#144272]/15 flex flex-col justify-between">
+                            <span className="text-[11px] font-semibold text-black/60 uppercase tracking-wider flex items-center gap-1">
+                                <FaDollarSign className="h-3 w-3 text-[#144272]" />
                                 Annual Tuition
                             </span>
                             <div className="mt-2">
-                                <span className="text-xl sm:text-2xl font-black text-slate-900">
+                                <span className="text-xl sm:text-2xl font-black text-[#144272]">
                                     {tuition ? `$${Number(tuition).toLocaleString()}` : 'Contact Agency'}
                                 </span>
-                                {tuition && <span className="text-[10px] text-slate-500 block">/ academic year</span>}
+                                {tuition && <span className="text-[10px] text-black/50 block">/ academic year</span>}
                             </div>
                         </div>
 
                         {/* Enrollment Card */}
-                        <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between">
-                            <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1">
-                                <FaUsers className="h-3 w-3 text-blue-600" />
+                        <div className="p-4 rounded-lg bg-[#F5F5F5] border border-[#144272]/15 flex flex-col justify-between">
+                            <span className="text-[11px] font-semibold text-black/60 uppercase tracking-wider flex items-center gap-1">
+                                <FaUsers className="h-3 w-3 text-[#144272]" />
                                 Total Enrollment
                             </span>
                             <div className="mt-2">
-                                <span className="text-xl sm:text-2xl font-black text-slate-900">
+                                <span className="text-xl sm:text-2xl font-black text-[#144272]">
                                     {enrollment ? Number(enrollment).toLocaleString() : 'N/A'}
                                 </span>
                                 {enrollmentYear && (
-                                    <span className="text-[10px] text-slate-500 block">Census {enrollmentYear}</span>
+                                    <span className="text-[10px] text-black/50 block">Census {enrollmentYear}</span>
                                 )}
                             </div>
                         </div>
 
                         {/* Student to Faculty Ratio */}
-                        <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between">
-                            <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1">
-                                <FaGraduationCap className="h-3 w-3 text-indigo-600" />
+                        <div className="p-4 rounded-lg bg-[#F5F5F5] border border-[#144272]/15 flex flex-col justify-between">
+                            <span className="text-[11px] font-semibold text-black/60 uppercase tracking-wider flex items-center gap-1">
+                                <FaGraduationCap className="h-3 w-3 text-[#144272]" />
                                 Student / Faculty
                             </span>
                             <div className="mt-2">
-                                <span className="text-xl sm:text-2xl font-black text-slate-900">
+                                <span className="text-xl sm:text-2xl font-black text-[#144272]">
                                     {studentFacultyRatio ? studentFacultyRatio : 'Standard'}
                                 </span>
-                                <span className="text-[10px] text-slate-500 block">Mentorship Ratio</span>
+                                <span className="text-[10px] text-black/50 block">Mentorship Ratio</span>
                             </div>
                         </div>
 
                         {/* Research Output Card */}
-                        <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between">
-                            <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1">
-                                <FaBookOpen className="h-3 w-3 text-purple-600" />
+                        <div className="p-4 rounded-lg bg-[#F5F5F5] border border-[#144272]/15 flex flex-col justify-between">
+                            <span className="text-[11px] font-semibold text-black/60 uppercase tracking-wider flex items-center gap-1">
+                                <FaBookOpen className="h-3 w-3 text-[#144272]" />
                                 Research Output
                             </span>
                             <div className="mt-2">
-                                <span className="text-xl sm:text-2xl font-black text-slate-900">
+                                <span className="text-xl sm:text-2xl font-black text-[#144272]">
                                     {researchOutput
                                         ? Number(researchOutput) > 1000000
                                             ? `${(Number(researchOutput) / 1000000).toFixed(2)}M`
                                             : Number(researchOutput).toLocaleString()
                                         : 'Active'}
                                 </span>
-                                <span className="text-[10px] text-slate-500 block">Citations & Papers</span>
+                                <span className="text-[10px] text-black/50 block">Citations &amp; Papers</span>
                             </div>
                         </div>
 
                         {/* Academic Duration Card */}
-                        <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between col-span-2 sm:col-span-1">
-                            <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1">
-                                <FaClock className="h-3 w-3 text-amber-600" />
+                        <div className="p-4 rounded-lg bg-[#F5F5F5] border border-[#144272]/15 flex flex-col justify-between col-span-2 sm:col-span-1">
+                            <span className="text-[11px] font-semibold text-black/60 uppercase tracking-wider flex items-center gap-1">
+                                <FaClock className="h-3 w-3 text-[#144272]" />
                                 Typical Length
                             </span>
                             <div className="mt-2">
-                                <span className="text-xl sm:text-2xl font-black text-slate-900">
+                                <span className="text-xl sm:text-2xl font-black text-[#144272]">
                                     {years || '3-4 Years'}
                                 </span>
-                                <span className="text-[10px] text-slate-500 block">Degree Completion</span>
+                                <span className="text-[10px] text-black/50 block">Degree Completion</span>
                             </div>
                         </div>
                     </div>
 
                     {/* In-State vs Out-of-State Tuition breakdown */}
                     {(tuitionInState || tuitionOutState) && (
-                        <div className="p-4 rounded-2xl bg-blue-50/60 border border-blue-200/70 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                        <div className="p-4 rounded-lg bg-[#3FC1C9]/15 border border-[#3FC1C9]/30 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                             <div className="text-xs">
-                                <span className="font-bold text-slate-800">Tuition Breakdown: </span>
-                                <span className="text-slate-600">Published official annual tuition rates:</span>
+                                <span className="font-bold text-[#144272]">Tuition Breakdown: </span>
+                                <span className="text-black/70">Published official annual tuition rates:</span>
                             </div>
                             <div className="flex flex-wrap items-center gap-4 text-xs font-semibold">
                                 {tuitionInState && (
-                                    <span className="text-slate-700">
-                                        In-State: <strong className="text-slate-900">${Number(tuitionInState).toLocaleString()}</strong>
+                                    <span className="text-black/80">
+                                        In-State: <strong className="text-[#144272]">${Number(tuitionInState).toLocaleString()}</strong>
                                     </span>
                                 )}
                                 {tuitionOutState && (
-                                    <span className="text-blue-700 bg-white px-2.5 py-1 rounded-lg border border-blue-200">
-                                        International / Out-of-State: <strong className="text-blue-900">${Number(tuitionOutState).toLocaleString()}</strong>
+                                    <span className="text-[#144272] bg-white px-2.5 py-1 rounded-lg border border-[#144272]/20">
+                                        International / Out-of-State: <strong className="text-[#144272]">${Number(tuitionOutState).toLocaleString()}</strong>
                                     </span>
                                 )}
                             </div>
@@ -387,17 +387,17 @@ export default function UniversityDossierModal({
                     {/* Degree Types & Programs Offered */}
                     {degreeTypes && degreeTypes.length > 0 && (
                         <div className="space-y-3">
-                            <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-                                <FaGraduationCap className="h-4 w-4 text-blue-600" />
-                                Available Degree Levels & Programs ({degreeTypes.length})
+                            <h3 className="text-sm font-bold text-[#144272] uppercase tracking-wider flex items-center gap-2">
+                                <FaGraduationCap className="h-4 w-4 text-[#3FC1C9]" />
+                                Available Degree Levels &amp; Programs ({degreeTypes.length})
                             </h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                                 {degreeTypes.map((deg: string, idx: number) => (
                                     <div
                                         key={idx}
-                                        className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200/70 text-xs font-medium text-slate-800 hover:border-blue-300 transition-colors"
+                                        className="flex items-center gap-2.5 p-3 rounded-lg bg-[#F5F5F5] border border-[#144272]/15 text-xs font-medium text-black hover:border-[#3FC1C9] transition-colors"
                                     >
-                                        <div className="h-6 w-6 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center flex-shrink-0 text-[10px]">
+                                        <div className="h-6 w-6 rounded-lg bg-[#3FC1C9]/20 text-[#144272] flex items-center justify-center flex-shrink-0 text-[10px] font-bold">
                                             ✓
                                         </div>
                                         <span>{deg}</span>
@@ -410,41 +410,41 @@ export default function UniversityDossierModal({
                     {/* Campus Geographic & Coordinates Section */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {/* Physical Address & Location */}
-                        <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3">
-                            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-2">
-                                <FaLocationDot className="h-4 w-4 text-red-500" />
-                                Campus Location & Coordinates
+                        <div className="p-5 rounded-lg bg-[#F5F5F5] border border-[#144272]/15 space-y-3">
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#144272] flex items-center gap-2">
+                                <FaLocationDot className="h-4 w-4 text-[#144272]" />
+                                Campus Location &amp; Coordinates
                             </h4>
 
-                            <div className="space-y-1.5 text-xs text-slate-600">
+                            <div className="space-y-1.5 text-xs text-black/70">
                                 {address && (
-                                    <p className="font-semibold text-slate-800">
+                                    <p className="font-semibold text-black">
                                         Street Address: <span className="font-normal">{address}</span>
                                     </p>
                                 )}
                                 <p>
-                                    City & State:{' '}
-                                    <span className="font-semibold text-slate-800">
+                                    City &amp; State:{' '}
+                                    <span className="font-semibold text-black">
                                         {[city, state, postalCode].filter(Boolean).join(', ') || city || 'Campus'}
                                     </span>
                                 </p>
-                                {regionCode && <p>State / Region Code: <strong className="text-slate-800">{regionCode}</strong></p>}
+                                {regionCode && <p>State / Region Code: <strong className="text-black">{regionCode}</strong></p>}
                                 {county && <p>County / Municipality: {county}</p>}
                                 <p>
                                     Country:{' '}
-                                    <strong className="text-slate-800">
+                                    <strong className="text-black">
                                         {country} {countryCode ? `(${countryCode})` : ''}
                                     </strong>
                                 </p>
                                 {(timezone || timezoneIana) && (
-                                    <p className="flex items-center gap-1.5 pt-1 text-[11px] text-slate-500">
-                                        <FaClock className="h-3 w-3 text-slate-400" />
+                                    <p className="flex items-center gap-1.5 pt-1 text-[11px] text-black/60">
+                                        <FaClock className="h-3 w-3 text-[#144272]" />
                                         Timezone: {timezoneIana || timezone} {timezone && `(${timezone})`}
                                     </p>
                                 )}
                                 {latitude && longitude && (
-                                    <p className="flex items-center gap-1.5 text-[11px] text-slate-500 font-mono">
-                                        <FaCompass className="h-3 w-3 text-slate-400" />
+                                    <p className="flex items-center gap-1.5 text-[11px] text-black/70 font-mono">
+                                        <FaCompass className="h-3 w-3 text-[#144272]" />
                                         GPS: {latitude}, {longitude}
                                     </p>
                                 )}
@@ -454,46 +454,46 @@ export default function UniversityDossierModal({
                                 href={googleMapsUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-xs font-semibold text-blue-600 hover:text-blue-800 pt-1"
+                                className="inline-flex items-center gap-2 text-xs font-semibold text-[#144272] hover:text-[#3FC1C9] pt-1"
                             >
                                 <FaArrowUpRightFromSquare className="h-3 w-3" />
-                                Open in Google Maps & View Satellite Campus
+                                Open in Google Maps &amp; View Satellite Campus
                             </a>
                         </div>
 
                         {/* Contact & Official Verification */}
-                        <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3">
-                            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-2">
-                                <FaGlobe className="h-4 w-4 text-blue-600" />
-                                Official Contact & Domains
+                        <div className="p-5 rounded-lg bg-[#F5F5F5] border border-[#144272]/15 space-y-3">
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#144272] flex items-center gap-2">
+                                <FaGlobe className="h-4 w-4 text-[#3FC1C9]" />
+                                Official Contact &amp; Domains
                             </h4>
 
-                            <div className="space-y-2 text-xs text-slate-600">
+                            <div className="space-y-2 text-xs text-black/70">
                                 {website ? (
                                     <div>
-                                        <span className="block text-[11px] text-slate-500">Official Web Portal:</span>
+                                        <span className="block text-[11px] text-black/50">Official Web Portal:</span>
                                         <a
                                             href={website.startsWith('http') ? website : `https://${website}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="font-bold text-blue-600 hover:underline break-all inline-flex items-center gap-1"
+                                            className="font-bold text-[#144272] hover:text-[#3FC1C9] hover:underline break-all inline-flex items-center gap-1"
                                         >
                                             {website}
                                             <FaArrowUpRightFromSquare className="h-2.5 w-2.5" />
                                         </a>
                                     </div>
                                 ) : (
-                                    <p className="text-slate-500 italic">No public web portal recorded</p>
+                                    <p className="text-black/50 italic">No public web portal recorded</p>
                                 )}
 
                                 {phone && (
                                     <div>
-                                        <span className="block text-[11px] text-slate-500">Admissions Phone:</span>
+                                        <span className="block text-[11px] text-black/50">Admissions Phone:</span>
                                         <a
                                             href={`tel:${phone.replace(/[^\d+]/g, '')}`}
-                                            className="font-semibold text-slate-800 hover:text-primary inline-flex items-center gap-1.5"
+                                            className="font-semibold text-black hover:text-[#3FC1C9] inline-flex items-center gap-1.5"
                                         >
-                                            <FaPhone className="h-3 w-3 text-emerald-600" />
+                                            <FaPhone className="h-3 w-3 text-[#144272]" />
                                             {phone}
                                         </a>
                                     </div>
@@ -501,14 +501,14 @@ export default function UniversityDossierModal({
 
                                 {domains && domains.length > 0 && (
                                     <div>
-                                        <span className="block text-[11px] text-slate-500">Verified Email Domains:</span>
+                                        <span className="block text-[11px] text-black/50">Verified Email Domains:</span>
                                         <div className="flex flex-wrap gap-1 mt-1">
                                             {domains.map((dom: string, i: number) => (
                                                 <span
                                                     key={i}
-                                                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-white border border-slate-200 text-[11px] font-mono text-slate-700"
+                                                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-white border border-[#144272]/20 text-[11px] font-mono text-[#144272]"
                                                 >
-                                                    <FaEnvelope className="h-2.5 w-2.5 text-slate-400" />
+                                                    <FaEnvelope className="h-2.5 w-2.5 text-[#144272]/60" />
                                                     @{dom}
                                                 </span>
                                             ))}
@@ -517,13 +517,13 @@ export default function UniversityDossierModal({
                                 )}
 
                                 {/* Registry IDs */}
-                                <div className="pt-2 border-t border-slate-200 flex flex-wrap items-center gap-3 text-[11px] text-slate-500">
+                                <div className="pt-2 border-t border-[#144272]/15 flex flex-wrap items-center gap-3 text-[11px] text-black/60">
                                     {rorId && (
                                         <a
                                             href={`https://ror.org/${rorId}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="hover:text-blue-600 underline"
+                                            className="hover:text-[#144272] underline"
                                         >
                                             ROR ID: {rorId}
                                         </a>
@@ -533,7 +533,7 @@ export default function UniversityDossierModal({
                                             href={`https://www.wikidata.org/wiki/${wikidataId}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="hover:text-blue-600 underline"
+                                            className="hover:text-[#144272] underline"
                                         >
                                             Wikidata: {wikidataId}
                                         </a>
@@ -546,19 +546,19 @@ export default function UniversityDossierModal({
                 </div>
 
                 {/* Footer Action Bar */}
-                <div className="p-4 sm:p-6 bg-slate-50 border-t border-slate-200/80 flex flex-col sm:flex-row justify-between items-center gap-3 flex-shrink-0">
+                <div className="p-4 sm:p-6 bg-white border-t border-[#144272]/15 flex flex-col sm:flex-row justify-between items-center gap-3 flex-shrink-0">
                     <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
                         <Button
                             type="button"
                             size="sm"
                             onClick={handleShare}
-                            className={`text-xs font-bold rounded-xl h-9 gap-1.5 ${
+                            className={`text-xs font-bold rounded-lg h-9 gap-1.5 ${
                                 copiedShare
-                                    ? 'bg-emerald-600 text-white'
-                                    : 'bg-white text-slate-700 border border-slate-300 hover:bg-slate-100'
+                                    ? 'bg-[#3FC1C9] text-[#144272]'
+                                    : 'bg-[#F5F5F5] text-[#144272] border border-[#144272]/30 hover:bg-[#F5F5F5]/80'
                             }`}
                         >
-                            {copiedShare ? <FaCheck className="h-3 w-3 text-white" /> : <FaCopy className="h-3 w-3" />}
+                            {copiedShare ? <FaCheck className="h-3 w-3 text-[#144272]" /> : <FaCopy className="h-3 w-3" />}
                             {copiedShare ? 'Copied for WhatsApp!' : 'Copy for WhatsApp'}
                         </Button>
 
@@ -566,7 +566,7 @@ export default function UniversityDossierModal({
                             type="button"
                             size="sm"
                             onClick={handleWhatsAppShare}
-                            className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl h-9 gap-1.5 shadow-xs"
+                            className="bg-[#3FC1C9] hover:bg-[#3FC1C9]/80 text-[#144272] text-xs font-bold rounded-lg h-9 gap-1.5 shadow-xs uppercase tracking-wider"
                         >
                             <FaWhatsapp className="h-3.5 w-3.5" />
                             Share on WhatsApp
@@ -578,7 +578,7 @@ export default function UniversityDossierModal({
                             type="button"
                             variant="outline"
                             onClick={onClose}
-                            className="flex-1 sm:flex-none border-slate-300 text-xs text-slate-700 rounded-xl"
+                            className="flex-1 sm:flex-none border-[#144272]/30 text-xs text-[#144272] rounded-lg"
                         >
                             Close Dossier
                         </Button>
@@ -587,7 +587,7 @@ export default function UniversityDossierModal({
                             href={`/apply/${encodeURIComponent(name)}`}
                             className="flex-1 sm:flex-none"
                         >
-                            <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm px-6 rounded-xl h-9">
+                            <Button className="w-full bg-[#144272] hover:bg-[#144272]/90 text-[#FFD749] font-bold text-xs flex items-center justify-center gap-2 shadow-xs px-6 rounded-lg h-9 uppercase tracking-wider">
                                 <FaPaperPlane className="h-3.5 w-3.5" />
                                 Apply to this University
                             </Button>

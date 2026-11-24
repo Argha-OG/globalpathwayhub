@@ -13,12 +13,13 @@ export async function GET() {
 
   // Fallback default destinations
   return NextResponse.json([
-    { name: 'United Kingdom' },
-    { name: 'United States' },
+    { name: 'Malaysia' },
     { name: 'Canada' },
     { name: 'Australia' },
+    { name: 'United Kingdom' },
+    { name: 'France' },
+    { name: 'United States' },
     { name: 'Germany' },
-    { name: 'Malaysia' },
     { name: 'Ireland' },
     { name: 'New Zealand' },
   ]);
